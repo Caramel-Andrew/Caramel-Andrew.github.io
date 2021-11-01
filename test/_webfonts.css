@@ -1,0 +1,8 @@
+@charset "utf-8";
+.c-body,li,dt,dd,th,td { font-family: 'mplus-1c-light'; }
+.c-title { font-family: 'mplus-1c-regular'; }
+.c-large_headline { font-family: 'mplus-1c-medium'; }
+.c-small_headline { font-family: 'mplus-1c-regular'; }
+.c-lead { font-family: 'mplus-1c-light'; }
+.c-credit { font-family: 'mplus-1p-light'; }
+.webfont1 { font-family: 'Lobster', cursive; }

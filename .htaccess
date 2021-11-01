@@ -1,0 +1,18 @@
+#PHPを動作させるための記述になります
+AddHandler x-httpd-php528 .php
+
+##
+# SymlinksはCPIサーバーをご利用の場合記述が必要です。
+# CPIサーバー以外でも、mod_rewriteを有効にし、エラーがでる場合は、
+# どちらかのオプションを有効にしてください。
+##
+# CPIサーバーでACE01_2015以降のサーバー
+Options +SymLinksIfOwnerMatch
+ 
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+ 
+# httpからの通信を、httpsにリダイレクト（www有り無し）
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*$) https://www.yoyomiracle.jp/$1 [R=301,L]

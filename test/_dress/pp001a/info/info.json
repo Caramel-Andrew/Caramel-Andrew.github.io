@@ -1,0 +1,11 @@
+{
+	"name": "Come On-A My House<div class=\"cs-subtitle\">White</div>"
+	, "category": "Template"
+	, "description": "淡いグレーとホワイトの背景に、シンプルなグレーを配色したDressです。"
+	, "colorwheel": {
+		"rule"		: "custom"
+		, "base"	: "#ffffff	"
+		, "sub"		: "#f0f0f0"
+		, "accent"	: "#747474"
+	}
+}

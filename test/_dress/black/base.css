@@ -1,0 +1,260 @@
+@charset "UTF-8";
+.-dress_black a {
+	color: #fff;
+}
+.-dress_black .c-menu li {
+	border-color: #ccc;
+	color: #fff;
+}
+.-dress_black .c-menu li:first-child {
+	border-color: #ccc;
+	color: #fff;
+}
+.-dress_black .c-menu li a {
+	color: #fff;
+}
+.-dress_black .c-menu li .c-unlink, .-dress_black .c-menu li .c-unlink .c-body {
+	color: #fff;
+}
+.-dress_black .c-menu.-menu_a li a, .-dress_black .c-menu.-menu_b li a {
+	color: #fff;
+}
+.-dress_black .c-menu.-menu_b.-v {
+	border-color: #fff;
+}
+.-dress_black .c-menu.-menu_c li {
+	border-color: #555;
+}
+.-dress_black .c-menu.-menu_c, .-dress_black .c-menu.-menu_c li a, .-dress_black .c-menu.-menu_c li:first-child a, .-dress_black .c-menu.-menu_d {
+	background: #000;
+}
+.-dress_black .c-menu.-menu_c li a:hover {
+	background: #555;
+}
+.-dress_black .c-menu.-menu_d.-v {
+	background: none;
+}
+.-dress_black .c-menu.-menu_d li a, .-dress_black .c-menu.-menu_d li .c-unlink, .-dress_black .c-menu.-menu_d li:first-child a, .-dress_black .c-menu.-menu_d li:first-child .c-unlink {
+	background: linear-gradient(to bottom, #151515 0, #000 98%);
+ filter: progid:DXImageTransform.Microsoft.gr;
+}
+.-dress_black .c-menu.-menu_c li, .-dress_black .c-menu.-menu_d li a, .-dress_black .c-menu.-menu_e li a, .-dress_black .c-menu.-menu_e li:first-child a {
+	color: #fff;
+}
+.-dress_black .c-menu.-menu_e.-v li a, .-dress_black .c-menu.-menu_e {
+	background: linear-gradient(to bottom, rgb(58,58,58) 0%, rgb(66,66,66) 45%, rgb(37,37,37) 48%, rgb(0,0,0) 100%);
+	border-radius: 4px;
+	border-color: #222;
+}
+.-dress_black .c-menu.-menu_e li a:hover {
+	background-color: #222;
+}
+.-dress_black .c-menu.-menu_e.-v {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.-dress_black .c-menu.-menu_e.-v li .c-unlink {
+	background: #000;
+	color: #fff;
+}
+.-dress_black {
+	color: #fff;
+}
+.-dress_black .b-plain .column {
+}
+.-dress_black main .b-both_diff .column {
+}
+.-dress_black .b-headlines .column {
+}
+.-dress_black .b-album .column {
+}
+.-dress_black .b-tab_navigation {
+	font-size: 0;
+}
+.-dress_black .b-tab_navigation li {
+	margin-right: 1px;
+	color: #fff;
+}
+.-dress_black .b-tab_navigation li a {
+	background-color: #222;
+	font-size: 1rem;
+	color: #fff;
+}
+.-dress_black .b-tab_navigation li.-active a, .-dress_black .b-tab_navigation li a:hover {
+	background-color: #fff;
+	color: #000;
+}
+.-dress_black .b-accordion .column {
+	background: #333;
+}
+.-dress_black .b-accordion_navigation a {
+	background: #555;
+}
+.-dress_black .b-accordion_navigation.-active a, .-dress_black .b-accordion_navigation a:hover {
+	background: #777;
+ filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.-dress_black .b-accordion_navigation {
+	border-top: 1px solid #333;
+}
+.-dress_black .c-body {
+	color: #fff;
+}
+.-dress_black .c-page_title {
+	color: #fff;
+}
+.-dress_black .c-title {
+	color: #fff;
+}
+.-dress_black .c-large_headline {
+	color: #fff;
+}
+.-dress_black .c-small_headline {
+	color: #fff;
+}
+.-dress_black .c-lead {
+	color: #fff;
+}
+.-dress_black .c-blockquote {
+	color: #fff;
+}
+.-dress_black .c-enclosure {
+	color: #fff;
+	border: 1px solid #999;
+}
+.-dress_black .c-note {
+	color: #fff;
+}
+.-dress_black .c-credit {
+	color: #fff;
+}
+.-dress_black .c-list-sign, .-dress_black .c-list-no_mark, .-dress_black .c-list-numbers, .-dress_black .c-list-alphabet, .-dress_black .c-list-alphabet_small, .-dress_black .c-list-greece, .-dress_black .c-list-greece_small, .-dress_black .c-list_indent {
+	color: #fff;
+}
+.-dress_black .c-list_table th {
+	color: #fff;
+	background: #555;
+	border-top: 1px solid #999;
+}
+.-dress_black .c-list_table td {
+	color: #fff;
+	border-top: 1px solid #999;
+}
+.-dress_black .c-list_table tr:first-child th, .-dress_black .c-list_table tr:first-child td {
+	border-top: 0 none;
+}
+.-dress_black .c-list_news {
+	color: #fff;
+	border-top: 1px solid #999;
+}
+.-dress_black .c-hr {
+	border-color: #ccc;
+}
+.-dress_black .c-breadcrumb {
+	color: #fff;
+}
+.-dress_black .c-pager {
+	color: #fff;
+}
+.-dress_black .m-motion.-f li a {
+	color: #fff;
+}
+.-dress_black .m-motion.-f li a:hover {
+	background-color: #555;
+	border-bottom: 1px solid #222;
+	color: #fff;
+}
+.-dress_black .m-motion.-f > li:hover > a + ul > li:first-child:after, .-dress_black .m-motion.-f > li:hover > .c-unlink + ul > li:first-child:after {
+	border-top-color: #ddd;
+}
+.-dress_black .m-motion.-f > li > ul li:first-child:before {
+	border-bottom-color: #ddd;
+}
+.-dress_black .m-motion.-f > li > ul > li a, .-dress_black .m-motion.-f > li > ul > li .c-unlink {
+	background-color: #ddd;
+	border-bottom: 1px solid #fff;
+}
+.-dress_black .m-motion.-f > li > ul > li a:hover {
+	background-color: #777;
+	border-bottom: 1px solid #111;
+	color: #fff;
+}
+.-dress_black .m-motion.-g {
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	background-color: transparent;
+}
+.-dress_black .m-motion.-g li a {
+	color: #fff;
+}
+.-dress_black .m-motion.-g .lavalamp-object {
+	background-color: #555;
+}
+.-dress_black .m-motion.-g li {
+	margin-left: 0px;
+}
+.-dress_black .m-motion.-j a {
+	color: #fff;
+}
+.-dress_black .m-motion.-j .lavalamp-object {
+	border-top: 1px dotted #ccc;
+}
+.-dress_black .m-motion.-h li a {
+	background-color: #555;
+	color: #fff;
+}
+.-dress_black .m-motion.-h li a:hover {
+ filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+	opacity: 1;
+	filter: alpha(opacity=100);
+	background-color: #777;
+	color: #fff;
+	width: 170px;
+	padding-left: 40px;
+}
+.-dress_black .m-motion.-h li a {
+	color: #fff;
+}
+.-dress_black .m-motion.-i li a {
+	border: 1px solid #666;
+	border-bottom-width: 3px;
+	border-radius: 3px;
+	color: #fff;
+	background: #555;
+	-webkit-transition: all 0.4s ease-in;
+	transition: all 0.4s ease-in;
+}
+.-dress_black .m-motion.-i li a:hover {
+	background: #888;
+}
+
+@media (max-width: 641px) {
+.-dress_black #js-globalNavigation {
+	background: #222;
+}
+.-dress_black .c-menu.-menu_a li {
+	border-bottom: 1px solid #eee;
+}
+.-dress_black .c-menu.-menu_a li a {
+	color: #fff;
+}
+.-dress_black .c-sp_navigation_btn {
+	background: #333;
+	border-color: #ccc;
+}
+.-dress_black .c-sp_navigation_btn .c-sp-navigation_line1, .-dress_black .c-sp_navigation_btn .c-sp-navigation_line2, .-dress_black .c-sp_navigation_btn .c-sp-navigation_line3 {
+	border-top: 4px solid #ccc;
+}
+.-dress_black .c-menu.-menu_e li a, .-dress_black .c-menu.-menu_e li:first-child a {
+	background: linear-gradient(to bottom, rgb(58,58,58) 0%, rgb(66,66,66) 45%, rgb(37,37,37) 48%, rgb(0,0,0) 100%);
+}
+.-dress_black .m-motion.-f > li > ul > li a, .-dress_black .m-motion.-f > li > ul > li .c-unlink {
+	background-color: transparent;
+	color: #fff;
+	border-bottom: none;
+}
+}
