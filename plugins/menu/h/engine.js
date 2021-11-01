@@ -1,1 +1,0 @@
-_bind.menu.h={render:function(n){}};

@@ -1,2 +1,0 @@
-<link href="//module.bindsite.jp/type-fonts/css/sourcehansans.css" rel="stylesheet" type="text/css">
-

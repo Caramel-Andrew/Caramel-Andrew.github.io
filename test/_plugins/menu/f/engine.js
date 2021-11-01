@@ -1,1 +1,0 @@
-!function(n){n.menu.f={render:function(n){}}}(_bind);
