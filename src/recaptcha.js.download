@@ -1,0 +1,6 @@
+var recaptcha_token = '';
+grecaptcha.ready(function() {
+	grecaptcha.execute('6LfX5J4UAAAAAA94YZP9TI95fY7Xd6e8xQX1Zvj2', {action: 'homepage'}).then(function(token) {
+		recaptcha_token = token;
+	});
+});

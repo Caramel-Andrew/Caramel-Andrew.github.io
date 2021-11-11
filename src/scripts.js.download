@@ -1,0 +1,72 @@
+$(function(){
+  
+  var _baseDomClass = '.sc-each_input';
+  var searchJDoms = {
+    formLabel: function($t){
+      return $t.find('.sc-form-label');
+    },
+    formInput: function($t){
+      return $t.find('.sc-each_input');
+    },
+    formInputField: function($t){
+      return this.formInput($t).find('.sc-input-field');
+    },
+    formInputLabel: function($t){
+      return this.formInput($t).find('.sc-input-label');
+    },
+    formInputLabelText: function($t){
+      return this.formInputLabel($t).find('.sc-input-label_text');
+    },
+    formTextArea: function($t){
+      return this.formInput($t).find('textarea');
+    }
+  };
+  
+  // ラベルトップの文字避け処理
+  $.fn.addClassHasValEvents = function() {
+    var $t = $(this);
+    var $target = $t.closest(_baseDomClass);
+    if ( $t.val() ) {
+      $target.addClass('-hasval');
+    } else {
+      $target.removeClass('-hasval');
+    }
+  };
+  
+  // textareaの高さ揃え
+  $.fn.textareaHeighter = function() {
+    var $t = $(this);
+    var $textarea = searchJDoms.formTextArea($t);
+    var $label = searchJDoms.formInputLabel($t);
+    var time = (isIE)?400:100;
+    setTimeout(function() {
+      $label.height($textarea.height());
+    },time);
+  } 
+  
+  $.fn.hasValInit = function(){
+    $(this).each(function(){
+      var $t = $(this);
+      if ( $t.find(_baseDomClass).length > 0 ) {
+        var $_t = $(this);
+        var $inputField = searchJDoms.formInputField($_t);
+        $inputField.addClassHasValEvents();
+        $inputField.on('focusout',function(){
+          $(this).addClassHasValEvents();
+        });
+        
+        if ( searchJDoms.formTextArea($t).length > 0 ) $t.textareaHeighter();
+      }
+    });
+  };
+  
+  /*
+   * 実行
+   */
+  // フォームの各行に実行
+  $(window).on('load',function(){
+    setTimeout(function(){
+      $('#myform .form-group').hasValInit();
+    },1);
+  });
+});

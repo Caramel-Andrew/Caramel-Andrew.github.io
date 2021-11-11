@@ -1,0 +1,370 @@
+
+var Send = Send || {};
+
+/*
+ * 単一のテキストボックス形式の送信パラメータ作成
+ *
+ */
+Send.Textbox = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Textbox.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Textbox.prototype.buildParams = function() {
+	var p = {
+		scFormFieldId: this._data.scFormFieldId
+		,fieldType: this._data.fieldType
+		,data: $(this._fieldid).val()
+	};
+	return p;
+}
+
+//------------------------------------------------------------------------------
+/*
+ * プルダウン形式の送信パラメータ作成
+ *
+ */
+Send.Pulldown = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Pulldown.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Pulldown.prototype.buildParams = function() {
+
+	var val = $(this._fieldid).val();
+
+	// チェックボックスと同じ集計処理で扱えるようにチェックボックスと合わせる
+	var detail = {};
+//	if(val != '') {
+//		detail['0'] = val;
+//	}
+	if(val != '') {
+		// 詳細パラメータ作成 添え字を並び順準拠するように修正
+		$('select[name="' + this._fieldname + '"] option').each(function(idx, item) {
+			var opt = $(item);
+			if(opt.prop('selected')) {
+				detail[(idx - 1)] = val; // index 0 は「選択なし」なので一つずらす
+			}
+		});
+	}
+
+	var p = {
+			scFormFieldId: this._data.scFormFieldId
+			,fieldType: this._data.fieldType
+			,data: val
+			,detail: JSON.stringify(detail)
+		};
+
+
+	return p;
+}
+//------------------------------------------------------------------------------
+/*
+ * ラジオボタンの送信パラメータ作成
+ *
+ */
+Send.Radio = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Radio.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Radio.prototype.buildParams = function() {
+
+	// 「その他」がチェックされているかどうか？
+	var etc = $(this._fieldid + '-etc').prop("checked");
+	// チェックされた値、もしくはその他の入力値を取得
+	var val = etc ? $(this._fieldid + '-etcstr').val() : $('input[name="' + this._fieldname + '"]:checked').val();
+
+	var detail = {};
+
+//	// チェックボックスと同じ集計処理で扱えるようにチェックボックスと合わせる
+//	if(val != '') {
+//		detail[etc ? 'etc': '0'] = val;
+//	}
+
+	// チェックボックスと同じ集計処理で扱えるようにチェックボックスと合わせる
+	if(val != '') {
+		// 詳細パラメータ作成 添え字を並び順準拠するように修正
+		// 「その他」を除いて取得
+		$('input[name="' + this._fieldname + '"]:not("' + this._fieldid + '-etc")').each(function(idx, item) {
+			var cbox = $(item);
+			if(cbox.prop('checked')) { // チェックされている
+				detail[idx] = cbox.val();
+			}
+		});
+
+		if(etc) { // その他
+			detail['etc'] = val;
+		}
+	}
+
+	var p = {
+		scFormFieldId: this._data.scFormFieldId
+		,fieldType: this._data.fieldType
+		,data: val
+		,detail: JSON.stringify(detail)
+	};
+
+	return p;
+}
+
+//------------------------------------------------------------------------------
+/*
+ * チェックボックスの送信パラメータ作成
+ *
+ */
+Send.Checkbox = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Checkbox.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Checkbox.prototype.buildParams = function() {
+
+	var vals = new Array();
+	var detail = {};
+
+	// 「その他」を除いてチェックされている値を取得
+	$('input[name="' + this._fieldname + '"]:checked:not("' + this._fieldid + '-etc")').each(function() {
+		vals.push($(this).val());
+	});
+
+	// 詳細パラメータ作成 添え字を並び順準拠するように修正
+	// 「その他」を除いて取得
+	$('input[name="' + this._fieldname + '"]:not("' + this._fieldid + '-etc")').each(function(idx, item) {
+		var cbox = $(item);
+		if(cbox.prop('checked')) { // チェックされている
+			detail[idx] = cbox.val();
+		}
+	});
+//	for (var idx = 0; idx < vals.length; idx++) {
+//		detail[idx] = vals[idx];
+//	}
+
+	// 「その他」がチェックされているかどうか？
+	var etc = $(this._fieldid + '-etc').prop("checked");
+	if(etc) {
+		vals.push($(this._fieldid + '-etcstr').val());
+		// 詳細にも追加
+		detail.etc = $(this._fieldid + '-etcstr').val();
+	}
+
+	var p = {
+		scFormFieldId: this._data.scFormFieldId
+		,fieldType: this._data.fieldType
+		,data: vals.join(',')
+		,detail: JSON.stringify(detail)
+	};
+
+	return p;
+}
+
+//------------------------------------------------------------------------------
+/*
+ * 名前の送信パラメータ作成
+ *
+ */
+Send.Name = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Name.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Name.prototype.buildParams = function() {
+
+	var detail = {
+		sei: $(this._fieldid + '-sei').val()
+		,mei: $(this._fieldid + '-mei').val()
+	};
+	// ふりがな
+	if(this._data.config.useruby == 1) {
+		detail.rubysei = $(this._fieldid + '-rubysei').val();
+		detail.rubymei = $(this._fieldid + '-rubymei').val();
+	}
+
+	var data = detail.sei;
+	if(detail.mei != null && detail.mei != '') data += ' ' + detail.mei;
+
+	// ふりがなと結合
+	if(this._data.config.useruby == 1) {
+		var ruby = detail.rubysei;
+		if(detail.rubymei != null && detail.rubymei != '') ruby += ' ' + detail.rubymei;
+
+		if(ruby != '') {
+			data = data + '（' + ruby + '）';
+		}
+	}
+
+	var p = {
+		scFormFieldId: this._data.scFormFieldId
+		,fieldType: this._data.fieldType
+		,data: data
+		,detail: JSON.stringify(detail)
+	};
+	return p;
+}
+
+//------------------------------------------------------------------------------
+/*
+ * 住所の送信パラメータ作成
+ *
+ */
+Send.Address = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Address.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Address.prototype.buildParams = function() {
+
+	var detail = {
+		zip1: $(this._fieldid + '-zip1').val()
+		,zip2: $(this._fieldid + '-zip2').val()
+		,ad1: $(this._fieldid + '-ad1').val()
+		,ad2: $(this._fieldid + '-ad2').val()
+		,ad3: $(this._fieldid + '-ad3').val()
+		,ad4: $(this._fieldid + '-ad4').val()
+		,ad5: $(this._fieldid + '-ad5').val()
+	};
+
+	var data = '';
+
+	// 郵便番号
+	var zip = detail.zip1;
+	if(detail.zip2 != null && detail.zip2 != '') zip += '-' + detail.zip2;
+	if(zip != '') data = '〒' + zip + ' ';
+
+	// 住所
+	if(detail.ad1 != null && detail.ad1 != '') data += detail.ad1;
+	if(detail.ad2 != null && detail.ad2 != '') data += detail.ad2;
+	if(detail.ad3 != null && detail.ad3 != '') data += detail.ad3;
+	if(detail.ad4 != null && detail.ad4 != '') data += detail.ad4;
+	if(detail.ad5 != null && detail.ad5 != '') data += detail.ad5;
+
+	var p = {
+		scFormFieldId: this._data.scFormFieldId
+		,fieldType: this._data.fieldType
+		,data: data
+		,detail: JSON.stringify(detail)
+	};
+	return p;
+}
+
+
+//------------------------------------------------------------------------------
+/*
+* 生年月日の送信パラメータ作成
+*
+*/
+Send.Birthday = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Birthday.prototype.initialize = function(data) {
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+}
+
+Send.Birthday.prototype.buildParams = function() {
+
+	var year = $(this._fieldid + ' #year').val();
+	var month = $(this._fieldid + ' #month').val();
+	var date = $(this._fieldid + ' #date').val();
+
+	var val = year + '/' + month + '/' + date;
+
+	var detail = {
+		year: year
+		,month: month
+		,date: date
+	};
+
+	var p = {
+			scFormFieldId: this._data.scFormFieldId
+			,fieldType: this._data.fieldType
+			,data: val
+			,detail: JSON.stringify(detail)
+		};
+
+
+	return p;
+}
+
+//------------------------------------------------------------------------------
+/*
+ * ファイルフィールド形式の送信パラメータ作成
+ *
+ */
+Send.Filefield = function(config) {
+	this.initialize.apply(this, arguments);
+}
+
+Send.Filefield.prototype.initialize = function(data) {
+
+	this._data = $.extend({}, data);
+	this._fieldid = '#' + data.fieldType + '-' + data.scFormFieldId;
+	this._fieldname = data.fieldType + '-' + data.scFormFieldId;
+	this.setFileProps('', '', '', '', '');
+
+	var query = $(this._fieldid).attr('query');
+	$(this._fieldid).dropify({
+	    messages: {
+	        'default': query
+	    }
+	});
+}
+Send.Filefield.prototype.setFileProps = function(path, name, size, type, downloadurl) {
+	this._filepath = path;
+	this._filename = name;
+	this._filesize = size;
+	this._filetype = type;
+	this._downloadurl = downloadurl;
+}
+Send.Filefield.prototype.buildParams = function() {
+
+	var detail = {
+		filepath: this._filepath
+		,filename: this._filename
+		,filesize: this._filesize
+		,filetype: this._filetype
+		,deleted: false // 一定期間後のファイル削除済みフラグ
+	};
+
+	var p = {
+		scFormFieldId: this._data.scFormFieldId
+		,fieldType: this._data.fieldType
+		,data: this._downloadurl
+		,detail: JSON.stringify(detail)
+	};
+	return p;
+}
+
+//------------------------------------------------------------------------------

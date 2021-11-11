@@ -1,0 +1,838 @@
+var ua = window.navigator.userAgent.toLowerCase();
+var isIE = false;
+var isPC = false;
+var isTB = false;
+var isSP = false;
+if ((ua.indexOf('android') > 0 && ua.indexOf('mobile') > 0) || ua.indexOf('ipod') > 0 || (ua.indexOf('iphone') > 0 && ua.indexOf('ipad') == -1)) {
+	// in iPhone,iPod touch,Android cases
+	isSP = true;
+}else if(ua.indexOf('android') > 0 || ua.indexOf('ipad') > 0){
+	//in iPad,Android tablet cases
+	isTB = true;
+}else{
+	//else
+	isPC = true;
+	//IE
+	isIE = (ua.indexOf('msie') >= 0 || ua.indexOf('trident') >= 0);
+}
+
+var checkConditionals = {
+		list: new Array(),
+		set: function(obj) {
+			this.list.push((obj instanceof $)?obj:$(obj));
+		},
+		isExists: function(obj) {
+			var rtn = false;
+			$.each(this.list, function(i,val) {
+				var ele = (obj instanceof $)?obj:$(obj);
+				if (val.is(ele)) {
+					rtn = true;
+					return false;
+				}
+			});
+			return rtn;
+		}
+}
+
+$(function(){
+
+	// URLからプレビューかどうか判断
+	var isPreview = location.href.indexOf('/preview/') > -1;
+
+	$.each($('div.form-caption'),function(i,e){
+		$(e).html($(e).html().replace(/\r?\n/g, '<br>'));
+	});
+
+	var _fields = new Array();
+
+	$.each(_data, function(idx, item){
+
+		// 各フィールドの初期化処理、送信用クラス設定
+		switch(item.fieldType) {
+		case 'datetime':
+			initDatetime(item);
+			_fields.push(new Send.Textbox(item));
+			break;
+		case 'address':
+			initAddress(item);
+			_fields.push(new Send.Address(item));
+			break;
+		case 'textbox':
+			_fields.push(new Send.Textbox(item));
+			break;
+		case 'textarea':
+			_fields.push(new Send.Textbox(item));
+			break;
+		case 'pulldown':
+			_fields.push(new Send.Pulldown(item));
+			break;
+		case 'radio':
+			_fields.push(new Send.Radio(item));
+			initRadioEvent(item);
+			break;
+		case 'checkbox':
+			_fields.push(new Send.Checkbox(item));
+			initCheckboxEvent(item);
+			break;
+		case 'name':
+			_fields.push(new Send.Name(item));
+			initName(item);
+			break;
+		case 'birthday':
+			_fields.push(new Send.Birthday(item));
+			initBirthday(item);
+			break;
+		case 'filefield':
+			_fields.push(new Send.Filefield(item));
+			break;
+		}
+
+		if (accountCourse == 2 && item.conditionalTarget && item.conditionalTarget != '') {
+			conditionalSettings(item);
+		}
+
+	});
+
+	$('input').on('ifChecked', function(event){
+		  $(this).validationEngine('validate')
+	});
+
+	// validate設定
+	$('#myform').validationEngine('attach', {
+		promptPosition:"bottomLeft"
+	});
+
+	// placeholder
+	$('[placeholder]').ahPlaceholder({
+		placeholderColor : 'silver',
+		placeholderAttr : 'placeholder',
+		likeApple : false
+	});
+
+	// webfont for input/textarea
+	$('input[type=text], textarea').each(function() {
+		if (typeof(FONTPLUS) != 'undefined')
+			loadWebFont($(this));
+	});
+
+	// プレビューの場合は送信不可
+	//if(isPreview) $("#submit-btn").prop("disabled", true);
+
+	$('#submit-btn').click(function() {
+
+		// プレビューの場合は送信不可
+		if(isPreview) return false;
+
+		if($("#myform").validationEngine('validate')) {
+			// 連打防止
+			$("#submit-btn").prop("disabled", true);
+
+			var promise = Promise.resolve();
+			// reCAPTCHA によるチェックを送信前に実施（Promiseでの直列処理）
+			// 認証失敗した場合は後の処理を飛ばしてcatchに遷移
+
+			// 回答送信はファイル送信出来ないので直前に別口でファイルアップロードを実行する
+			// また、非同期ファイルアップロード→アップロード完了→回答送信という動作にしたいので
+			// アップロード処理はPromiseを利用した同期処理で実装
+			promise
+// IE対応の為、アロー関数除去
+//			.then(() => {return recaptcha_verify( typeof recaptcha_token !== 'undefined'  ? recaptcha_token : '' )})
+//			.then(() => {return preupload(_fields)})
+			.then(function(){return recaptcha_verify( typeof recaptcha_token !== 'undefined'  ? recaptcha_token : '' )})
+			.then(function(){return preupload(_fields)})
+			.then(function() { // preuploadで生成した非同期処理がすべて完了したらthen()が呼ばれます
+//				console.log("receive start");
+				// 送信クラスを使って送信データを生成する
+				var fieldsdata = new Array();
+				$.each(_fields, function(idx, item){
+					checkDataBeforeSend(item._data)
+					fieldsdata.push(item.buildParams());
+				});
+
+				$.ajax({
+					type: "POST",
+					url: "../receive/apply",
+					dataType: "json",
+					data: {
+						scFormId: scFormId
+						,fieldsdata: JSON.stringify(fieldsdata)
+					},
+					success: function(data) {
+						//if(data.result) {
+							/*
+							$('.slide-navi-area div[class^="navi_"]').css({'opacity':'0.4'});
+							var modal = $("#modal-message");
+							if (data.message) {
+								$('#modal-message-body', modal).html(data.message);
+								if (typeof(ga) != 'undefined') ga('send', 'event', 'SmoothContact送信', '送信完了');
+								if (typeof(goog_report_conversion) != 'undefined') goog_report_conversion();
+								if (typeof(gtag_report_conversion) != 'undefined') gtag_report_conversion();
+								if (typeof(yahoo_report_conversion) != 'undefined') yahoo_report_conversion();
+							} else {
+	                            $('#modal-message-body', modal).html(i18n.t("result.form_sent_success"));
+							}
+							modal.modal({backdrop: "true"});
+							// modal 位置調整
+							var y = (isSP) ? 500 : 700;
+							var top = modal.height() - y;
+							if (top > 0) $("#modal-message").css('padding-top', top+'px');
+							*/
+						//}
+
+						//----------------------------------------------------------------------
+						// 完了or失敗画面へ遷移
+						var url = location.href.replace('/output/', data.result ? '/complete/' : '/failed/');
+
+						// POST送信するためにForm生成
+						var postform = document.createElement('form');
+						postform.action  = url;
+						postform.method = 'POST';
+						postform.className = "complete_form"
+
+						var p = document.createElement('input'); // 結果コード
+						p.name  = 'rtncode';
+						p.value = data.rtncode;
+						postform.appendChild(p);
+
+						p = document.createElement('textarea'); // メッセージ
+						p.name  = 'message';
+						p.value = data.message;
+						postform.appendChild(p);
+
+						document.body.appendChild(postform);
+						postform.submit();
+					}
+				});
+			}).catch(function() {
+				// recaptcha_verifyでreject発生時に遷移
+				// 殆ど発生しないと思うので、とりあえずalert
+				alert('フォームの送信に失敗しました。\nページを再読み込みし、再度送信をお試しください。');
+			});
+		}
+	});
+
+	// プレビュー時では無く、embed時は、背景をtransparentに
+	if (isPreview==false && window != window.parent) {
+		$(document.body).css('background-color', 'transparent');
+	}
+
+	//------------------------------------------------------------------
+	// 親画面にSmoothcontactの高さを通知
+
+	// iframe内のドキュメントで正確な高さが取れない対策
+	// body直下のelement(class:container)の高さを合計して計算する
+	var ttlHeight = 0;
+	var children = document.body.children;
+	for(var idx = 0;idx < children.length;idx++) {
+		if(children[idx].className.indexOf('container') > -1) {
+			ttlHeight += children[idx].offsetHeight;
+		}
+	}
+	window.parent.postMessage({
+		type: 'resize'
+		,"uuid": uuid
+		,"height": ttlHeight
+	}, "*");
+
+	// リサイズイベントを完了時のみ発火するように
+	(function(){
+		var timer = 0;
+		window.onresize = function () {
+
+			if (timer > 0) { // 連続してリサイズが呼ばれた場合は逐次タイマーリセット
+				clearTimeout(timer);
+			}
+
+			timer = setTimeout(function () {
+				// リサイズ処理
+				var ttlHeight = 0;
+				var children = document.body.children;
+				for(var idx = 0;idx < children.length;idx++) {
+					if(children[idx].className.indexOf('container') > -1) {
+						ttlHeight += children[idx].offsetHeight;
+					}
+				}
+
+				window.parent.postMessage({
+					type: 'resize'
+					,"uuid": uuid
+					,"height": ttlHeight
+				}, "*");
+
+			}, 200);
+		};
+	}());
+});
+
+//------------------------------------------------------------------------------------------------------------
+//reCaptcha
+//------------------------------------------------------------------------------------------------------------
+/**
+* reCaptcha verify
+*/
+var recaptcha_verify = function(token) {
+//	console.log("recaptcha_verify start");
+	return new Promise(function(resolve, reject){
+		$.ajax({
+			type: "POST",
+			url: "../recaptcha/verify",
+			dataType: "json",
+			data: {
+				token: token
+			},
+			cache       : false
+		})
+		.done(function(data, textStatus, jqXHR){
+			if(data.success) {
+				resolve(); // 成功
+			} else {
+				reject(); // 失敗
+			}
+		});
+	});
+}
+
+//------------------------------------------------------------------------------------------------------------
+// ファイルアップロード
+//------------------------------------------------------------------------------------------------------------
+/**
+ * Ajaxファイルアップロード
+ */
+var upload = function(item, scFormId, file) {
+//	console.log("upload start");
+	return new Promise(function(resolve, reject){
+		var fd = new FormData();
+		fd.append("scFormId", scFormId);
+		fd.append("scFormFieldId", item._data.scFormFieldId);
+		fd.append("file", file);
+
+		$.ajax({
+			url: "../upload/apply",
+			type : "POST",
+			data : fd,
+			cache       : false,
+			contentType : false,
+			processData : false,
+			dataType    : "json"
+		})
+		.done(function(data, textStatus, jqXHR){
+			if(data.result) {
+				// 保存ファイル名等を設定
+				item.setFileProps(data.fileName, file.name, file.size, file.type, data.downloadurl);
+//				console.log(item.buildParams());
+			}
+//			console.log("upload end");
+			resolve(); // 完了
+		});
+	});
+}
+/**
+ * フォーム送信前ファイルアップロード
+ * 回答送信はファイル送信出来ないので直前に別口でファイルアップロードを実行する
+ * また、非同期ファイルアップロード→アップロード完了→回答送信という動作にしたいので
+ * アップロード処理はPromiseを利用した同期処理で実装
+ */
+var preupload = function(items) {
+	var upfiles = [];
+	$.each(items, function(idx, item){
+		if(item._data.fieldType == 'filefield') { // filefieldのみ対象
+			var fileInput = $(item._fieldid)[0];
+			var files = fileInput.files;
+
+			if(files.length > 0) { // ファイルが選択されいたら
+				upfiles.push(upload(item, scFormId, files[0])); // Promise処理の配列
+			}
+		}
+	});
+	//
+	return Promise.all(upfiles); // 配列内のPromiseが全て完了（resolve）したらthenが呼ばれる
+}
+
+//------------------------------------------------------------------------------------------------------------
+
+
+/**
+ * 日時フィールドの初期化処理
+ * @param item
+ */
+function initDatetime(item) {
+	var controller = 'slider';
+	if (isSP || isTB) controller = 'select';
+	var fieldid = '#datetime-' + item.scFormFieldId;
+	var minDate = (item.config.limitDate && item.config.limitDate == 'minDate') ? 0 : null;
+	var maxDate = (item.config.limitDate && item.config.limitDate == 'maxDate') ? 0 : null;
+	var showMinute = (typeof(item.config.showMinute) != 'undefined') ? item.config.showMinute : true;
+	var stepMinute = (typeof(item.config.stepMinute) != 'undefined') ? item.config.stepMinute-0 : 1;
+	var hh = 0;
+	var mm = 0;
+
+	// redmine#8923
+	// 「未来日時のみ」と「分を表示するOFF」の場合のみTimeスライダーの初期値がおかしな状態になるので
+	// 最小日時を　「1時間足す＋分を切り捨て」　に設定
+	var minDateTime = null;
+	if(minDate != null && !showMinute) {
+		var now = new Date();
+		now.setHours(now.getHours() + 1);
+		now.setMinutes(0);
+		minDateTime = now;
+	}
+
+	if (typeof($.fn.addClassHasValEvents) == 'undefined')
+		// dummy
+		$.fn.addClassHasValEvents = function(){return false;};
+	if(item.config.inputtype == 'date') {
+		$(fieldid).datepicker({
+			minDate: minDate,
+			maxDate: maxDate,
+			onClose:function(){
+				$(this).addClassHasValEvents();
+				},
+			onSelect:function(){
+				$(this).addClassHasValEvents();
+				$(this).validationEngine('validate');
+			}
+		});
+	} else if(item.config.inputtype == 'time') {
+		$(fieldid)
+		.focusin(function(e) {
+			minDate = null;
+			if (item.config.limitDate && item.config.limitDate == 'minDate') {
+				if (stepMinute > 1) {
+					minDate = minmaxDate(stepMinute, 1);
+					hh = minDate.getHours();
+					mm = minDate.getMinutes();
+				} else {
+					minDate = 0;
+				}
+			}
+			maxDate = null;
+			if (item.config.limitDate && item.config.limitDate == 'maxDate') {
+				if (stepMinute > 1) {
+					maxDate = minmaxDate(stepMinute, 0);
+					hh = maxDate.getHours();
+					mm = maxDate.getMinutes();
+				} else {
+					maxDate = 0;
+				}
+			}
+			$(fieldid).timepicker({
+				controlType: controller,
+				minDate: minDateTime != null ? minDateTime : minDate,
+				maxDate: maxDate,
+				hour: hh,
+				minute: mm,
+				showMinute: showMinute,
+				stepMinute: stepMinute,
+				onClose:function(){
+					$(this).addClassHasValEvents();
+					$(this).datetimepicker("destroy");
+					},
+				onSelect:function(){
+					$(this).addClassHasValEvents();
+					$(this).validationEngine('validate');
+				}
+			});
+		})
+		.focusout(function(e) {
+		});
+
+	} else if(item.config.inputtype == 'datetime') {
+		$(fieldid)
+		.focusin(function(e) {
+			minDate = null;
+			if (item.config.limitDate && item.config.limitDate == 'minDate') {
+				if (stepMinute > 1) {
+					minDate = minmaxDate(stepMinute, 1);
+					hh = minDate.getHours();
+					mm = minDate.getMinutes();
+				} else {
+					minDate = 0;
+				}
+			}
+			maxDate = null;
+			if (item.config.limitDate && item.config.limitDate == 'maxDate') {
+				if (stepMinute > 1) {
+					maxDate = minmaxDate(stepMinute, 0);
+					hh = maxDate.getHours();
+					mm = maxDate.getMinutes();
+				} else {
+					maxDate = 0;
+				}
+			}
+			$(fieldid).datetimepicker({
+				controlType: controller,
+				minDate: minDateTime != null ? minDateTime : minDate,
+				maxDate: maxDate,
+				hour: hh,
+				minute: mm,
+				showMinute: showMinute,
+				stepMinute: stepMinute,
+				onClose:function(){
+					$(this).addClassHasValEvents();
+					$(this).datetimepicker("destroy");
+					},
+				onSelect:function(){
+					$(this).addClassHasValEvents();
+					$(this).validationEngine('validate');
+				}
+			});
+		})
+		.focusout(function(e) {
+		});
+	}
+};
+
+function minmaxDate(step, add) {
+	var date = new Date();
+	var maxStep = Math.floor(60 / step);
+	var time = new Date().getMinutes();
+	var nowStep = Math.floor(time / step);
+	var amari = time % step;
+	if (nowStep >= maxStep || time == 0) {
+		date.setMinutes(0);
+	} else if (amari != 0) {
+		date.setMinutes(step*(nowStep+add));
+	}
+	return date;
+}
+
+/**
+ * 住所フィールドの初期化処理
+ * @param item
+ */
+function initAddress(item) {
+
+	var fieldid = '#address-' + item.scFormFieldId;
+
+	var fieldid1 = '#address-' + item.scFormFieldId + '-ad1';
+	var fieldid2 = '#address-' + item.scFormFieldId + '-ad2';
+
+	// 連想配列のキー値を動的に設定するための小細工です
+	var address = {};
+	var key = '';
+
+	key = '#address-' + item.scFormFieldId + '-ad1';
+	address[key] = '%3';
+	key = '#address-' + item.scFormFieldId + '-ad2';
+	address[key] = '%4';
+	key = '#address-' + item.scFormFieldId + '-ad3';
+	address[key] = '%5';
+
+	if (typeof(item.config.zipOneFlag) != 'undefined' && item.config.zipOneFlag == 1) {
+		$(fieldid + '-zip1').jpostal({
+			postcode : [
+				fieldid + '-zip1'
+			],
+			address : address
+		});
+	} else {
+		$(fieldid + '-zip1').jpostal({
+			postcode : [
+				fieldid + '-zip1',
+				fieldid + '-zip2'
+			],
+			address : address
+		});
+	}
+};
+
+/**
+ * radioボタンセレクトイベント.
+ * その他にerrorが出ている場合の処理追加
+ * @param item
+ */
+function initRadioEvent(item) {
+	if (item.config && item.config.useetc && item.config.useetc == 1) {
+		var radio = $('input[name="' + item.fieldType + '-' + item.scFormFieldId + '"]');
+		radio.on('click', function(){
+			var name = $('.' + item.fieldType + '-' + item.scFormFieldId + '-etcstrformError');
+			if (name) name.click();
+		});
+	}
+}
+
+/**
+ * checkboxセレクトイベント.
+ * その他にerrorが出ている場合の処理追加
+ * @param item
+ */
+function initCheckboxEvent(item) {
+	if (item.config && item.config.useetc && item.config.useetc == 1) {
+		var checkbox = $('input[name="' + item.fieldType + '-' + item.scFormFieldId + '"]');
+		checkbox.on('click', function(){
+			var name = $('.' + item.fieldType + '-' + item.scFormFieldId + '-etcstrformError');
+			var check = $('#' + item.fieldType + '-' + item.scFormFieldId + '-etc');
+			if (check && !check.prop('checked') && name) name.click();
+		});
+	}
+}
+
+/**
+ * name要素のふりがな自動入力設定
+ */
+function initName(item) {
+	if (item.config && item.config.useruby && item.config.rubyauto) {
+		var rubytype = (item.config.rubytype == 'kata') ?
+				kntxtext.constant.letterType.kana : kntxtext.constant.letterType.hira;
+		var ary = [];
+		if (item.config.disp_one_field) {
+			ary.push('name-'+item.scFormFieldId+'-sei');
+			ary.push('name-'+item.scFormFieldId+'-rubysei');
+			ary.push(rubytype);
+			ary.push(kntxtext.constant.insertType.auto);
+			kntxtext.target.push(ary);
+		} else {
+			ary.push('name-'+item.scFormFieldId+'-sei');
+			ary.push('name-'+item.scFormFieldId+'-rubysei');
+			ary.push(rubytype);
+			ary.push(kntxtext.constant.insertType.auto);
+			kntxtext.target.push(ary);
+			ary = [];
+			ary.push('name-'+item.scFormFieldId+'-mei');
+			ary.push('name-'+item.scFormFieldId+'-rubymei');
+			ary.push(rubytype);
+			ary.push(kntxtext.constant.insertType.auto);
+			kntxtext.target.push(ary);
+		}
+	}
+}
+
+/**
+ * birthday要素のpulldown設定
+ */
+function initBirthday(item) {
+	var fieldId = '#' + item.fieldType + '-' + item.scFormFieldId
+
+	//現在の年数オブジェクトを4桁で生成
+	var time = new Date();
+	var year = time.getFullYear();
+	//1900年まで表示
+	for (var i = year; i >= 1900; i--) {
+	    $(fieldId + ' #year').append('<option value="' + i + '">' + i + '</option>');
+	}
+	//1～12の数字を生成
+	for (var i = 1; i <= 12; i++) {
+	    $(fieldId + ' #month').append('<option value="' + i + '">' + i + '</option>');
+	}
+	//1～31の数字を生成
+	for (var i = 1; i <= 31; i++) {
+	    $(fieldId + ' #date').append('<option value="' + i + '">' + i + '</option>');
+	}
+}
+
+
+/**
+ * 送信前の確認
+ * 非表示項目の内容を空にする
+ *
+ */
+function checkDataBeforeSend (item) {
+	var sfx = '';
+	switch (item.fieldType) {
+	case 'name':
+		sfx = '-sei';
+		break;
+	case 'address':
+		sfx = '-zip1';
+		break;
+	}
+	var id = item.fieldType + '-' + item.scFormFieldId + sfx;
+	var scGrp = $('#'+id).closest('div.sc-group');
+	if (scGrp.css('display') == 'none') {
+		switch (item.fieldType) {
+		case 'radio':
+		case 'checkbox':
+			var fieldid = '#' + item.fieldType + '-' + item.scFormFieldId;
+			var fieldname = item.fieldType + '-' + item.scFormFieldId;
+			if ($(fieldid + '-etc').prop('checked')) {
+				$(fieldid + '-etc').prop('checked', false);
+				$(fieldid + '-etcstr').val('');
+			}
+			if ($('input[name="' + fieldname + '"]:checked').length > 0)
+				$('input[name="' + fieldname + '"]:checked').prop('checked', false);
+			break;
+		case 'datetime':
+		case 'textbox':
+		case 'textarea':
+		case 'pulldown':
+			var fieldid = '#' + item.fieldType + '-' + item.scFormFieldId;
+			$(fieldid).val('');
+			break;
+		case 'name':
+			var ary = new Array();
+			ary.push('#name-' + item.scFormFieldId + '-sei');
+			ary.push('#name-' + item.scFormFieldId + '-mei');
+			ary.push('#name-' + item.scFormFieldId + '-rubysei');
+			ary.push('#name-' + item.scFormFieldId + '-rubymei');
+
+			$.each(ary, function(idx, fieldid){
+				if($(fieldid).length > 0) $(fieldid).val('');
+			});
+			break;
+		case 'address':
+			var ary = new Array();
+			ary.push('#address-' + item.scFormFieldId + '-zip1');
+			ary.push('#address-' + item.scFormFieldId + '-ad1');
+			ary.push('#address-' + item.scFormFieldId + '-ad2');
+			ary.push('#address-' + item.scFormFieldId + '-ad3');
+			ary.push('#address-' + item.scFormFieldId + '-ad4');
+			ary.push('#address-' + item.scFormFieldId + '-ad5');
+
+			$.each(ary, function(idx, fieldid){
+				if($(fieldid).length > 0) $(fieldid).val('');
+			});
+			break;
+		case 'pulldown':
+			var fieldid = '#' + item.fieldType + '-' + item.scFormFieldId;
+			$(fieldid + ' #year').val('');
+			$(fieldid + ' #month').val('');
+			$(fieldid + ' #date').val('');
+			break;
+		}
+	}
+}
+
+/**
+ * 条件付き質問項目の表示／非表示切り替え
+ *
+ */
+function conditionalSettings (item) {
+	// 初期非表示
+	var sfx = '';
+	switch (item.fieldType) {
+	case 'name':
+		sfx = '-sei';
+		break;
+	case 'address':
+		sfx = '-zip1';
+		break;
+	}
+	var id = item.fieldType + '-' + item.scFormFieldId + sfx;
+	var scGrp = $('#'+id).closest('div.sc-group');
+	scGrp.addClass('condition');
+	scGrp.css('display', 'none');
+	checkConditionals.set(scGrp);
+
+	// 対象の質問を取得
+	var targetId = item.conditionalTarget.split('-')[0];
+	var targetVal = item.conditionalTarget.split('-')[1];
+	scGrp.data('c-target',targetId);
+	var target;
+	$.each(_data, function(idx, item){
+		if (item.scFormFieldId == targetId) {
+			target = item;
+			return false;
+		}
+	});
+	var col = target.fieldType + '-' + target.scFormFieldId;
+
+	// イベントを設定
+	switch (target.fieldType) {
+	case 'radio':
+		$('input[name="'+col+'"]').on('ifChecked', function(){
+			if (!$(this).siblings().hasClass('iCheck-helper')) return false;
+			var idx = $('input[name="'+col+'"]').index(this);
+			if ($(this).prop('checked')) {
+				if (idx == targetVal) {
+					scGrp.show('fast');
+					if (typeof($.fn.textareaHeighter) != 'undefined') scGrp.textareaHeighter();
+				} else {
+					scGrp.hide('fast');
+				}
+			}
+		});
+		$('input[name="'+col+'"]').on('click', function(){
+			if ($(this).siblings().hasClass('iCheck-helper')) return false;
+			var idx = $('input[name="'+col+'"]').index(this);
+			if ($(this).prop('checked')) {
+				if (idx == targetVal) {
+					scGrp.show('fast');
+					if (typeof($.fn.textareaHeighter) != 'undefined') scGrp.textareaHeighter();
+				} else {
+					scGrp.hide('fast');
+				}
+			}
+		});
+		$('input[name="'+col+'"]').closest('div.sc-group').on('inview', function(event, isInView) {
+			if (!checkConditionals.isExists($(this))) return false;
+			if (isInView && $(this).css('display') != 'none') {
+				$('input[name="'+col+'"]').trigger('ifChecked');
+				$('input[name="'+col+'"]').trigger('click');
+			} else if (!isInView && $(this).css('display') == 'none') {
+				scGrp.hide('fast');
+			}
+		});
+		break;
+	case 'checkbox':
+		$('input[name="'+col+'"]').on('ifChanged', function(){
+			if (!$(this).siblings().hasClass('iCheck-helper')) return false;
+			var idx = $('input[name="'+col+'"]').index(this);
+			if (idx == targetVal) {
+				if ($(this).prop('checked')) {
+					scGrp.show('fast');
+					if (typeof($.fn.textareaHeighter) != 'undefined') scGrp.textareaHeighter();
+				} else {
+					scGrp.hide('fast');
+				}
+			}
+		});
+		$('input[name="'+col+'"]').on('click', function(){
+			if ($(this).siblings().hasClass('iCheck-helper')) return false;
+			var idx = $('input[name="'+col+'"]').index(this);
+			if (idx == targetVal) {
+				if ($(this).prop('checked')) {
+					scGrp.show('fast');
+					if (typeof($.fn.textareaHeighter) != 'undefined') scGrp.textareaHeighter();
+				} else {
+					scGrp.hide('fast');
+				}
+			}
+		});
+		$('input[name="'+col+'"]').closest('div.sc-group').on('inview', function(event, isInView) {
+			if (!checkConditionals.isExists($(this))) return false;
+			if (isInView && $(this).css('display') != 'none') {
+				$('input[name="'+col+'"]').trigger('ifChanged');
+				$('input[name="'+col+'"]').trigger('click');
+			} else if (!isInView && $(this).css('display') == 'none') {
+				scGrp.hide('fast');
+			}
+		});
+		break;
+	case 'pulldown':
+		$('select[name="'+col+'"]').on('change', function(){
+			var idx = this.selectedIndex-1;
+			if (idx == targetVal) {
+				scGrp.show('fast');
+				if (typeof($.fn.textareaHeighter) != 'undefined') scGrp.textareaHeighter();
+			} else {
+				scGrp.hide('fast');
+			}
+		});
+		$('select[name="'+col+'"]').closest('div.sc-group').on('inview', function(event, isInView) {
+			if (!checkConditionals.isExists($(this))) return false;
+			if (isInView && $(this).css('display') != 'none') {
+				$('select[name="'+col+'"]').trigger('change');
+			} else if (!isInView && $(this).css('display') == 'none') {
+				scGrp.hide('fast');
+			}
+		});
+		break;
+	}
+}
+
+function loadWebFont(target) {
+	target.bind('keyup focusout', function(e){
+		if (typeof(FONTPLUS) != 'undefined') {
+			/*
+			var val = $(this).val();
+			var ffnn = $(this).css('font-family').replace(/'/g,'');
+			ffnn = ffnn.replace(/"/g,'');
+			var ff = ffnn.replace(/-input/g,'');
+			FONTPLUS.targetSelector('input#'+target.attr('id'));
+			FONTPLUS.load([{'fontname':ff, 'nickname':ffnn,'text':val}]);
+			*/
+			if (e.type == 'keyup' && e.keyCode != 13) return;
+			FONTPLUS.reload(false);
+		}
+	});
+}

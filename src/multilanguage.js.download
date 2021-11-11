@@ -1,0 +1,41 @@
+var language = (navigator.languages && navigator.languages.length > 0) ? navigator.languages[0] : (navigator.language || navigator.userLanguage);
+var validationJs = siteurl+"/_modules/lib/jquery/jve/localization/jquery.validationEngine-ja.js";
+var timepickerJs = siteurl+"/_modules/lib/jquery/jquery-ui-timepicker-addon-custom-ja.js";
+if(language=="en" || language.indexOf("en-") > -1){
+	validationJs = siteurl+"/_modules/lib/jquery/jve/localization/jquery.validationEngine-en.js";
+	timepickerJs = siteurl+"/_modules/lib/jquery/jquery-ui-timepicker-addon.js";
+}else if(language=="vi"){
+	validationJs = siteurl+"/_modules/lib/jquery/jve/localization/jquery.validationEngine-vi.js";
+	timepickerJs = siteurl+"/_modules/lib/jquery/jquery-ui-timepicker-addon-custom-vi.js";
+}
+if(language!="en") $("head").append('<script type="text/javascript" src="' + timepickerJs + '" charset="utf-8"><\/script>');
+
+head.js({ i18next:   siteurl+"/_modules/js/i18next-1.6.3.min.js"},
+        { jqueryvalidation:      validationJs });
+  	 head.ready("jqueryvalidation",function(){
+	 head.load(siteurl+"/_modules/lib/jquery/jve/jquery.validationEngine.js");
+	 head.load(siteurl+"/templates/bootstrap/system.js?millis=" + new Date().getTime());
+	 head.load(siteurl+"/_modules/js/slide.js");
+
+ });
+
+
+ head.ready("i18next", function() {
+
+	 head.ready(document, function() {
+		//detect language
+		 	var option = {
+		 			 "lng": (navigator.languages && navigator.languages.length > 0) ? navigator.languages[0] : (navigator.language || navigator.userLanguage),
+		 		    // "lng": i18n.lng(),
+		 			getAsync: true,
+		 			"resGetPath": siteurl+'/_modules/locales/__lng__/translation.json'
+		 	};
+
+		 	i18n.init(option,function(t){
+		 		$(".form-group").i18n();
+		 		$(".i18data").i18n();
+		 	});
+
+	 });
+
+});

@@ -1,0 +1,91 @@
+
+/* Z-INDEX */
+ .formError { z-index: 990; }
+    .formError .formErrorContent { z-index: 991; }
+    .formError .formErrorArrow { z-index: 996; }
+
+    .ui-dialog .formError { z-index: 5000; }
+    .ui-dialog .formError .formErrorContent { z-index: 5001; }
+    .ui-dialog .formError .formErrorArrow { z-index: 5006; }
+
+.inputContainer {
+	position: relative;
+	float: left;
+}
+
+.formError {
+	position: absolute;
+	top: 300px;
+	left: 300px;
+	display: block;
+	cursor: pointer;
+	text-align: left;
+}
+.formError.inline {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: inline-block;
+}
+.ajaxSubmit {
+	padding: 20px;
+	background: #55ea55;
+	border: 1px solid #999;
+	display: none;
+}
+.formError .formErrorContent {
+	width: 100%;
+	background: #c00;
+	position:relative;
+	color: #fff;
+	min-width: 120px;
+	font-size: 11px;
+	box-shadow: 0 0 4px rgba(0,0,0,.8);
+	padding: 1em;
+	border-radius: 4px;
+	position: relative;
+	z-index: 1;
+}
+.formError.inline .formErrorContent {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-o-box-shadow: none;
+	border: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	-o-border-radius: 0;
+}
+.greenPopup .formErrorContent {
+	background: #2fc07d;
+}
+.blackPopup .formErrorContent {
+	background: #393939;
+	color: #FFF;
+}
+.formError .formErrorArrow {
+	margin: 0 0 0 12px;
+	display: block;
+	width: 0;
+	height: 0;
+	border-top: 5px solid #c00;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	position: relative;
+	z-index: 2;
+}
+body[dir='rtl'] .formError .formErrorArrow,
+body.rtl .formError .formErrorArrow {
+	margin: 0 12px 0 0;
+}
+.formError .formErrorArrowBottom {
+	border-top: none;
+	border-bottom: 5px solid #c00;
+}
+.greenPopup .formErrorArrow {
+	border-top-color: #2fc07d;
+}
+.blackPopup .formErrorArrow {
+	border-top-color: #393939;
+}
