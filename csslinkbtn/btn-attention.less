@@ -1,0 +1,43 @@
+// Declaring variables
+@background-color:#232323;
+@border:#232323;
+@color:#FFFFFF;
+@background-color-hover:rgba(35,35,35, 0.9);
+@border-hover:#232323;
+@color-hover:#FFFFFF;
+
+// Using variables
+a.btn-attention{
+	background: @background-color !important;
+	color: @color !important;
+	border: 3px solid @border !important;
+	border-radius: 100px !important;
+	min-width: 150px !important;
+	max-width: 100% !important;
+	font-size: 11px !important;
+	line-height: 2 !important;
+	text-align: center !important;
+	text-decoration: none !important;
+	cursor:pointer !important;
+	padding: 0.65em 1em !important;
+	transition: all 0.2s !important;
+}
+a.btn-attention:visited{
+	background: @background-color !important;
+	color: @color !important;
+	border: 2px solid @border !important;
+	text-decoration: none !important;
+}
+a.btn-attention:active{
+	background: @background-color-hover !important;
+	color: @color-hover !important;
+	border: 2px solid @border-hover !important;
+	text-decoration: none !important;
+}
+a.btn-attention:hover{
+	background: @background-color-hover !important;
+	color: @color-hover !important;
+	border: 3px solid @border-hover !important;
+	text-decoration: none !important;
+	opacity: 1 !important;
+}
