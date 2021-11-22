@@ -9,6 +9,13 @@
     height: 200px;
     margin: 40px auto 400px 150px;
 }
+.profile_block_mobile{
+    display: block;
+    text-align: center;
+    height: 200px;
+    margin: 40px auto 1000px auto;
+}
+
 .yoyobutton{
     align-items: center;
     background-color: rgba(0,0,0,0);
