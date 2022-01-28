@@ -1,12 +1,4 @@
-.c-photo {
-    transition-duration: 2s;
-}
-
-.c-photo :hover{
-    transform: scale(1.05,1.05);
-}
-
-.c-photo, .c-mobile-photo, .director-picture, .profile_picture, .profile_picture_mobile{
+.c-photo, .c-mobile-photo, .profile_picture, .profile_picture_mobile{
     box-shadow:
         0 1.9px 2.5px rgba(0, 0, 0, 0.057),
         0 5px 6.1px rgba(0, 0, 0, 0.076),
@@ -25,4 +17,3 @@
         0 30.5px 34.8px rgba(0, 0, 0, 0.1),
         0 42px 56px rgba(0, 0, 0, 0.13);
 }
-
