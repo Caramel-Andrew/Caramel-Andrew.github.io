@@ -1,0 +1,7 @@
+.c-photo {
+    transition-duration: 2s;
+}
+
+.c-photo :hover{
+    transform: scale(1.05,1.05);
+}
