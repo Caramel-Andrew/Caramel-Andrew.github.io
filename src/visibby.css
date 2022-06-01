@@ -385,7 +385,7 @@ section h2{
 	font-size: 2.5em;
 	font-weight:normal;
 	text-align: center;
-	background: url(../img/visibby/borderWhite.png) repeat-x 0 50%;
+	background: url(../img/borderWhite.png) repeat-x 0 50%;
 	background-size: 1px 1px;
 }
 
@@ -518,6 +518,7 @@ section h2{
 	align-items: center;
 	height: 100%;
 	margin: auto;
+	max-width: 100%;
 }
 
 .innerMap{
@@ -616,7 +617,7 @@ section h2{
 }
 
 #sec04_02{
-	background: url(../img/visibby/PXT00004062394402.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/_visibby/PXT00004062394402.jpg) no-repeat 100% 100% fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	background-position: center;
@@ -944,6 +945,8 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
+	width: auto;
+	max-width: auto;
 }
 
 .stampSlide-slide__item:nth-of-type(1) .stampSlide-slide__img {
@@ -1011,6 +1014,8 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
+	width: auto;
+	max-width: 100%;
 }
 
 .tweetSlide-slide__item:nth-of-type(1) .tweetSlide-slide__img {
@@ -1148,6 +1153,8 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
+	width: auto;
+	max-width: 100%;
 }
 
 .quizSlide-slide__item:nth-of-type(1) .quizSlide-slide__img {
