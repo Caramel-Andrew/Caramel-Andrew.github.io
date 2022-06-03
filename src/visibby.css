@@ -420,7 +420,7 @@ section h2{
 
 .container-serviceimg-spmock{
 	flex-grow: 0;
-	width: 23%;
+	width: 20%;
 }
 
 .case-title{
@@ -514,6 +514,7 @@ section h2{
 	flex-direction: row-reverse;
 	align-items: center;
 	width: 80%;
+	padding: 10px 0 10px;
 	aspect-ratio: 20/9;
 	object-fit: contain;
 	left: 0;
@@ -532,7 +533,7 @@ section h2{
 	display: flex;
 	align-items: center;
 	height: 100%;
-	aspect-ratio: 1/2;
+	aspect-ratio: 1/2.1;
 	margin: auto;
 	max-width: 100%;
 }
@@ -954,7 +955,6 @@ a.btn-custom01:hover .btn-arrow{
 	height: auto;
 }
 
-
 /* --------------------------------
 スライドショーSTAMP Screen
 -------------------------------- */
@@ -1033,7 +1033,7 @@ a.btn-custom01:hover .btn-arrow{
 	animation-name: slideAnimeTWEETsp;
 	animation-timing-function: ease;
 	display: block;
-	object-fit: cover;
+	object-fit: contain;
 	opacity: 0;
 	height: 100%;
 	width:  100%;
@@ -1071,10 +1071,9 @@ a.btn-custom01:hover .btn-arrow{
 
   /* ------ hero erea ------- */
 .tweetSlide {
-	overflow: hidden;
 	position: relative;
 	height: 100%;
-	width: 60vw;
+	width: 100%;
 }
 
 .tweetSlide-slide{
@@ -1172,7 +1171,7 @@ a.btn-custom01:hover .btn-arrow{
 	animation-name: slideAnimeQUIZsp;
 	animation-timing-function: ease;
 	display: block;
-	object-fit: cover;
+	object-fit: contain;
 	opacity: 0;
 	height: 100%;
 	width: 100%;
@@ -1214,11 +1213,12 @@ a.btn-custom01:hover .btn-arrow{
 
   /* ------ hero erea ------- */
 .quizSlide {
-	overflow: hidden;
 	position: relative;
+	height: 100%;
+	width: 100%;
 }
 
-.quizScreenSlide-slide {
+.quizSlide-slide {
 	height: 100%;
 	width: 100%;
 }
@@ -1246,6 +1246,7 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
+	width: 100%;
 }
 
 .quizScreenSlide-slide__item:nth-of-type(1) .quizScreenSlide-slide__img {
@@ -1297,12 +1298,14 @@ a.btn-custom01:hover .btn-arrow{
   /* ------ hero erea ------- */
 .quizScreenSlide {
 	height: 100%;
+	width: 100%;
 	overflow: hidden;
 	position: relative;
 }
 
-quizScreenSlide-slide {
+.quizScreenSlide-slide {
 	height: 100%;
+	width: 100%;
 }
 
 .quizScreenSlide-slide__item {
@@ -1886,9 +1889,21 @@ quizScreenSlide-slide {
 		width: 96% !important;
 		left: 2%;
 	}
+	
+	#sec04_01{
+		padding: 50px 20px;
+	}
+	#sec04_01 img{
+		width: auto;
+	}
+
 	#sec04_02{
 		padding: 50px 20px;
 	}
+	#sec04_02 img{
+		width: auto;
+	}
+
 	.innerOverviewcol3{
 		width: 100%;
 		margin: 0 auto;
