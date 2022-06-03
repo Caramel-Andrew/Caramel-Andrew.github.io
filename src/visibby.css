@@ -3,7 +3,8 @@
 @import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
 
 /* reset */
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td{margin:0;padding:0;}
+p{margin-bottom: 5%;}
 address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;}
 ul{list-style:none;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -392,6 +393,7 @@ section h2{
 .innerTitle {
 	font-family: 'Roboto', sans-serif;
 	font-style: italic;
+	font-weight: 700;
 	background: #000;
 	padding: 0 70px;
 }
@@ -413,11 +415,12 @@ section h2{
 
 .contact-click{
 	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
 }
 
-.sp-mock-size{
-	width: 15vw;
-	height: auto;
+.container-serviceimg-spmock{
+	flex-grow: 0;
+	width: 23%;
 }
 
 .case-title{
@@ -433,14 +436,16 @@ section h2{
 
 /* arrow style -------------------------------------------*/
 
-.arrow-container {
+.container-serviceimg-arrow {
 	position: relative;
 	display: block;
+	flex-grow: 0;
 	margin: 0 auto;
+	height: 10%;
+	width: 10%;
 	transform: rotate(-90deg);
-	left: -6%;
 }
-.arrow-container .arrow {
+.container-serviceimg-arrow .arrow {
 	display: block;
 	position: absolute;
 	top: -16px;
@@ -457,16 +462,16 @@ section h2{
 	opacity: 0;
 	box-sizing: border-box;
 }
-.arrow-container .arrow:nth-of-type(1) {
+.container-serviceimg-arrow .arrow:nth-of-type(1) {
 	-webkit-animation-delay: 0s;
 	animation-delay: 0s;
 }
-.arrow-container .arrow:nth-of-type(2) {
+.container-serviceimg-arrow .arrow:nth-of-type(2) {
 	top: 0px;
 	-webkit-animation-delay: .15s;
 	animation-delay: .15s;
 }
-.arrow-container .arrow:nth-of-type(3) {
+.container-serviceimg-arrow .arrow:nth-of-type(3) {
 	top: 16px;
 	-webkit-animation-delay: .3s;
 	animation-delay: .3s;
@@ -504,19 +509,30 @@ section h2{
 
 /* service-pictures
 ------------------------------------------------------------*/
-.innerService{
+.container-serviceimg{
 	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
 	width: 80%;
 	aspect-ratio: 20/9;
+	object-fit: contain;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 }
 
-.innerService .item{
+.container-serviceimg-screen{
+	flex-grow: 1;
+	right: 0;
+	height: 100%;
+	margin: auto;
+}
+
+.item-sp{
 	display: flex;
 	align-items: center;
 	height: 100%;
+	aspect-ratio: 1/2;
 	margin: auto;
 	max-width: 100%;
 }
@@ -534,13 +550,8 @@ section h2{
 	height: 100%;
 }
 
-.arrow-container{
+.container-serviceimg-arrow{
 	transform: rotate(-90deg);
-}
-
-.item .screen{
-	display: flex;
-	align-items: center;
 }
 
 .innerS{
@@ -616,8 +627,21 @@ section h2{
 	-webkit-transform: translate(-50%,-50%);
 }
 
+#sec04_01{
+	background: url(../img/visibby/under_overview.jpg) no-repeat 100% 100% fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	background-position: center;
+	text-align: center;
+	padding: 100px 20px;
+}
+
+#sec04_01 img{
+	width: auto;
+}
+
 #sec04_02{
-	background: url(../img/_visibby/PXT00004062394402.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/visibby/under_services.jpg) no-repeat 100% 100% fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	background-position: center;
@@ -936,24 +960,22 @@ a.btn-custom01:hover .btn-arrow{
 -------------------------------- */
 
 /* ------ slide image ------- */
-.stampSlide-slide__img {
+.stampScreenSlide-slide__img {
 	animation-duration: 18s;
 	animation-iteration-count: infinite;
 	animation-name: slideAnimeSTAMP;
 	animation-timing-function: ease;
 	display: block;
-	object-fit: cover;
 	opacity: 0;
 	height: 100%;
-	width: auto;
-	max-width: auto;
+	width: 100%;
 }
 
-.stampSlide-slide__item:nth-of-type(1) .stampSlide-slide__img {
+.stampScreenSlide-slide__item:nth-of-type(1) .stampScreenSlide-slide__img {
 	animation-delay: 0s;
 }
 
-.stampSlide-slide__item:nth-of-type(2) .stampSlide-slide__img {
+.stampScreenSlide-slide__item:nth-of-type(2) .stampScreenSlide-slide__img {
 	animation-delay: 9s;
 }
 
@@ -980,19 +1002,19 @@ a.btn-custom01:hover .btn-arrow{
 }
 
   /* ------ hero erea ------- */
-.stampSlide {
+.stampScreenSlide {
 	height: 100%;
+	width: 100%;
 	overflow: hidden;
 	position: relative;
 }
 
-.stampSlide__inner {
-	margin: 0 auto;
-	width: 50vw;
-	height: auto;
+.stampScreenSlide-slide{
+	height: 100%;
+	width: 100%;
 }
 
-.stampSlide-slide__item {
+.stampScreenSlide-slide__item {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -1014,8 +1036,7 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
-	width: auto;
-	max-width: 100%;
+	width:  100%;
 }
 
 .tweetSlide-slide__item:nth-of-type(1) .tweetSlide-slide__img {
@@ -1050,15 +1071,15 @@ a.btn-custom01:hover .btn-arrow{
 
   /* ------ hero erea ------- */
 .tweetSlide {
-	height: 100%;
 	overflow: hidden;
 	position: relative;
+	height: 100%;
+	width: 60vw;
 }
 
-.tweetSlide__inner {
-	margin: 0 auto;
-	width: 50vw;
-	height: auto;
+.tweetSlide-slide{
+	height: 100%;
+	width: 100%;
 }
 
 .tweetSlide-slide__item {
@@ -1082,6 +1103,7 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
+	width: 100%;
 }
 
 .tweetScreenSlide-slide__item:nth-of-type(1) .tweetScreenSlide-slide__img {
@@ -1120,14 +1142,15 @@ a.btn-custom01:hover .btn-arrow{
 
   /* ------ hero erea ------- */
 .tweetScreenSlide {
+	height: 100%;
+	width: 100%;
 	overflow: hidden;
 	position: relative;
 }
 
-.tweetScreenSlide__inner {
-	margin: 0 auto;
-	width: 50vw;
-	height: auto;
+.tweetScreenSlide-slide {
+	height: 100%;
+	width: 100%;
 }
 
 .tweetScreenSlide-slide__item {
@@ -1137,7 +1160,6 @@ a.btn-custom01:hover .btn-arrow{
 	width: 100%;
 	height: auto;
 }
-
 
 /* --------------------------------
 スライドショーQUIZ sp
@@ -1153,8 +1175,7 @@ a.btn-custom01:hover .btn-arrow{
 	object-fit: cover;
 	opacity: 0;
 	height: 100%;
-	width: auto;
-	max-width: 100%;
+	width: 100%;
 }
 
 .quizSlide-slide__item:nth-of-type(1) .quizSlide-slide__img {
@@ -1197,7 +1218,10 @@ a.btn-custom01:hover .btn-arrow{
 	position: relative;
 }
 
-
+.quizScreenSlide-slide {
+	height: 100%;
+	width: 100%;
+}
 
 .quizSlide-slide__item {
 	position: absolute;
@@ -1277,10 +1301,8 @@ a.btn-custom01:hover .btn-arrow{
 	position: relative;
 }
 
-.quizScreenSlide__inner {
-	margin: 0 auto;
-	width: 50vw;
-	height: auto;
+quizScreenSlide-slide {
+	height: 100%;
 }
 
 .quizScreenSlide-slide__item {
@@ -1499,10 +1521,6 @@ a.btn-custom01:hover .btn-arrow{
 	}
 
 
-	/* SEC03 PROJECT
-	-----------------*/
-
-
 	#footer{
 		padding: 30px 10px 70px 0;
 	}
@@ -1533,6 +1551,7 @@ a.btn-custom01:hover .btn-arrow{
 	.innerTitle {
 		font-family: 'Roboto', sans-serif;
 		font-style: italic;
+		font-weight: 700;
 		background: #000;
 		padding: 0 60px;
 	}
@@ -1596,8 +1615,8 @@ a.btn-custom01:hover .btn-arrow{
 		width: 150px;
 		height: auto;
 		padding-left: 4%;
-		padding-top: 20px;
-		padding-bottom: 20px;
+		padding-top: 20%;
+		padding-bottom: 20%;
 		top: 50%;
 		left: 0;
 		transform: translateY(-50%);
@@ -1782,7 +1801,7 @@ a.btn-custom01:hover .btn-arrow{
 	section h2{
 		width: 80%;
 	}
-	.innerService{
+	.container-serviceimg{
 		width: 85%;
 	}
 	.innerMap{
@@ -1790,9 +1809,6 @@ a.btn-custom01:hover .btn-arrow{
 	}
 	.innerS{
 		width: 80%;
-	}
-	.arrow-container {
-		left: -11%;
 	}
 	/* //Service 幅設定 */
 
@@ -1819,6 +1835,7 @@ a.btn-custom01:hover .btn-arrow{
 	.innerTitle {
 		font-family: 'Roboto', sans-serif;
 		font-style: italic;
+		font-weight: 700;
 		background: #000;
 		padding: 0 20px;
 	}
@@ -1881,7 +1898,7 @@ a.btn-custom01:hover .btn-arrow{
 	section h2{
 		width: 90%;
 	}
-	.innerService{
+	.container-serviceimg{
 		width: 100%;
 	}
 	.innerMap{
@@ -1892,9 +1909,6 @@ a.btn-custom01:hover .btn-arrow{
 	}
 	.overview-3contents{
 		width: 95%;
-	}
-	.arrow-container{
-		left: -22%;
 	}
 	/* //Service 幅設定 */
 
