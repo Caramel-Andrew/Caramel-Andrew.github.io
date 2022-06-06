@@ -37,6 +37,11 @@ a:hover, .active{
 
 a:active, a:focus,input:active, input:focus{outline:0;}
 
+.innerS h3{
+	font-size: 2.4rem;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 700;
+}
 
 /* ヘッダー
 ------------------------------------------------------------*/
@@ -74,7 +79,7 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 }
 
 .topSlide-slide{
-z-index: -100;
+	z-index: -100;
 }
 #mainImg .topSlide-slide__img{
 	position: absolute;
@@ -100,51 +105,55 @@ z-index: -100;
 	object-fit: cover;
 }
 
-.titlecolor1{
+/* fontstyle */
+.colorgreen{
 	color: rgb(162, 255, 22);
-	font-size: 5rem;
 }
-.titlecolor2{
+.colorred{
 	color: rgb(255, 54, 121);
-	font-size: 5rem;
 }
-.titlecolor3{
+.colorpink{
+	color: #ff38d1;
+}
+.colorblue{
 	color: #1DA1F2;
 }
-.titlecolor4{
+.colorblack{
 	color: rgba(255, 255, 255, 0);
+}
+.coloryellow{
+	color: #ffd52c;
+}
+
+.titlestyle{
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	font-weight: 700;
+	background: #000;
+}
+
+.fontsize50{
 	font-size: 5rem;
+}
+.fontsize16{
+	font-size: 1.6rem;
+}
+.fontsize40{
+	font-size: 4.0rem
+}
+.fontsize18{
+	font-size: 1.8rem;
+	font-weight: 700;
+}
+.fontsize22{
+	font-size: 2.2rem;
+}
+
+.stroke{
 	-webkit-text-stroke: 0.1rem #FFF;
 	text-stroke: 0.1rem #FFF;
 }
-
-.servicecolor1{
-	color: #ff38d1;
-	font-size: 4rem;
-}
-.ov3-servicecolor1{
-	color: #ff38d1;
-	font-size: 1.8rem;
-}
-.servicecolor2{
-	color: #4dbbff;
-	font-size: 4rem;
-}
-.ov3-servicecolor2{
-	color: #4dbbff;
-	font-size: 4rem;
-	font-size: 1.8rem;
-	font-weight: 700;
-}
-.servicecolor3{
-	color: #ffd52c;
-	font-size: 4rem;
-}
-.ov3-servicecolor3{
-	color: #ffd52c;
-	font-size: 1.8rem;
-	font-weight: 700;
-}
+/* fontstyle */
 
 /* フッター
 ------------------------------------------------------------*/
@@ -390,16 +399,8 @@ section h2{
 	background-size: 1px 1px;
 }
 
-.innerTitle {
-	font-family: 'Roboto', sans-serif;
-	font-style: italic;
-	font-weight: 700;
-	background: #000;
+.titlepadding {
 	padding: 0 70px;
-}
-
-.innerTitle-head{
-	font-size: 2.2rem;
 }
 
 .innerOverviewcol3{
@@ -423,13 +424,13 @@ section h2{
 	width: 20%;
 }
 
-.case-title{
+.title-case{
 	font-size: 2.2rem;
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
 @media screen and (max-width: 400px){
-	.case-title{
+	.title-case{
 		font-size: 1.8rem;
 	}
 }
@@ -1551,11 +1552,7 @@ a.btn-custom01:hover .btn-arrow{
 		letter-spacing: 0.02em;
 		line-height: 1.3em;
 	}
-	.innerTitle {
-		font-family: 'Roboto', sans-serif;
-		font-style: italic;
-		font-weight: 700;
-		background: #000;
+	.titlepadding {
 		padding: 0 60px;
 	}
 	section h2{
@@ -1835,11 +1832,7 @@ a.btn-custom01:hover .btn-arrow{
 		line-height: 1.5em;
 		padding-bottom: 80px;
 	}
-	.innerTitle {
-		font-family: 'Roboto', sans-serif;
-		font-style: italic;
-		font-weight: 700;
-		background: #000;
+	.titlepadding {
 		padding: 0 20px;
 	}
 	#header.fixed{
@@ -1913,6 +1906,7 @@ a.btn-custom01:hover .btn-arrow{
 	section h2{
 		width: 90%;
 	}
+
 	.container-serviceimg{
 		width: 100%;
 	}
