@@ -1785,6 +1785,7 @@ a.btn-custom01:hover .btn-arrow{
 		z-index: -100;
 	}
 	#mainVideo{
+		position: absolute;
 		width: 100vw;
 	}
 
