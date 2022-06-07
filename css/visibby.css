@@ -138,14 +138,14 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 .fontsize16{
 	font-size: 1.6rem;
 }
-.fontsize40{
+.fontsize-servicecolor{
 	font-size: 4.0rem
 }
 .fontsize18{
 	font-size: 1.8rem;
 	font-weight: 700;
 }
-.fontsize22{
+.fontsize-servicewhite{
 	font-size: 2.2rem;
 }
 
@@ -437,7 +437,7 @@ section h2{
 .title-case{
 	font-size: 2.2rem;
 	padding-top: 20px;
-	padding-bottom: 10px;
+	padding-bottom: 8px;
 }
 @media screen and (max-width: 400px){
 	.fontsize-catchcopy{
@@ -446,6 +446,10 @@ section h2{
 	.title-case{
 		font-size: 1.7rem;
 	}
+}
+
+.margintop-movie{
+	margin-top: 50px;
 }
 
 /* arrow style -------------------------------------------*/
@@ -554,7 +558,7 @@ section h2{
 
 .innerMap{
 	width: 80vw;
-	aspect-ratio: 45/25;
+	aspect-ratio: 45/22;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -868,7 +872,7 @@ a.btn-custom01:hover .btn-arrow{
 
 .copyright{
 		clear: both;
-		padding-bottom: 50px;
+		padding-bottom: 140px;
 		text-align: center;
 		font-size: 12px;
 }
@@ -1343,8 +1347,10 @@ a.btn-custom01:hover .btn-arrow{
 	animation-name: slideAnimeMAP;
 	animation-timing-function: ease;
 	display: block;
+	object-fit: contain;
 	opacity: 0;
 	height: 100%;
+	width: 100%;
 }
 
 .mapSlide-slide__item:nth-of-type(1) .mapSlide-slide__img {
@@ -1885,6 +1891,14 @@ a.btn-custom01:hover .btn-arrow{
 		margin: 0 auto;
 	}
 
+	.fontsize-servicecolor{
+		font-size: 3.7rem;
+	}
+
+	.fontsize-servicewhite{
+		font-size: 2.0rem;
+	}
+
 	#gallery li{
 		float: none;
 		width: 100%;
@@ -1938,8 +1952,3 @@ a.btn-custom01:hover .btn-arrow{
 	}
 
 }
-
-
-
-
-
