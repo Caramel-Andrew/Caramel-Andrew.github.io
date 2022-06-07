@@ -50,6 +50,7 @@
 
 @media screen and (min-width: 1280px) {
     .contactform-container{
+        position: relative;
         text-align: center;
         width:100vw;
         height:1050px; 
@@ -57,16 +58,19 @@
     .contactform{
         width:80%;
         height:1050px; 
+        position: fixed;
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
     .contactform-container{
+        position: relative;
         text-align: center;
         width:100vw;
         height:1100px; 
     }
     .contactform{
+        position: fixed;
         width:80%;
         height:1100px; 
     }
@@ -74,11 +78,13 @@
 
 @media screen and (max-width: 768px) {
     .contactform-container{
+        position: relative;
         text-align: center;
         width:100vw;
         height:1250px; 
     }
     .contactform{
+        position: fixed;
         width:80%;
         height:1250px; 
     }
