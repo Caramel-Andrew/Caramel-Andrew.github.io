@@ -822,7 +822,7 @@
                                                     <span class="js-sync -gmap" style="overflow: hidden;">
                                                         <div id="bk59198646"
                                                             class="container-map b-plain c-space_normal c-sp-space_normal cssskin-_block_main"
-                                                            data-bk-id="bk59198646"><iframe sandbox="allow-same-origin allow-scripts allow-top-navigation"
+                                                            data-bk-id="bk59198646"><iframe id="map-contents" sandbox="allow-same-origin allow-scripts allow-top-navigation"
                                                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3243.6903405825115!2d139.66500701553372!3d35.61070434144356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f4e1c0a97fa5%3A0x26f6d560b203bf01!2z77yI5qCq77yJ44Oo44O844Oo44O844Of44Op44Kv44Or!5e0!3m2!1sen!2sjp!4v1636618406554!5m2!1sen!2sjp"
                                                                 width="100%" height="800vh" style="border:0;"
                                                                 allowfullscreen="" loading="lazy"></iframe></div>
@@ -851,7 +851,7 @@
 
                                         <!-- コンタクトフォームのスタイルはindex.cssで設定 -->
                                         <div class="contactform-container">
-                                            <iframe sandbox="allow-same-origin allow-scripts allow-top-navigation"
+                                            <iframe id="contact-contents" sandbox="allow-same-origin allow-scripts allow-top-navigation"
                                             class="contactform" src="https://smoothcontact.jp/front/output/7f0000013ca6a83efdda213ca31cdad" allowtransparency=“true” frameborder=“0”></iframe>
                                         </div>
 
@@ -947,6 +947,20 @@
     <script type="text/javascript">
         var css_list = ['csslinkbtn/btn-import.css'];
         var page_update = 1636527813364;
+
+        $(document).ready(function() {
+            // #hogehogeのところにposition:fixed;にしたい要素のIDを入れて下さい
+            setTimeout(function() {
+                $("#map-contents").css({"position" : "absolute"});
+            } , 10);
+        });
+
+        $(document).ready(function() {
+            // #hogehogeのところにposition:fixed;にしたい要素のIDを入れて下さい
+            setTimeout(function() {
+                $("#contact-contents").css({"position" : "absolute"});
+            } , 10);
+        });
     </script>
     <script src="src/lib.js.download" defer=""></script>
     <script src="src/bind.js.download" id="script-js" defer=""></script>
