@@ -531,13 +531,23 @@ section h2{
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
-	width: 80%;
+	width: 55%;
 	padding: 10px 0 10px;
 	aspect-ratio: 20/9;
 	object-fit: contain;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
+}
+@media only screen and (max-width: 1200px){
+	.container-serviceimg{
+		width: 70%;
+	}
+}
+@media only screen and (max-width: 1000px){
+	.container-serviceimg{
+		width: 80%;
+	}
 }
 
 .container-serviceimg-screen{
@@ -649,7 +659,7 @@ section h2{
 }
 
 #sec04_01{
-	background: url(../img/visibby/under_overview.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/visibby/under_overview_v02.webp) no-repeat 100% 100% fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	background-position: center;
@@ -662,7 +672,7 @@ section h2{
 }
 
 #sec04_02{
-	background: url(../img/visibby/under_services.jpg) no-repeat 100% 100% fixed;
+	background: url(../img/visibby/under_services_v02.webp) no-repeat 100% 100% fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	background-position: center;
