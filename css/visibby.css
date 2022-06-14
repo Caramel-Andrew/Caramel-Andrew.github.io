@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 @import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&display=swap');
 
 /* reset */
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td{margin:0;padding:0;}
@@ -68,7 +67,6 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 }
 #mainVideo{
 	position: relative;
-	display: block;
 	margin: 0 auto;
 	width: 80vw;
 	aspect-ratio: 1920/1080;
@@ -95,11 +93,12 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 	width: 100%;
 	height: 70vh;
 }
-#mainVideo .inner-mainvideo, #mainVideo object, #mainVideo embed{
+#mainVideo video{
 	position: absolute;
+	display: block;
 	object-fit: contain;
-	top: 0;
-	left: 0;
+	width: 100%;
+	height: 100%;
 }
 #eventLogo img{
 	position: absolute;
@@ -139,14 +138,14 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 .fontsize16{
 	font-size: 1.6rem;
 }
-.fontsize-servicecolor{
+.fontsize40{
 	font-size: 4.0rem
 }
 .fontsize18{
 	font-size: 1.8rem;
 	font-weight: 700;
 }
-.fontsize-servicewhite{
+.fontsize22{
 	font-size: 2.2rem;
 }
 
@@ -171,7 +170,6 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 #footer{
 	clear: both;
 	padding: 50px 10px 50px 0;
-	margin-top: 140px;
 	text-align: center;
 	font-size: 12px;
 }
@@ -391,7 +389,7 @@ img{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	z-index: 15;
+	z-index: 2;
 }
 
 section{
@@ -439,7 +437,7 @@ section h2{
 .title-case{
 	font-size: 2.2rem;
 	padding-top: 20px;
-	padding-bottom: 8px;
+	padding-bottom: 10px;
 }
 @media screen and (max-width: 400px){
 	.fontsize-catchcopy{
@@ -448,10 +446,6 @@ section h2{
 	.title-case{
 		font-size: 1.7rem;
 	}
-}
-
-.margintop-movie{
-	margin-top: 50px;
 }
 
 /* arrow style -------------------------------------------*/
@@ -533,7 +527,7 @@ section h2{
 	display: flex;
 	flex-direction: row-reverse;
 	align-items: center;
-	width: 55%;
+	width: 80%;
 	padding: 10px 0 10px;
 	aspect-ratio: 20/9;
 	object-fit: contain;
@@ -541,23 +535,12 @@ section h2{
 	right: 0;
 	margin: 0 auto;
 }
-@media only screen and (max-width: 1200px){
-	.container-serviceimg{
-		width: 70%;
-	}
-}
-@media only screen and (max-width: 1000px){
-	.container-serviceimg{
-		width: 80%;
-	}
-}
 
 .container-serviceimg-screen{
 	flex-grow: 1;
 	right: 0;
 	height: 100%;
 	margin: auto;
-	z-index: 10;
 }
 
 .item-sp{
@@ -571,7 +554,7 @@ section h2{
 
 .innerMap{
 	width: 80vw;
-	aspect-ratio: 45/22;
+	aspect-ratio: 45/25;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
@@ -661,7 +644,7 @@ section h2{
 }
 
 #sec04_01{
-	background: url(../img/visibby/under_overview_v02.webp) no-repeat 100% 100% fixed;
+	background: url(../img/visibby/under_overview.jpg) no-repeat 100% 100% fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	background-position: center;
@@ -674,7 +657,7 @@ section h2{
 }
 
 #sec04_02{
-	background: url(../img/visibby/under_services_v02.webp) no-repeat 100% 100% fixed;
+	background: url(../img/visibby/under_services.jpg) no-repeat 100% 100% fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
 	background-position: center;
@@ -885,7 +868,7 @@ a.btn-custom01:hover .btn-arrow{
 
 .copyright{
 		clear: both;
-		padding-bottom: 140px;
+		padding-bottom: 50px;
 		text-align: center;
 		font-size: 12px;
 }
@@ -1360,10 +1343,8 @@ a.btn-custom01:hover .btn-arrow{
 	animation-name: slideAnimeMAP;
 	animation-timing-function: ease;
 	display: block;
-	object-fit: contain;
 	opacity: 0;
 	height: 100%;
-	width: 100%;
 }
 
 .mapSlide-slide__item:nth-of-type(1) .mapSlide-slide__img {
@@ -1798,6 +1779,7 @@ a.btn-custom01:hover .btn-arrow{
 		z-index: -100;
 	}
 	#mainVideo{
+		z-index: -100;
 		width: 100vw;
 	}
 
@@ -1903,14 +1885,6 @@ a.btn-custom01:hover .btn-arrow{
 		margin: 0 auto;
 	}
 
-	.fontsize-servicecolor{
-		font-size: 3.7rem;
-	}
-
-	.fontsize-servicewhite{
-		font-size: 2.0rem;
-	}
-
 	#gallery li{
 		float: none;
 		width: 100%;
@@ -1964,3 +1938,8 @@ a.btn-custom01:hover .btn-arrow{
 	}
 
 }
+
+
+
+
+
