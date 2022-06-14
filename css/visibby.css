@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
-@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+@import url(https://use.fontawesome.com/releases/v5.13.0/css/all.css);
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&display=swap');
 
 /* reset */
@@ -68,8 +68,8 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 }
 #mainVideo{
 	position: relative;
-	display: block;
 	margin: 0 auto;
+	display: block;
 	width: 80vw;
 	aspect-ratio: 1920/1080;
 }
@@ -391,7 +391,7 @@ img{
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%);
-	z-index: 15;
+	z-index: 2;
 }
 
 section{
@@ -449,7 +449,6 @@ section h2{
 		font-size: 1.7rem;
 	}
 }
-
 .margintop-movie{
 	margin-top: 50px;
 }
