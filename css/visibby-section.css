@@ -6,6 +6,8 @@
     height: auto;
     z-index: 0;
     background: rgba(0,0,0,1);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .main_img {
     position: absolute;
