@@ -100,6 +100,27 @@
     text-decoration: none;
 }
 
+/* YOYOlogo--------------------------------------- */
+
+.wrapper-yoyologo{
+    width: 250px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+    .wrapper-yoyologo{
+        padding-bottom: 0px;
+    }
+}
+
+.wrapper-yoyologo:hover{
+    transform: scale(1.1);
+}
+
+/* //YOYOlogo------------------------------------- */
+
 .wrapper-sns{
 	width: 70%;
 	margin: 0 auto;
