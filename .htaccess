@@ -1,13 +1,5 @@
-<Files ~ "\.(htaccess|htpasswd)$">
-
-deny from all
-
-</Files>
-
- 
-
 RewriteEngine on
 
-RewriteCond %{THE_REQUEST} ^.*/index.html
+RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)index.html$ https://caramel-code.com/$1 [R=301,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
