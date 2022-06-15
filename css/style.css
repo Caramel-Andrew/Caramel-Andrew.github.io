@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .gm-style .gm-style-mtc label,
 .gm-style .gm-style-mtc div {
     font-weight: 400
@@ -100,4 +98,46 @@
 .gm-style {
     font: 400 11px Roboto, Arial, sans-serif;
     text-decoration: none;
+}
+
+.wrapper-sns{
+	width: 70%;
+	margin: 0 auto;
+    padding-top: 90px;
+	padding-bottom: 90px;
+    background-color: #FFAE27;
+}
+
+.content-3sns{
+	text-align: center;
+}
+
+.content-3sns .circle{
+	display: block;
+	position: relative;
+	margin: 0 auto;
+	width: 50px;
+	height: 50px;
+	line-height: 0 !important;
+}
+.circle:hover{
+	transform: scale(1.1);
+}
+
+.content-3sns li{
+	display: inline-block;
+	width: 18%;
+	padding: 0 2% 50px;
+	vertical-align: top;
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper-sns{
+        width: 100%;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .content-3sns li{
+        width: 22%;
+    }
 }
