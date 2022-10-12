@@ -1963,3 +1963,155 @@ a.btn-custom01:hover .btn-arrow{
 	}
 
 }
+
+/* CASE
+------------------------------------------------------------*/
+.case-section{
+	display: grid;
+}
+.case-container{
+	display: grid;
+	position: relative;
+	justify-content: center;
+	grid-template:
+	"area1 area2" 49vw
+	"area3 area4" 49vw
+	/ 49vw 49vw;
+	grid-gap: 4px;
+	margin: 0 auto;
+	padding: 5px;
+	width: 95%;
+	height: 100%;
+	text-align: center;
+}
+.case-container a{
+	cursor: pointer;
+}
+.case{
+	position: relative;
+	padding: 2px;
+	filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.5));
+	cursor: pointer;
+}
+.case::after{
+	content: "";
+	z-index: -20;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border: 0.1px solid #fff;
+}
+.case img{
+	width: 100%;
+}
+@media screen and (min-width:516px) {
+  .case-container {
+		grid-template:
+			"area1 area2 area3" 30vw
+			/ 30vw 30vw 30vw;
+		padding: 15px;
+		grid-gap: 1rem;
+  }
+}@media screen and (min-width:768px) {
+  .case-container {
+		grid-template:
+			"area1 area2 area3" 28vw
+			/ 28vw 28vw 28vw;
+		padding: 15px;
+		grid-gap: 2rem;
+  }
+	.case{
+		filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.7));
+	}
+	
+}@media screen and (min-width:992px) {
+  .case-container {
+		grid-template:
+			"area1 area2 area3" 240px
+			/ 240px 240px 240px;
+    width: 70%;
+		padding: 25px;
+		grid-gap: 3rem;
+  }
+	.case{
+		filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.7));
+	}
+}@media screen and (min-width:1200px) {
+  .case-container {
+		grid-template:
+			"area1 area2 area3" 260px
+			/ 260px 260px 260px;
+    width: 60%;
+		padding: 35px;
+		grid-gap: 6rem;
+  }
+	.case{
+		filter: drop-shadow(0px 0px 9px rgba(255, 255, 255, 0.7));
+	}
+}
+
+.tb2preeve {
+	grid-area: area1;
+	width: 100%;
+	height: 100%;
+	background: url(../img/visibby/TB2/TB2BG.webp);
+	background-size: cover;
+	background-position: center;
+}
+.tb2preeve img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	object-fit: contain;
+}
+.expojpn {
+	position: relative;
+	grid-area: area2;
+	width: 100%;
+	height: 100%;
+}
+.expojpn::after{
+	content: "";
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background: url(../img/visibby/expojpn/expojpnBG.webp);
+	background-size: cover;
+	background-position: center;
+	filter: brightness(70%);
+}
+.expojpn img{
+	position: absolute;
+	width: 400px;
+	height: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	filter: drop-shadow(0px 0px 2px rgb(255, 255, 255));
+}
+.comingsoon{
+	position: relative;
+	background: rgb(27, 27, 27);
+}
+.comingsoon a{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	white-space: noWrap; 
+}
