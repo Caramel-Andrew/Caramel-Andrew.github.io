@@ -109,9 +109,11 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 /* fontstyle */
 .colorgreen{
 	color: rgb(162, 255, 22);
+	transition: all .5s;
 }
 .colorred{
 	color: rgb(255, 54, 121);
+	transition: all .5s;
 }
 .colorpink{
 	color: #ff38d1;
@@ -121,10 +123,22 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 }
 .colorblack{
 	color: rgba(255, 255, 255, 0);
+	transition: all .5s;
 }
 .coloryellow{
 	color: #ffd52c;
 }
+
+.colorblack:hover{
+	filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, 1));
+}
+.colorgreen:hover{
+	filter: drop-shadow(0px 0px 8px rgba(162, 255, 22, 1));
+}
+.colorred:hover{
+	filter: drop-shadow(0px 0px 8px rgba(255, 54, 121, 1));
+}
+
 
 .titlestyle{
 	font-family: 'Roboto', sans-serif;
@@ -632,6 +646,7 @@ section h2{
 	width: 10vw;
 	height: 10vw;
 	line-height: 0 !important;
+	transition: all .5s;
 }
 .circle:hover{
 	transform: scale(1.1);
@@ -2030,8 +2045,11 @@ a.btn-custom01:hover .btn-arrow{
   }
 	.case{
 		filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.7));
+		transition: all .5s;
 	}
-	
+	.case:hover{
+		transform: scale(1.08);
+	}
 }@media screen and (min-width:992px) {
   .case-container {
 		grid-template:
