@@ -312,6 +312,10 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 	right: 0;
 	padding-top: 10px;
 	padding-right: 10px;
+	cursor: pointer;
+}
+#scroll a{
+	text-decoration: none;
 }
 #display{
 	display: flex;
