@@ -171,7 +171,7 @@ a:active, a:focus,input:active, input:focus{outline:0;}
 #footer{
 	clear: both;
 	padding: 50px 10px 50px 0;
-	margin-top: 140px;
+	margin-top: 20px;
 	text-align: center;
 	font-size: 12px;
 }
@@ -2118,4 +2118,68 @@ a.btn-custom01:hover .btn-arrow{
 	left: 50%;
 	transform: translate(-50%,-50%);
 	white-space: noWrap; 
+}
+
+#related-contents{
+	margin-top: 100px;
+}
+.relatedcontents{
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 50px;
+}
+.relatedcontents-left{
+	width: 220px;
+	transition: all .5s;
+}
+.relatedcontents-right{
+	width: 220px;
+	transition: all .5s;
+}
+.relatedcontents-left:hover{
+	transform: scale(1.2);
+}
+.relatedcontents-right:hover{
+	transform: scale(1.2);
+}
+@media screen and (min-width:516px) {
+  .relatedcontents {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		grid-gap: 50px;
+  }
+	.relatedcontents-left{
+		width: 250px;
+	}
+	.relatedcontents-right{
+		width: 250px;
+	}
+}@media screen and (min-width:768px) {
+  .relatedcontents {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		grid-gap: 50px;
+  }
+}@media screen and (min-width:992px) {
+  .relatedcontents {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		grid-gap: 80px;
+  }
+}@media screen and (min-width:1200px) {
+  .relatedcontents {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: center;
+		grid-gap: 100px;
+  }
 }
