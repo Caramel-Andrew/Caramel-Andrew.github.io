@@ -1544,16 +1544,29 @@ a.btn-custom01:hover .btn-arrow{
 
 /* RESPONSIVE 設定
 ------------------------------------------------------------*/
+.container-video{
+	aspect-ratio: 16/9;
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
 
 /* PC
 ------------------------------------------------------------*/
 @media only screen and (min-width: 1200px){
+	.container-video{
+		width: 60%;
+	}
 	.inner{
 		width: 1024px;
 	}
 }
 
 @media only screen and (min-width: 800px){
+	.container-video{
+		width: 85%;
+	}
 	body{
 		font-size:14px;
 	}
