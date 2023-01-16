@@ -107,6 +107,7 @@
     margin: 0 auto;
     padding-bottom: 50px;
     text-align: center;
+    transition: transform .6s ease;
 }
 
 @media screen and (max-width: 640px) {
@@ -133,16 +134,17 @@
 	text-align: center;
 }
 
-.content-3sns .circle{
+.content-3sns .button-sns{
 	display: block;
 	position: relative;
 	margin: 0 auto;
 	width: 50px;
 	height: 50px;
 	line-height: 0 !important;
+    transition: .6s;
 }
-.circle:hover{
-	transform: scale(1.1);
+.button-sns:hover{
+	transform: scale(1.4);
 }
 
 .content-3sns li{
