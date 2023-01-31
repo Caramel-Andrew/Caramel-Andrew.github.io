@@ -162,3 +162,58 @@
         width: 22%;
     }
 }
+
+/* 言語ボタン */
+.container_button_language{
+    position: relative;
+    display: grid;
+    place-content: center;
+    margin: 0 auto;
+    text-align: center;
+    background: transparent;
+    font-style: rgb(189, 120, 0);
+}
+.container_button_language a{
+    display: inline-block;
+    width: 140px;
+    padding: 10px;
+    border:rgb(189, 120, 0) 1px solid;
+    border-radius: 30px;
+    background-color: transparent;
+    color: rgb(189, 120, 0) !important;
+    text-decoration: none;
+    transition: 0.8s;
+}
+.container_button_language a::before{
+    display: inline-block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-right: 0.15rem solid rgb(189, 120, 0);
+    border-bottom: 0.15rem solid rgb(189, 120, 0);
+    -webkit-transform: translate(-20px) rotate(-45deg);
+    transform: translate(-20px) rotate(-45deg);
+}
+.container_button_language a:hover{
+    background-color: rgba(218, 218, 218, 0.531);
+    border:transparent 1px solid;
+    transition: 0.35s;
+    transform: scale(1.1);
+}
+
+
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.blankspace_big{
+    height: 80px;
+}
+.blankspace_medium{
+    height: 40px;
+}
+.blankspace_small{
+    height: 20px;
+}
