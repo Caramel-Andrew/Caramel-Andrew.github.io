@@ -1,0 +1,166 @@
+body{
+  margin: 0;
+  padding: 0;
+	background:linear-gradient(135deg, #ffea8a,#e25b4c,#080c47);/*グラデーションを定義*/
+	background-size: 200% 200%;/*サイズを大きくひきのばす*/
+	animation: bggradient 15s ease infinite;
+  -webkit-backdrop-filter: hue-rotate(-100deg);
+	backdrop-filter: hue-rotate(-100deg);
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: .03em;
+}
+@keyframes bggradient{
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+h2{
+  font-size: 18px;
+}
+
+p{
+  font-size: 14px;
+}
+
+.wrapper{
+  background-attachment: fixed; 
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  -webkit-backdrop-filter: brightness(65%) contrast(100%);
+	backdrop-filter: brightness(65%) contrast(100%);
+}
+
+.content-description{
+  width: 100%;
+  height: 500px;
+}
+
+@media screen and (max-width: 767px){
+  .br-pc{
+    display: none;
+  }
+
+  .content-row{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .section-delimiter{
+    height: 100px;
+  }
+
+  /* flex-container */
+  .flex-container{
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .flex-content{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  /* .flex-container ----- */
+
+  .first-view{
+    position: relative;
+    z-index: 10000;
+    width: 100vw;
+    height: 420px;
+    background: url('../img/tennisbraker/first-view.webp');
+    background-position: -50px top;
+    background-size: 250vw;
+  }
+
+  .container{
+    height: 600px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  .content{
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: auto;
+    background   : linear-gradient(to bottom, #99ccff, #0059b3);
+    border: 0.5px solid white;
+  }
+}
+
+
+@media screen and (min-width: 768px){
+  .content-row{
+    width: 990px;
+    margin: 0 auto;
+  }
+
+  .section-delimiter{
+    height: 150px;
+  }
+
+  /* flex-container */
+  .flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .flex-content{
+    display: block;
+    width: 48%;
+    height: auto;
+  }
+  /* .flex-container ----- */
+
+  .first-view{
+    background-position: 0px -50px;
+    background-size: 100%;
+    height: 500px;
+  }
+
+  .container{
+    height: 600px;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -40px;
+    margin-right: -40px;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .content{
+    margin-top: 40px;
+    margin-bottom: 0px;
+    width: 23%;
+    height: 300px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background   : linear-gradient(to bottom, #99ccff, #0059b3);
+    border: 0.5px solid white;
+  }
+}
+
+/* .panel{
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+  -webkit-box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
+  box-shadow: 0 5px 30px rgb(0 0 0 / 20%);
+} */
