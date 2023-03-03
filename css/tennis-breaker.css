@@ -50,13 +50,6 @@ img{
   width: 100%;
 }
 
-h2{
-  width: 100%;
-}
-
-p{
-  width: 100%;
-}
 
 .block-margin{
   height: 30px;
@@ -116,13 +109,9 @@ p{
     display: none;
   } 
 
-  .content-row{
+  .content-row, .content-row-features{
     width: 90%;
     margin: 0 auto;
-  }
-
-  .block-delimiter{
-    height: 50px;
   }
 
   .sp-cols{
@@ -145,7 +134,7 @@ p{
   }
 
   .container{
-    height: 600px;
+    height: fit-content;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -162,8 +151,8 @@ p{
 }
 
 
-@media screen and (min-width: 520px) and (max-width: 833px){
-  .cols{
+@media screen and (min-width: 520px) and (max-width: 989px){
+  .sp-cols{
     display: none;
   }
 
@@ -172,26 +161,23 @@ p{
   } 
 
   .content-row{
-    width: 90%;
+    width: 520px;
+    margin: 0 auto;
+  }
+  .content-row-features{
+    width: 700px;
     margin: 0 auto;
   }
 
-  .block-delimiter{
-    height: 100px;
-  }
-
-  .sp-cols{
+  .cols{
     display: block;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 90vw;
-    margin: 0 auto;
   }
 
-  .video_container {
+  .video-container {
     position: relative;
+    width: 100vw;
     height: 500px;
+    overflow: hidden;
   }
   
   /* .video-ttl {
@@ -207,7 +193,14 @@ p{
   .video-content {
     position: absolute;
     left: 50%;
-    transform: translate(-40%);
+    transform: translate(-50%);
+    width: auto;
+    height: 500px;
+    overflow: hidden;
+  }
+  video{
+    display: block;
+    margin: 0 0 0 auto;
   }
 
   .container{
@@ -222,19 +215,40 @@ p{
     margin-top: 40px;
     margin-bottom: 0px;
     width: 200px;
-    height: 200px;
     border: 0.5px solid white;
     border-radius: 10px;
   }
 
 }
 
+@media screen and (min-width: 520px) and (max-width: 700px){
+  .content-row-features{
+    height: fit-content;
+    width: 90%;
+    margin: 0 auto;
+  }
 
-@media screen and (min-width: 834px){
+  .container{
+    display: block;
+    height: fit-content;
+    width: 400px;
+    margin: 0 auto;
+  }
+  .content{
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width: 990px){
   .sp-cols{
     display: none;
   }
   .content-row{
+    width: 990px;
+    margin: 0 auto;
+  }
+  .content-row-features{
     width: 990px;
     margin: 0 auto;
   }
@@ -272,10 +286,6 @@ p{
     height: 200px;
   }
 
-  .block-delimiter{
-    height: 100px;
-  }
-
   .first-view{
     background: url('../img/tennisbraker/first-view.webp');
     background-position: 0px -50px;
@@ -287,6 +297,12 @@ p{
 
 }
 
+
+.content-features{
+  position: relative;
+  height: fit-content;
+  width: 100vw;
+}
 /* .panel{
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
