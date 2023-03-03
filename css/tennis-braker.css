@@ -159,13 +159,25 @@ p{
     margin: 0 auto;
   }
 
-  .first-view{
+  .video_wr {
     position: relative;
-    z-index: 10000;
-    width: 100vw;
-    height: 420px;
-    background-position: -50px top;
-    background-size: 250vw;
+    height: 500px;
+  }
+  
+  .video-ttl {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /*上下左右中央寄せ*/
+    text-align:center;
+    color: #ffffff;
+  }
+  
+  .first-view-movie {
+  width: 300px;
+  height: 200px;
+  max-width: 500px;
   }
 
   .container{
