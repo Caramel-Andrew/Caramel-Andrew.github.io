@@ -1,13 +1,15 @@
 body{
   margin: 0;
   padding: 0;
-	background:linear-gradient(135deg, #ffea8a,#e25b4c,#080c47);/*グラデーションを定義*/
+  letter-spacing: .03em;
+  background:linear-gradient(135deg, #ffea8a,#e25b4c,#080c47);/*グラデーションを定義*/
 	background-size: 200% 200%;/*サイズを大きくひきのばす*/
+  color: rgba(255, 255, 255, 0.75);
+}
+bgFixer{
 	animation: bggradient 15s ease infinite;
   -webkit-backdrop-filter: hue-rotate(-100deg);
 	backdrop-filter: hue-rotate(-100deg);
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: .03em;
 }
 @keyframes bggradient{
 	0% {

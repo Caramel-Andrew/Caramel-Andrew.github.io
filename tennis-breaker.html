@@ -1,48 +1,223 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>テニスブレイカー</title>
-  <!-- CSS -->
-  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="src/style.css">
+  <link type="text/css" rel="stylesheet" href="src/mystyle.css">
+  <link type="text/css" rel="stylesheet" href="../sass/style.css">
+
+  <link type="text/css" rel="stylesheet" href="src/css">
+  <link type="text/css" rel="stylesheet" href="src/css(1)">
+
+  <link rel="stylesheet" type="text/css" href="src/bind.css" id="bind-css">
+  <link rel="stylesheet" type="text/css" href="src/base(1).css">
+  <link rel="stylesheet" type="text/css" href="src/base(2).css">
+  <link rel="stylesheet" type="text/css" href="src/base(3).css">
+  <link href="src/css(2)" rel="stylesheet" type="text/css">
+  <link href="src/css(3)" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="src/index.css" id="page-css">
+  <link type="text/css" rel="stylesheet" href="css/shadow.css">
+  <link rel="stylesheet" type="text/css" href="csslinkbtn/btn-import.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/tennis-breaker.css">
+  <link rel="stylesheet" type="text/css" href="src/sync-loader.css">
+
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="https://module.bindsite.jp/">
+  <link rel="dns-prefetch" href="https://webfont-pub.weblife.me/">
+  <link rel="dns-prefetch" href="https://sync5-res.digitalstage.jp/">
+  <link rel="dns-prefetch" href="https://sync5-cnsl.digitalstage.jp/">
+  <link rel="dns-prefetch" href="https://smoothcontact.jp/">
+
+  <!-- icon & favicon -->
+  <link rel="shortcut icon" href="img/caramel-favicon.ico">
+  <link rel="apple-touch-icon" href="img/caramel_icon_180.png" sizes="180×180">
+
+  <!-- JavaScript -->
+  <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+  <script type="text/javascript" src="src/jquery-1.8.3.min.js"></script>
+  <script id="google-map-js-api" async="" src="src/js"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/common.js.download"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/util.js.download"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/map.js.download"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/marker.js.download"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/stats.js.download"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/onion.js.download"></script>
+  <script type="text/javascript" charset="UTF-8" src="src/controls.js.download"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-661WJ9N4TD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-661WJ9N4TD');
+  </script>
 </head>
-<body>
-<div class="wrapper">
-  <div class="video-container" style="position: relative; width: 100vw; height: 500px; overflow: hidden;">
-    <div class="video-content" style="height: 100%;">
-      <video class="first-view-movie" style="position: relative; left: 50%; transform: translate(-50%); height: 100%;" src="img/tennisbraker/Tennis-breaker_loop.mp4" muted autoplay loop 
-      style="width: 100%"></video>
+
+<body class="bgFixer">
+
+  <noscript>
+    <div id="js-off">
+      <img src="_module/images/noscript.gif" alt="Enable JavaScript in your browser. このウェブサイトはJavaScriptをオンにしてご覧下さい。">
     </div>
+  </noscript>
+  <div id="a-header" data-float="false" class="a-header   cssskin-_area_header">
+    <header>
+      <div class="site_frame">
+        <section>
+          <div id="bk59198667"
+            class="b-plain c-space_normal c-sp-space_normal c-padding_normal c-sp-padding_normal is-pc-hide bd-webp -dress_b12003 cssskin-_block_header js-globalNavigationBaseBlock"
+            data-bk-id="bk59198667">
+            <div class=" column -column1">
+              <div class=" c-body">
+
+              </div>
+              <nav>
+
+                <!-- header mobile screen -->
+
+                <div id="js-globalNavigation" data-slide-type="rightSlide" data-btn-position="rightTop_fixed"
+                  data-relative-on-tablet="true" class="-js-menuSlide-right_side_sliders">
+                  <div class=" -menu_right">
+                    <ul class="c-menu -menu_a menu-parts">
+                      <li><a href="index.html?press=preview#DOWNLOAD" data-mypid="4022136"
+                          class=" js-link_scroller">DOWNLOAD</a></li>
+                      <li><a href="index.html?press=preview#CONTACT" data-mypid="4022136" data-=""
+                          class=" js-link_scroller">CONTACT</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="spNavigationTrigger"
+                  class="c-sp_navigation_btn -js-menuPosition-right_top_fixed -js-menuPosition-relative_on_tablet js-hide">
+                  <div class="c-sp-navigation_line1 c-sp-navigation_line"></div>
+                  <div class="c-sp-navigation_line2 c-sp-navigation_line"></div>
+                  <div class="c-sp-navigation_line3 c-sp-navigation_line"></div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
+  </div>
+  <div id="a-ghost_header" data-effect="fade" data-float="true"
+    class="a-ghost_header js-ghost_mode cssskin-_block_ghost_header" style="left: auto;">
+    <header>
+      <div class="site_frame">
+        <section>
+          <div id="bk59198465"
+            class="b-both_diff -right_large -sp-single_column c-space_normal c-sp-space_normal c-sp-padding_normal bd-webp -dress_f1a3b9458df4409aa0eefc2c9be411cc cssskin-_block_ghost_header"
+            data-bk-id="bk59198465" data-shared="true" data-sharedname="_ゴーストヘッダ">
+            <div class=" g-column">
+              <div class=" column -col4">
+                <div class=" c-body">
+                  <div class="c-img   ">
+                    <a href="" data-mypid="4022136">
+                      <picture>
+                        <source type="image/webp">
+                        <img src="img/plugin/caramelcode-vfx.webp" alt="caramel.code" id="imgsrc61215652_1"
+                          class=" c-no_adjust" style="filter: invert(100%);">
+                      </picture>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- header PC screen-->
+              <div class=" column -col8">
+                <nav>
+                  <div class=" -menu_right">
+                    <ul class="c-menu -menu_a menu-parts">
+                      <li><a href="index.html?press=preview#DOWNLOAD" data-mypid="4022136"
+                          class=" js-link_scroller">DOWNLOAD</a></li>
+                      <li><a href="index.html?press=preview#CONTACT" data-mypid="4022136"
+                          class=" js-link_scroller">CONTACT</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </header>
   </div>
 
-  <div class="margin-80"></div>
-
-
-
-
-  <div class="content-row">
-    <div class="section-headline">
-      <h2 class="headline-title">
-        ブロック崩しの楽しさをさらにレベルアップ
-      </h2>
-      <p>
-        ブロック崩しのパズルゲームは、これ以上ないほどエキサイティングだと思いませんか？<br>
-        もう一度考えてみてください。<br>
-        テニスブレイカーは、この定番ゲームをさらに進化させました。<br>
-        巨大なボード、本物のテニスラケット、本物のテニスボールで構成されたこのゲームは、最高得点を競い合いながら、会員が汗を流すことになるでしょう。<br>
-        イベントやジムでテニスブレイカーを導入したい方は、ぜひお知らせください。
-      </p>
+  <div class="wrapper">
+    <div class="video-container" style="position: relative; width: 100vw; overflow: hidden;">
+      <div class="video-content" style="height: 100%;">
+        <video class="first-view-movie" style="position: relative; left: 50%; transform: translate(-50%); height: 100%;"
+          src="img/tennisbraker/Tennis-breaker_loop.mp4" muted autoplay loop style="width: 100%"></video>
+      </div>
     </div>
 
     <div class="margin-80"></div>
 
-    <div class="margin-40"></div>
+    <div class="content-row">
+      <div class="section-headline">
+        <h2 class="headline-title">
+          ブロック崩しの楽しさをさらにレベルアップ
+        </h2>
+        <p>
+          ブロック崩しのパズルゲームは、これ以上ないほどエキサイティングだと思いませんか？<br>
+          もう一度考えてみてください。<br>
+          テニスブレイカーは、この定番ゲームをさらに進化させました。<br>
+          巨大なボード、本物のテニスラケット、本物のテニスボールで構成されたこのゲームは、最高得点を競い合いながら、会員が汗を流すことになるでしょう。<br>
+          イベントやジムでテニスブレイカーを導入したい方は、ぜひお知らせください。
+        </p>
+      </div>
 
-    <div class="cols">
-      <div class="col centerborder-style">
+      <div class="margin-80"></div>
+
+      <div class="margin-40"></div>
+
+      <div class="cols">
+        <div class="col centerborder-style">
+          <div class="block-headline">
+            <img src="img/tennisbraker/howtoplay.webp" alt="tennis-braker's game screen">
+          </div>
+
+          <div class="margin-80"></div>
+
+          <div class="block block-description">
+            <h2 class="headtext-style">パズルゲームにテニスを取り入れた<br class="br-pc">新感覚のインタラクティブなゲーム</h2>
+            <p class="text-style">テニスラケットとテニスボールを使って、<br class="br-pc">大きなスクリーン上のブロックにぶつけます。<br
+                class="br-pc">隣同士の同じ色のブロックも一緒に消えます。<br class="br-pc">
+              一度にたくさんのブロックを消すほど高得点<br class="br-pc">になります。</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="block block-headline">
+            <h2 class="headtext-style">パズルを楽しみながらエクササイズ</h2>
+            <p>テニスブレイカーは楽しく体を動かすことのできる<br>エキサイティングなゲームです</p>
+          </div>
+
+          <div class="margin-80"></div>
+
+          <div class="block block-description">
+            <img src="img/tennisbraker/howtoplay.webp" alt="tennis-braker's game screen">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-row">
+      <div class="sp-cols">
+        <div class="block-delimiter"></div>
+
+        <div class="block block-headline">
+          <h2 class="headtext-style">パズルを楽しみながらエクササイズ</h2>
+          <p>テニスブレイカーは楽しく体を動かすことのできる<br>エキサイティングなゲームです</p>
+        </div>
+
+        <div class="block-margin"></div>
+
         <div class="block-headline">
           <img src="img/tennisbraker/howtoplay.webp" alt="tennis-braker's game screen">
         </div>
@@ -51,91 +226,67 @@
 
         <div class="block block-description">
           <h2 class="headtext-style">パズルゲームにテニスを取り入れた<br class="br-pc">新感覚のインタラクティブなゲーム</h2>
-          <p class="text-style">テニスラケットとテニスボールを使って、<br class="br-pc">大きなスクリーン上のブロックにぶつけます。<br class="br-pc">隣同士の同じ色のブロックも一緒に消えます。<br class="br-pc">
-          一度にたくさんのブロックを消すほど高得点<br class="br-pc">になります。</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="block block-headline">
-          <h2 class="headtext-style">パズルを楽しみながらエクササイズ</h2>
-          <p>テニスブレイカーは楽しく体を動かすことのできる<br>エキサイティングなゲームです</p>
+          <p class="text-style">テニスラケットとテニスボールを使って、<br class="br-pc">大きなスクリーン上のブロックにぶつけます。<br
+              class="br-pc">隣同士の同じ色のブロックも一緒に消えます。<br class="br-pc">
+            一度にたくさんのブロックを消すほど高得点<br class="br-pc">になります。</p>
         </div>
 
-        <div class="margin-80"></div>
+        <div class="block-margin"></div>
 
         <div class="block block-description">
           <img src="img/tennisbraker/howtoplay.webp" alt="tennis-braker's game screen">
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="content-row">
-    <div class="sp-cols">
-      <div class="block-delimiter"></div>
-
-      <div class="block block-headline">
-        <h2 class="headtext-style">パズルを楽しみながらエクササイズ</h2>
-        <p>テニスブレイカーは楽しく体を動かすことのできる<br>エキサイティングなゲームです</p>
-      </div>
-
-      <div class="block-margin"></div>
-
-      <div class="block-headline">
-        <img src="img/tennisbraker/howtoplay.webp" alt="tennis-braker's game screen">
-      </div>
-
-      <div class="margin-80"></div>
-
-      <div class="block block-description">
-        <h2 class="headtext-style">パズルゲームにテニスを取り入れた<br class="br-pc">新感覚のインタラクティブなゲーム</h2>
-        <p class="text-style">テニスラケットとテニスボールを使って、<br class="br-pc">大きなスクリーン上のブロックにぶつけます。<br class="br-pc">隣同士の同じ色のブロックも一緒に消えます。<br class="br-pc">
-        一度にたくさんのブロックを消すほど高得点<br class="br-pc">になります。</p>
-      </div>
-
-      <div class="block-margin"></div>
-
-      <div class="block block-description">
-        <img src="img/tennisbraker/howtoplay.webp" alt="tennis-braker's game screen">
-      </div>
-    </div>
-  </div>
-
-  <div class="margin-80"></div>
+    <div class="margin-80"></div>
 
 
 
 
-  <section class="content-features">
-  <div class="content-row-features">
-    <div class="container">
-      <div class="content">
-        <div class="inner">
-          <img src="img/tennisbraker/projector.webp">
-          <div class="margin-20"></div>
-          <h2>プロジェクター投影</h2>
-          <p>テニスブレイカーは、PCを使って、ゲーム画面を壁に投影して使用します。</p>
+    <section class="content-features">
+      <div class="content-row-features">
+        <div class="container">
+          <div class="content">
+            <div class="inner">
+              <img src="img/tennisbraker/projector.webp">
+              <div class="margin-20"></div>
+              <h2>プロジェクター投影</h2>
+              <p>テニスブレイカーは、PCを使って、ゲーム画面を壁に投影して使用します。</p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="inner">
+              <img src="img/tennisbraker/touch_sensor.webp">
+              <div class="margin-20"></div>
+              <h2>タッチセンサー使用</h2>
+              <p>テニスブレーカーは、革新的な距離センサーとタッチセンサーにより、打ったボールの位置を認識し、プレイ画面に反映させます。</p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="inner">
+              <img src="img/book-icon.png">
+              <div class="margin-20"></div>
+              <h2>カスタマイズ可能</h2>
+              <p>テニスだけでなくサッカーや野球といった様々なスポーツに対応可能</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="content">
-        <div class="inner">
-          <img src="img/tennisbraker/touch_sensor.webp">
-          <div class="margin-20"></div>
-          <h2>タッチセンサー使用</h2>
-          <p>テニスブレーカーは、革新的な距離センサーとタッチセンサーにより、打ったボールの位置を認識し、プレイ画面に反映させます。</p>
-        </div>
-      </div>
-      <div class="content">
-        <div class="inner">
-          <img src="img/book-icon.png">
-          <div class="margin-20"></div>
-          <h2>カスタマイズ可能</h2>
-          <p>テニスだけでなくサッカーや野球といった様々なスポーツに対応可能</p>
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
-  </section>
-</div>
+  <script type="text/javascript" src="src/sync-loader.js.download"></script>
+  <script type="text/javascript">
+    var css_list = ['csslinkbtn/btn-import.css'];
+    var page_update = 1636527813364;
+  </script>
+  <script src="src/lib.js.download" defer=""></script>
+  <script src="src/bind.js.download" id="script-js" defer=""></script>
+  <!--[if lt IE 9]><script src="_module/lib/html5shiv.min.js?v=14.0.0"></script><![endif]-->
+  <!-- custom_tags_start -->
+  <script defer="" type="text/javascript">
+  </script>
+  <!-- custom_tags_end -->
 </body>
+
 </html>
