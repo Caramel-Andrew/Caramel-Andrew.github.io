@@ -10,14 +10,14 @@
     max-width: 1200px;
     min-width: 400px;
     
-    height: 200px;
-    margin: 40px auto 400px 150px;
+    height: fit-content;
+    margin: 40px auto 40px 200px;
 }
 .profile_block_mobile{
     display: block;
-    text-align: center;
-    height: 200px;
-    margin: 40px auto 1000px auto;
+    text-align: left;
+    height: fit-content;
+    margin: 40px auto 40px auto;
 }
 
 .yoyobutton{
