@@ -151,11 +151,25 @@ p{
 /* //YOYOlogo------------------------------------- */
 
 .wrapper-sns{
-	width: 70%;
+	width: 50%;
 	margin: 0 auto;
     padding-top: 90px;
 	padding-bottom: 90px;
     background-color: #FFAE27;
+}
+@media screen and (max-width: 600px) {
+    .wrapper-sns{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .wrapper-sns{
+        width: 100%;
+    }
+}@media screen and (max-width: 600px) {
+    .wrapper-sns{
+        width: 100%;
+    }
 }
 
 .content-3sns{
