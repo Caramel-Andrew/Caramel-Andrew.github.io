@@ -6,7 +6,7 @@ body{
 	background-size: 200% 200%;/*サイズを大きくひきのばす*/
   color: rgba(255, 255, 255, 0.75);
 }
-bgFixer{
+.bgFixer{
 	animation: bggradient 15s ease infinite;
   -webkit-backdrop-filter: hue-rotate(-100deg);
 	backdrop-filter: hue-rotate(-100deg);
@@ -173,7 +173,7 @@ img{
     z-index: 10000;
     width: 100vw;
     height: 420px;
-    background: url('../img/tennisbraker/first-view.webp');
+    background: url('../img/tennisbreaker/first-view.webp');
     background-position: -50px top;
     background-size: 250vw;
   }
@@ -349,12 +349,12 @@ img{
 
   .cols{
     display: flex;
-    margin: 0 -5vw;
+    margin: 0 -8vw;
   }
 
   .col{
     width: 50%;
-    padding: 0 5vw;
+    padding: 0 3vw;
   }
 
   .centerborder-style{
@@ -381,7 +381,7 @@ img{
   }
 
   .first-view{
-    background: url('../img/tennisbraker/first-view.webp');
+    background: url('../img/tennisbreaker/first-view.webp');
     background-position: 0px -50px;
     background-size: 100%;
     height: 500px;
