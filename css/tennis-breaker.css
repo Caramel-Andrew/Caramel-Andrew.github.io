@@ -7,9 +7,9 @@ body{
   color: rgba(255, 255, 255, 0.75);
 }
 .bgFixer{
-	animation: bggradient 15s ease infinite;
+	/* animation: bggradient 15s ease infinite;
   -webkit-backdrop-filter: hue-rotate(-100deg);
-	backdrop-filter: hue-rotate(-100deg);
+	backdrop-filter: hue-rotate(-100deg); */
 }
 @keyframes bggradient{
 	0% {
