@@ -2,14 +2,14 @@ body{
   margin: 0;
   padding: 0;
   letter-spacing: .03em;
-  background:linear-gradient(135deg, #ffea8a,#e25b4c,#080c47);/*グラデーションを定義*/
-	background-size: 200% 200%;/*サイズを大きくひきのばす*/
+  background:linear-gradient(135deg, rgb(255, 138, 237),hsl(266, 72%, 59%));
+  animation: bggradient 15s ease infinite;
   color: rgba(255, 255, 255, 0.75);
 }
 .bgFixer{
-	animation: bggradient 15s ease infinite;
+	/* animation: bggradient 15s ease infinite;
   -webkit-backdrop-filter: hue-rotate(-100deg);
-	backdrop-filter: hue-rotate(-100deg);
+	backdrop-filter: hue-rotate(-100deg); */
 }
 @keyframes bggradient{
 	0% {
@@ -35,8 +35,10 @@ p{
 }
 
 .headtext-style, .text-style{
-  width: 90%;
   margin: 0 auto;
+}
+.sp-text{
+  width: 90%;
 }
 
 .wrapper{
@@ -379,7 +381,7 @@ img{
     place-content: center;
   }
   .block-headline{
-    height: 200px;
+    height: 300px;
   }
   .block-description{
     height: 200px;
