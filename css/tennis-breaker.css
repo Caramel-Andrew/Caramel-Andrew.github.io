@@ -11,6 +11,12 @@ body{
   -webkit-backdrop-filter: hue-rotate(-100deg);
 	backdrop-filter: hue-rotate(-100deg); */
 }
+.c-menu.-menu_a li:first-child {
+  border-color: #9990 !important;
+}
+.c-menu.-menu_a li {
+  border-color: #9990;
+}
 @keyframes bggradient{
 	0% {
 		background-position: 0% 50%;
