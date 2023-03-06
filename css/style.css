@@ -317,12 +317,12 @@ p{
     width: 70%;
 }
 
-.item-tennisbraker{
-    background-image: url(../img/tennisbraker/bg-tennisbraker.webp);
+.item-tennisbreaker{
+    background-image: url(../img/tennisbreaker/bg-tennisbreaker.webp);
     background-position: 13% 20%;
     background-size: 200%;
 }
-.item-tennisbraker img{
+.item-tennisbreaker img{
     transform: scale(1.2);
 }
 
