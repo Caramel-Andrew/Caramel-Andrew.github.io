@@ -85,6 +85,18 @@ img{
   text-align: center;
 }
 
+@media (width < 600px) {
+  .section-headline img{
+    width: 100%;
+  }
+}
+@media (600px <= width) {
+  .section-headline img{
+    max-width: 65%;
+  }
+}
+
+
 .button-container{
   flex-grow: 1;
   width: 280px;
