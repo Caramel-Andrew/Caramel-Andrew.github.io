@@ -226,8 +226,9 @@ p{
 
 .howtouse-area p{
   text-align: left;
-  word-wrap: break-all;
-  letter-spacing: 0.05em; 
+  word-wrap: break-word;
+  letter-spacing: 0.10em; 
+  position: relative;
 }
 @media (width < 600px) {
   .howtouse-area{
@@ -242,7 +243,24 @@ p{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 75%;
+    max-width: 65%;
+  }
+}
+
+@media (width < 700px) {
+  .howtouse-area img{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (700px <= width) {
+  .howtouse-area img{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 80%;
   }
 }
 
