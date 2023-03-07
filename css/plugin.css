@@ -119,12 +119,6 @@
   margin: 0 auto;
 }
 
-.howtouse-area{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
 @media (width < 600px){
   .button-area{
     width: 300x;
@@ -187,6 +181,13 @@
 }
 .button-content a:hover:before{
   background-image: url(../img/plugin/download-icon-white.webp);
+}
+
+
+.howtouse-area{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 
@@ -487,7 +488,7 @@
     height: 10%;
     text-align: center;
   }
-  .arrow {
+  .arrow-twocontents {
     display: inline-block;
     color: #333;
     line-height: 1;
@@ -497,7 +498,7 @@
     margin: 20px 0 ;
     background: currentColor;
   }
-  .arrow::before {
+  .arrow-twocontents::before {
     content: '';
     width: 1.5em;
     height: 1.5em;
@@ -528,7 +529,7 @@
     width: 10%;
     height: auto;
   }
-  .arrow {
+  .arrow-twocontents {
     display: inline-block;
     color: #333;
     line-height: 1;
@@ -537,7 +538,7 @@
     height: 0.2em;
     background: currentColor;
   }
-  .arrow::before {
+  .arrow-twocontents::before {
     content: '';
     width: 1.5em;
     height: 1.5em;
@@ -567,7 +568,7 @@
     width: 10%;
     height: auto;
   }
-  .arrow {
+  .arrow-twocontents {
     display: inline-block;
     color: #333;
     line-height: 1;
@@ -576,7 +577,7 @@
     height: 0.2em;
     background: currentColor;
   }
-  .arrow::before {
+  .arrow-twocontents::before {
     content: '';
     width: 1.5em;
     height: 1.5em;
