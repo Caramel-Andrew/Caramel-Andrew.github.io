@@ -224,6 +224,11 @@ p{
 }
 
 
+.howtouse-area p{
+  text-align: left;
+  word-wrap: break-all;
+  letter-spacing: 0.05em; 
+}
 @media (width < 600px) {
   .howtouse-area{
     display: flex;
