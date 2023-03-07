@@ -438,11 +438,7 @@ img{
     width: 100%;
     aspect-ratio: 16/9;
   }
-
-
-
 }
-
 
 .content-features{
   position: relative;
@@ -479,4 +475,19 @@ img{
 .button-content a{
   font-size: 14px;
   font-weight: bold;
+}
+
+.control-panel{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.control-panel-title{
+  width: 30%;
+  text-align: right;
+}
+
+.control-panel-text{
+  width: 70%;
+  text-align: left;
 }
