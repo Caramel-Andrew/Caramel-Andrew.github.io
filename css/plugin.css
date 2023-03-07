@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap');
 
+@media (width < 600px) {
+  p{
+    text-align: justify;
+    word-wrap: break-word;
+    letter-spacing: 0.05em; 
+  }
+  .br-pc{
+    display: none;
+  }
+}
+@media (600px <= width < 1050px) {
+  .br-sp, .br-pc{
+    display: none;
+  }
+  .br-tab{
+    display: block;
+  }
+}
+@media (1050px <= width) {
+  p{
+    text-align: center;
+    word-wrap: break-word;
+  }
+  .br-sp, .br-tab{
+    display: none;
+  }
+  .br-pc{
+    display: block;
+  }
+}
+
+p{
+  font-family: sans-serif; 
+  font-weight: 500; 
+  line-height: 1.5; 
+  font-size: 14px;
+  margin-left: 1em; 
+  margin-right: 1em;
+}
+
 .header-logo{
   position: absolute;
   top: -80px;
@@ -184,10 +224,21 @@
 }
 
 
-.howtouse-area{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
+@media (width < 600px) {
+  .howtouse-area{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+@media (600px <= width) {
+  .howtouse-area{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 75%;
+  }
 }
 
 
