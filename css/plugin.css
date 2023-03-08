@@ -329,7 +329,15 @@ p{
     width: 100%;
   }
 }
-@media (600px <= width) {
+@media (600px <= width < 1025px){
+  .howtouse-area{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 70%;
+  }
+}
+@media (1025px <= width) {
   .howtouse-area{
     display: flex;
     flex-wrap: wrap;
