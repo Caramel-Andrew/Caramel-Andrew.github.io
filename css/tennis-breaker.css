@@ -3,10 +3,13 @@ body{
   padding: 0;
   letter-spacing: .03em;
   background:linear-gradient(135deg, rgb(255, 138, 237),hsl(266, 72%, 59%));
+  /* background:linear-gradient(90deg, rgb(236, 27, 205),hsl(266, 92%, 43%)); */
   background-position: center center;
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   color: rgba(255, 255, 255, 0.75);
+  overflow-x: hidden;
 }
 .bgFixer{
 	/* animation: bggradient 15s ease infinite;
@@ -90,8 +93,8 @@ p{
   background-size: cover;
   background-position: center;
   width: 100%;
-  -webkit-backdrop-filter: brightness(65%) contrast(100%);
-	backdrop-filter: brightness(65%) contrast(100%);
+  /* -webkit-backdrop-filter: brightness(65%) contrast(100%);
+	backdrop-filter: brightness(65%) contrast(100%); */
 }
 
 .content-description{
@@ -362,7 +365,7 @@ img{
 
   .headvideo-container {
     position: relative;
-    width: 100vw !important;
+    /* width: 100vw !important; */
     overflow: hidden;
   }
   
