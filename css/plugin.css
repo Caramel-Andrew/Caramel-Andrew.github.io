@@ -31,6 +31,28 @@
   }
 }
 
+@media (width < 600px){
+  .content-row{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media (600px <= width < 1050px){
+  .content-row{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+@media (1050px < width){
+  .content-row{
+    width: 1050px;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 p{
   font-family: sans-serif; 
   font-weight: 500; 
@@ -130,7 +152,15 @@ p{
   color: rgb(240, 240, 240);
   margin-top: 10px;
   margin-bottom: 30px;
+  margin-left: 1em;
+  margin-right: 1em;
 }
+
+.h2{
+
+
+}
+
 
 .content p{
   font-size: 0.9rem;
@@ -183,6 +213,7 @@ p{
   height: 100px;
   display: grid;
   place-items: center;
+  margin: 0 auto
 }
 
 .button-content a {
@@ -217,18 +248,78 @@ p{
   margin-right: 18px;
   width: 24px;
   height: 24px;
-  transition: 0.9s;
+  transition: 1.0s;
 }
 .button-content a:hover:before{
   background-image: url(../img/plugin/download-icon-white.webp);
 }
 
 
+
+.button-contact-container{
+  flex-grow: 1;
+  width: 200px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto
+}
+
+.button-contact-content a {
+  background: rgba(240, 240, 240);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 22px;
+  width: 180px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: 350;
+  border-radius:  46px;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+}
+.button-contact-content a:hover {
+  background: #313131;
+  color: #FFF;
+}
+
+.button-contact-content a:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/mail-black.webp);
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 18px;
+  width: 24px;
+  height: 24px;
+  transition: 1.0s;
+}
+.button-contact-content a:hover:before{
+  background-image: url(../img/mail-white.webp);
+}
+
+.plugin_path_win{
+  position: relative;
+  width: 150%;
+  margin: 0 auto;
+}
+
+.howtouse-area img{
+  width: 80%;
+}
+
 .howtouse-area p{
   text-align: left;
   word-wrap: break-word;
   letter-spacing: 0.10em; 
   position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 @media (width < 600px) {
   .howtouse-area{
@@ -243,7 +334,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 65%;
+    max-width: 45%;
   }
 }
 
@@ -252,7 +343,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 100%;
+    margin-bottom: 20px;
   }
 }
 @media (700px <= width) {
@@ -260,7 +351,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 80%;
+    margin-bottom: 20px;
   }
 }
 
@@ -704,4 +795,48 @@ p{
 
 
   border: 3px solid #313131;
+}
+
+
+
+
+@media (width < 600px){
+  .control-panel{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+}
+@media (600px <= width < 1050px){
+  .control-panel{
+    display: flex;
+    width: 120%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+}
+@media (1050px <= width){
+  .control-panel{
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+}
+
+
+.control-panel-title{
+  width: 30%;
+}
+.control-panel-title p{
+  font-weight: bold;
+  text-align: right;
+}
+
+.control-panel-text{
+  width: 70%;
+}
+.control-panel-text p{
+  text-align: left;
 }
