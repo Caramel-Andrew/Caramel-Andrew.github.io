@@ -129,8 +129,60 @@ img{
   }
 }
 
+.button-contact-container{
+  flex-grow: 1;
+  width: 200px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto
+}
+.button-contact-content a {
+  background: rgba(240, 240, 240);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 22px;
+  width: 180px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: 350;
+  border-radius:  46px;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
 
-.button-container{
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.button-contact-content a:hover {
+  background: #313131;
+  color: #FFF;
+  transition: 0.3s ease-in-out;
+}
+.button-contact-content a:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/mail-black.webp);
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 18px;
+  width: 24px;
+  height: 24px;
+  transition: 0.3s ease-in-out;
+  transition-delay: -0.05s;
+}
+.button-contact-content a:hover:before{
+  background-image: url(../img/mail-white.webp);
+  transition: 0.3s ease-in-out;
+  transition-delay: -0.05s;
+}
+
+
+/* .button-container{
   flex-grow: 1;
   width: 280px;
   height: 100px;
@@ -160,7 +212,7 @@ img{
 .button-content a:hover {
   background: #313131;
   color: #FFF;
-}
+} */
 
 
 .container{

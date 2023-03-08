@@ -264,7 +264,6 @@ p{
   place-items: center;
   margin: 0 auto
 }
-
 .button-contact-content a {
   background: rgba(240, 240, 240);
   position: relative;
@@ -282,12 +281,15 @@ p{
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 5.5px );
   -webkit-backdrop-filter: blur( 5.5px );
+
+  font-family: sans-serif;
+  font-weight: bold;
 }
 .button-contact-content a:hover {
   background: #313131;
   color: #FFF;
+  transition: 0.3s ease-in-out;
 }
-
 .button-contact-content a:before {
   content: '';
   display: inline-block;
@@ -297,10 +299,13 @@ p{
   margin-right: 18px;
   width: 24px;
   height: 24px;
-  transition: 1.0s;
+  transition: 0.3s ease-in-out;
+  transition-delay: -0.05s;
 }
 .button-contact-content a:hover:before{
   background-image: url(../img/mail-white.webp);
+  transition: 0.3s ease-in-out;
+  transition-delay: -0.05s;
 }
 
 .plugin_path_win{
