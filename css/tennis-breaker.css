@@ -35,9 +35,7 @@ p{
 .headtext-style, .text-style{
   margin: 0 auto;
 }
-.sp-text{
-  width: 90%;
-}
+
 
 .firsttext-head{
   font-size: 2.2rem;
@@ -45,6 +43,7 @@ p{
 .firsttext{
   font-size: 14px;
 }
+
 @media (width < 520px){
   .firsttext-head{
     font-size: 2.2rem;
@@ -52,6 +51,9 @@ p{
   }
   .firsttext{
     font-size: 14px;
+    width: 90%;
+  }
+  .sp-text{
     width: 90%;
   }
 }
@@ -63,6 +65,9 @@ p{
   }
   .firsttext{
     font-size: 14px;
+    width: 100%;
+  }
+  .sp-text{
     width: 100%;
   }
 }
@@ -113,9 +118,14 @@ img{
     width: 100%;
   }
 }
-@media (600px <= width) {
+@media (600px <= width < 990px) {
   .section-headline img{
-    max-width: 65%;
+    width: 100%;
+  }
+}
+@media (990px <= width){
+  .section-headline img{
+    width: 65%;
   }
 }
 
@@ -200,6 +210,15 @@ img{
     display: none;
   }
 
+  .sp-cols{
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   .content-row, .content-row-features{
     width: 100%;
     margin: 0 auto;
@@ -214,15 +233,6 @@ img{
   }
   .br-sp{
     display: block;
-  }
-
-  .sp-cols{
-    display: block;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 0 auto;
   }
 
   .first-view{
@@ -268,8 +278,17 @@ img{
 
 
 @media screen and (min-width: 520px) and (max-width: 989px){
-  .sp-cols{
+  .cols{
     display: none;
+  }
+
+  .sp-cols{
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
   }
 
 
@@ -286,10 +305,6 @@ img{
     display: none;
   }
   .br-tab{
-    display: block;
-  }
-
-  .cols{
     display: block;
   }
 
