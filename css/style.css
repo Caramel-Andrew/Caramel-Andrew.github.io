@@ -7,6 +7,24 @@ p {
   font-size: 14px;
 }
 
+.sp-text{
+  text-align: justify;
+  
+}
+
+@media (width < 800px){
+  .title-message{
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
+@media (800px <= width){
+  .title-message{
+    width: 40em; 
+    margin: 0 auto;
+  }
+}
+
 .margin-10 {
   height: 10px;
 }
