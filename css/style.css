@@ -401,7 +401,7 @@ p {
 }
 
 .item-plugin {
-  background-image: url(../img/plugin/BG.webp);
+  background-image: url(../img/plugin/BG_small.webp);
   background-size: 140%;
 }
 .item-plugin img {
