@@ -240,7 +240,7 @@ p{
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 22px;
+  padding: 22px 22px 22px 48px;
   width: 180px;
   color: #313131;
   transition: 0.3s ease-in-out;
@@ -261,8 +261,9 @@ p{
   display: inline-block;
   background-image: url(../img/plugin/download-icon-black.webp);
   background-size: contain;
+  position: absolute;
+  left: 24px;
   vertical-align: middle;
-  margin-right: 18px;
   width: 24px;
   height: 24px;
   transition: 1.0s;
@@ -331,6 +332,10 @@ p{
   margin: 0 auto;
 }
 
+.howtouse-img{
+  border: 0.5px solid #000
+}
+
 .howtouse-area img{
   width: 95%;
 }
@@ -343,6 +348,20 @@ p{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.textindent-number{
+  margin-left: 2.3em;
+  text-indent: -1.6em;
+}
+.textindent-os{
+  margin-left: 2.3em;
+  text-indent: -0.4em;
+}
+.textindent-caution{
+  margin-left: 2.3em;
+  text-indent: -1.2em;
+}
+
+
 @media screen and (max-width: 599px){
   .howtouse-area{
     display: flex;
@@ -860,8 +879,12 @@ p{
   width: 30%;
 }
 .control-panel-title p{
-  font-weight: bold;
   text-align: right;
+  padding: 0 0.5em 0 0;
+  border-right: 0.5px solid #000
+}
+.control-panel-title span{
+  font-weight: bold;
 }
 
 .control-panel-text{
@@ -869,4 +892,5 @@ p{
 }
 .control-panel-text p{
   text-align: left;
+  margin-left: 0;
 }
