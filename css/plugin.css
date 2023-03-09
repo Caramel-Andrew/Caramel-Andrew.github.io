@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap');
 
-@media (width < 600px) {
+@media screen and (max-width: 599px) {
   p{
     text-align: justify;
     word-wrap: break-word;
@@ -10,7 +10,7 @@
     display: none;
   }
 }
-@media (600px <= width < 1050px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
   .br-sp, .br-pc{
     display: none;
   }
@@ -18,7 +18,7 @@
     display: block;
   }
 }
-@media (1050px <= width) {
+@media screen and (min-width: 1025px) {
   p{
     text-align: center;
     word-wrap: break-word;
@@ -31,21 +31,21 @@
   }
 }
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .content-row{
     width: 100%;
     margin: 0 auto;
     text-align: center;
   }
 }
-@media (600px <= width < 1050px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .content-row{
     width: 600px;
     margin: 0 auto;
     text-align: center;
   }
 }
-@media (1050px < width){
+@media screen and (min-width: 1025px){
   .content-row{
     width: 1050px;
     margin: 0 auto;
@@ -113,7 +113,7 @@ p{
   border: 1px solid rgba( 255, 255, 255, 0.20 );
 }
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .container{
     width: 90vw;
     height: 580px;
@@ -121,14 +121,14 @@ p{
   }
 }
 
-@media (600px <= width < 1025px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .container{
     width: 600px;
     height: 460px;
   }
 }
 
-@media (1025px <= width){
+@media screen and (min-width: 1025px){
   .container{
     width: 720px;
     height: 480px;
@@ -189,19 +189,19 @@ p{
   margin: 0 auto;
 }
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .button-area{
     width: 300x;
   }
 }
 
-@media (600px <= width < 1025px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .button-area{
     width: 460px;
   }
 }
 
-@media (1025px <= width){
+@media screen and (min-width: 1025px){
   .button-area{
     width: 500px;
   }
@@ -326,7 +326,7 @@ p{
   margin-top: 20px;
   margin-bottom: 20px;
 }
-@media (width < 600px) {
+@media screen and (max-width: 599px){
   .howtouse-area{
     display: flex;
     flex-wrap: wrap;
@@ -334,7 +334,7 @@ p{
     width: 100%;
   }
 }
-@media (600px <= width < 1025px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .howtouse-area{
     display: flex;
     flex-wrap: wrap;
@@ -342,7 +342,7 @@ p{
     width: 70%;
   }
 }
-@media (1025px <= width) {
+@media screen and (min-width: 1025px){
   .howtouse-area{
     display: flex;
     flex-wrap: wrap;
@@ -351,7 +351,7 @@ p{
   }
 }
 
-@media (width < 700px) {
+@media screen and (max-width: 699px) {
   .howtouse-area img{
     display: flex;
     flex-wrap: wrap;
@@ -359,7 +359,7 @@ p{
     margin-bottom: 20px;
   }
 }
-@media (700px <= width) {
+@media screen and (min-width: 700px) {
   .howtouse-area img{
     display: flex;
     flex-wrap: wrap;
@@ -524,7 +524,7 @@ p{
   animation-duration: 16s;
 }
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .circles li:nth-child(1){
     display: none;
   }
@@ -580,7 +580,7 @@ p{
   }
 }
 
-@media (600px <= width < 1025px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .circles li:nth-child(1){
     display: none;
   }
@@ -653,7 +653,7 @@ p{
 
 }
 
-@media (width < 700px){
+@media screen and (max-width: 699px){
   .plugin-image{
     position: relative;
     width: 80%;
@@ -692,7 +692,7 @@ p{
 
 }
 
-@media (700px <= width < 1025px){
+@media screen and (min-width: 700px) and (max-width: 1024px){
   .plugin-image{
     display: flex;
     position: relative;
@@ -732,7 +732,7 @@ p{
   }
 }
 
-@media (1025px <= width){
+@media screen and (min-width: 1025px){
   .plugin-image{
     display: flex;
     position: relative;
@@ -813,7 +813,7 @@ p{
 
 
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .control-panel{
     display: flex;
     width: 100%;
@@ -821,7 +821,7 @@ p{
     flex-wrap: wrap;
   }
 }
-@media (600px <= width < 1050px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .control-panel{
     display: flex;
     width: 120%;
@@ -829,7 +829,7 @@ p{
     flex-wrap: wrap;
   }
 }
-@media (1050px <= width){
+@media screen and (min-width: 1025px){
   .control-panel{
     display: flex;
     width: 85%;

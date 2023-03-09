@@ -47,7 +47,7 @@ p{
   font-size: 14px;
 }
 
-@media (width < 520px){
+@media screen and (max-width: 519px){
   .firsttext-head{
     font-size: 2.2rem;
     width: 90%;
@@ -60,7 +60,7 @@ p{
     width: 90%;
   }
 }
-@media (520px <= width < 1025px){
+@media screen and (min-width: 520px) and (max-width: 1024px){
   .firsttext-head{
     font-size: 2.2rem;
     width: 100%;
@@ -74,7 +74,7 @@ p{
     width: 100%;
   }
 }
-@media (1025px <= width){
+@media screen and (min-width: 1025px){
   .firsttext-head{
     font-size: 2.2rem;
     width: 800px;
@@ -116,17 +116,17 @@ img{
   text-align: center;
 }
 
-@media (width < 600px) {
+@media screen and (max-width: 599px) {
   .section-headline img{
     width: 100%;
   }
 }
-@media (600px <= width < 1025px) {
+@media screen and (min-width: 600px) and (max-width: 1024px) {
   .section-headline img{
     width: 100%;
   }
 }
-@media (1025px <= width){
+@media screen and (min-width: 1025px){
   .section-headline img{
     width: 65%;
   }
@@ -261,7 +261,7 @@ img{
   margin-top: 10px;
 }
 
-@media (width < 520px){
+@media screen and (max-width: 519px){
   .cols{
     display: none;
   }
@@ -346,7 +346,7 @@ img{
 }
 
 
-@media (520px <= width < 1025px){
+@media screen and (min-width: 520px) and (max-width: 1024px){
   .cols{
     display: none;
   }
@@ -382,7 +382,7 @@ img{
     /* width: 100vw !important; */
     overflow: hidden;
   }
-  @media (1025px <= width){
+  @media screen and (min-width: 1025px){
     .headvideo-container {
       position: relative;
       /* width: 100vw !important; */
@@ -459,7 +459,7 @@ img{
 
 }
 
-@media (520px <= width <700px){
+@media screen and (min-width: 520px) and (max-width: 699px){
   .content-row-features{
     height: fit-content;
     width: 90%;
@@ -492,7 +492,7 @@ img{
 }
 
 
-@media (1025px <= width){
+@media screen and (min-width: 1025px){
   .sp-cols{
     display: none;
   }
@@ -598,14 +598,14 @@ img{
 } */
 
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .contact h2{
     width: 90%;
     text-align: left;
     margin: 0 auto;
   }
 }
-@media (600px <= width){
+@media screen and (min-width: 600px){
   .contact h2{
     width: 90%;
     text-align: center;
@@ -634,18 +634,18 @@ img{
 }
 
 
-@media (width < 600px){
+@media screen and (max-width: 599px){
   .video-container{
     width: 100%;
   }
 }
-@media (600px <= width < 1025px){
+@media screen and (min-width: 600px) and (max-width: 1024px){
   .video-container{
     width: 80%;
     margin: 0 auto;
   }
 }
-@media (1025px < width){
+@media screen and (min-width: 1025px){
   .video-container{
     width: 990px;
     margin: 0 auto;

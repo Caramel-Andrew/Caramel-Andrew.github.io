@@ -12,13 +12,13 @@ p {
   
 }
 
-@media (width < 800px){
+@media screen and (max-width: 799px){
   .title-message{
     width: fit-content;
     margin: 0 auto;
   }
 }
-@media (800px <= width){
+@media screen and (min-width: 800px){
   .title-message{
     width: 40em; 
     margin: 0 auto;
