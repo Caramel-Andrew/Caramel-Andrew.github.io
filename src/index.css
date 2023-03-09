@@ -92,7 +92,7 @@
         position: relative;
         text-align: center;
         margin: 0 auto;
-        width:80vw;
+        width: 80%;
         height:1100px; 
     }
     .contactform{
@@ -110,8 +110,8 @@
         position: relative;
         margin: 0 auto;
         text-align: center;
-        width:80vw;
-        height:1250px; 
+        width: 95%;
+        height: 1000px; 
     }
     .contactform{
         position: absolute;

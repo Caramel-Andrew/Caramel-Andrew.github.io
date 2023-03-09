@@ -93,6 +93,7 @@ p{
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
 }
 
 .gm-control-active > img:nth-child(1) {
@@ -219,6 +220,7 @@ p{
   margin: 0 auto;
   padding-bottom: 50px;
   text-align: center;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 640px) {
@@ -229,6 +231,9 @@ p{
 
 .wrapper-yoyologo:hover {
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform-origin: center;
+  -webkit-transform-origin: center;
 }
 
 /* //YOYOlogo------------------------------------- */
@@ -258,6 +263,7 @@ p{
 
 .content-3sns {
   text-align: center;
+  padding: 0;
 }
 
 .content-3sns .circle {
