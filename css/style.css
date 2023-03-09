@@ -427,7 +427,7 @@ p{
   width: 88%;
 }
 
-@media not all and (min-width: 768px) {
+@media not all and (min-width: 600px) {
   .item {
     width: 100%;
   }
