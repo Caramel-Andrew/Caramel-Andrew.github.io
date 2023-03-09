@@ -1,10 +1,22 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
-p {
-  font-family: sans-serif;
-  font-weight: 500;
-  line-height: 1.5;
+h2{
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 1rem;
+  line-height: 1.5em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+}
+
+p{
   font-size: 14px;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .sp-text{
@@ -118,9 +130,6 @@ p {
 .abouttable {
   -webkit-text-size-adjust: 100%;
   letter-spacing: 1px;
-  font-family: sans-serif;
-  font-weight: 500;
-  font-size: 14px;
   line-height: 1.8;
   text-align: left;
   box-sizing: border-box;

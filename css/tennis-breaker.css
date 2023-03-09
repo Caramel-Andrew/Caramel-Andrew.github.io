@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
 body{
   margin: 0;
   padding: 0;
@@ -28,11 +30,15 @@ h2{
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.5em;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
 }
 
 p{
   font-size: 14px;
   margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
 }
 
 .headtext-style, .text-style{
@@ -158,8 +164,9 @@ img{
   backdrop-filter: blur( 5.5px );
   -webkit-backdrop-filter: blur( 5.5px );
 
-  font-family: sans-serif;
-  font-weight: bold;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 .button-contact-content a:hover {
   background: #313131;
