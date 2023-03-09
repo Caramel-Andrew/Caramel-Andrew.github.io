@@ -6,15 +6,15 @@ h2{
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.5em;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  font-family: 'Noto Sans JP', sans-serif !important;
+  font-weight: 700 !important;
 }
 
 p{
   font-size: 14px;
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 400;
+  font-family: 'Noto Sans JP', sans-serif !important;
+  font-weight: 400 !important;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -396,6 +396,11 @@ p{
   height: 100%;
 }
 .item img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   margin: 0 auto;
 }
 
@@ -412,7 +417,6 @@ p{
   background-size: 200%;
 }
 .item-tennisbreaker img {
-  transform: scale(1.2);
 }
 
 .item-plugin {
@@ -431,4 +435,9 @@ p{
   .item:not(:last-child) {
     margin-bottom: 30px;
   }
+}
+
+
+.aboutrow p{
+  margin-left: 0;
 }
