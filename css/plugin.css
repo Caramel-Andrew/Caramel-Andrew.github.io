@@ -425,7 +425,31 @@ p{
   left: 50%;
   translate: -50%;
   width: 100vw;
-  height: 300px
+  height: 300px;
+}
+@media screen and (min-width: 2400px){
+  .waves-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    width: 100vw;
+    height: 300px;
+    transform: scale(4, 2);
+    transform-origin: center;
+  }
+}
+@media screen and (min-width: 3800px){
+  .waves-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50%;
+    width: 100vw;
+    height: 300px;
+    transform: scale(8, 4);
+    transform-origin: center;
+  }
 }
 
 .waves {
