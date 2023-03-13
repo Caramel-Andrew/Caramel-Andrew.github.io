@@ -19,6 +19,15 @@ p{
   margin-right: 1rem;
 }
 
+a{
+  font-size: 14px;
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif !important;
+  font-weight: 400 !important;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .sp-text{
   text-align: justify;
   
@@ -284,6 +293,7 @@ p{
   line-height: 100px;
   padding: 0 2% 50px;
   vertical-align: top;
+  line-height: 5;
 }
 
 @media screen and (max-width: 600px) {
