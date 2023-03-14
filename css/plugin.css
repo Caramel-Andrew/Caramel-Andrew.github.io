@@ -993,7 +993,7 @@ p {
     justify-content: space-between;
     width: 320px;
     margin: 0 auto;
-    transform: translate(-20px);
+    /* transform: translate(-20px); */
   }
 
   .content-flex img {
