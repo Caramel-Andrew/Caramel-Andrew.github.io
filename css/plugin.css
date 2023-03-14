@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
-h2{
+h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: 1rem;
@@ -10,76 +10,97 @@ h2{
   font-weight: 700;
 }
 
-p{
+p {
   font-size: 14px;
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 400;
 }
 
+.colordiv {
+  height: 100px;
+  margin-bottom: 100px;
+  background: url(../img/plugin/BG.webp);
+  background-position: center;
+  background-size: 110% 110%;
+  padding-top: 0px;
+  background-attachment: fixed;
+}
+
 @media screen and (max-width: 599px) {
-  p{
+  p {
     text-align: justify;
     word-wrap: break-word;
-    letter-spacing: 0.05em; 
+    letter-spacing: 0.05em;
   }
-  .br-pc{
+
+  .br-pc {
     display: none;
   }
 }
+
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-  .br-sp, .br-pc{
+
+  .br-sp,
+  .br-pc {
     display: none;
   }
-  .br-tab{
-    display: block;
-  }
-}
-@media screen and (min-width: 1025px) {
-  p{
-    text-align: center;
-    word-wrap: break-word;
-  }
-  .br-sp, .br-tab{
-    display: none;
-  }
-  .br-pc{
+
+  .br-tab {
     display: block;
   }
 }
 
-@media screen and (max-width: 599px){
-  .content-row{
+@media screen and (min-width: 1025px) {
+  p {
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .br-sp,
+  .br-tab {
+    display: none;
+  }
+
+  .br-pc {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .content-row {
     width: 100%;
     margin: 0 auto;
     text-align: center;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .content-row{
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .content-row {
     width: 600px;
     margin: 0 auto;
     text-align: center;
   }
 }
-@media screen and (min-width: 1025px){
-  .content-row{
+
+@media screen and (min-width: 1025px) {
+  .content-row {
     width: 1050px;
     margin: 0 auto;
     text-align: center;
   }
 }
 
-p{
-  font-family: sans-serif; 
-  font-weight: 500; 
-  line-height: 1.5; 
+p {
+  font-family: sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
   font-size: 14px;
-  margin-left: 1em; 
+  margin-left: 1em;
   margin-right: 1em;
 }
 
-.header-logo{
+.header-logo {
   position: absolute;
   top: -80px;
   left: 0;
@@ -89,11 +110,11 @@ p{
   height: 50px;
 }
 
-.logo{
+.logo {
   width: 100%;
 }
 
-.hero{
+.hero {
   overflow: hidden;
   position: relative;
   background: url(../img/plugin/BG.webp);
@@ -107,52 +128,52 @@ p{
   align-items: center;
 }
 
-.hero:after{
+.hero:after {
   position: absolute;
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.138);
 }
 
-.container{
+.container {
   display: grid;
   place-items: center;
   z-index: 1;
-  height:380px;
+  height: 380px;
   max-width: 720px;
   padding: 30px 30px;
   text-align: center;
   background: rgba(255, 255, 255, 0.089);
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 5.5px );
-  -webkit-backdrop-filter: blur( 5.5px );
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
   border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.20 );
+  border: 1px solid rgba(255, 255, 255, 0.20);
 }
 
-@media screen and (max-width: 599px){
-  .container{
+@media screen and (max-width: 599px) {
+  .container {
     width: 90vw;
     height: 580px;
     padding: 30px 0px;
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .container{
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .container {
     width: 600px;
     height: 460px;
   }
 }
 
-@media screen and (min-width: 1025px){
-  .container{
+@media screen and (min-width: 1025px) {
+  .container {
     width: 720px;
     height: 480px;
   }
 }
 
-.content h1{
+.content h1 {
   font-size: 4.6rem;
   line-height: 4.6rem;
   font-family: 'Zen Maru Gothic', sans-serif;
@@ -163,7 +184,7 @@ p{
   margin-bottom: 0px;
 }
 
-.content h2{
+.content h2 {
   text-align: center;
   font-size: 1.7rem;
   color: rgb(240, 240, 240);
@@ -173,25 +194,23 @@ p{
   margin-right: 1em;
 }
 
-.h2{
+.h2 {}
 
 
-}
-
-
-.content p{
+.content p {
   font-size: 0.9rem;
   color: rgb(240, 240, 240);
   margin-bottom: 30px;
 }
 
-.content{
+.content {
   position: relative;
   text-align: center;
   height: fit-content;
   width: auto;
 }
-.content img{
+
+.content img {
   display: block;
   position: relative;
   width: auto;
@@ -200,31 +219,31 @@ p{
 }
 
 
-.button-area{
+.button-area {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 599px){
-  .button-area{
+@media screen and (max-width: 599px) {
+  .button-area {
     width: 300x;
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .button-area{
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .button-area {
     width: 460px;
   }
 }
 
-@media screen and (min-width: 1025px){
-  .button-area{
+@media screen and (min-width: 1025px) {
+  .button-area {
     width: 500px;
   }
 }
 
-.button-container{
+.button-container {
   flex-grow: 1;
   width: 200px;
   height: 100px;
@@ -246,11 +265,12 @@ p{
   transition: 0.3s ease-in-out;
   font-size: 0.9rem;
   font-weight: 350;
-  border-radius:  46px;
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 5.5px );
-  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 46px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
 }
+
 .button-content a:hover {
   background: #313131;
   color: #FFF;
@@ -268,13 +288,14 @@ p{
   height: 24px;
   transition: 1.0s;
 }
-.button-content a:hover:before{
+
+.button-content a:hover:before {
   background-image: url(../img/plugin/download-icon-white.webp);
 }
 
 
 
-.button-contact-container{
+.button-contact-container {
   flex-grow: 1;
   width: 200px;
   height: 100px;
@@ -282,6 +303,7 @@ p{
   place-items: center;
   margin: 0 auto
 }
+
 .button-contact-content a {
   background: rgba(240, 240, 240);
   position: relative;
@@ -295,19 +317,21 @@ p{
   transition: 0.3s ease-in-out;
   font-size: 0.9rem;
   font-weight: 350;
-  border-radius:  46px;
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 5.5px );
-  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 46px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
 
   font-family: sans-serif;
   font-weight: bold;
 }
+
 .button-contact-content a:hover {
   background: #313131;
   color: #FFF;
   transition: 0.3s ease-in-out;
 }
+
 .button-contact-content a:before {
   content: '';
   display: inline-block;
@@ -320,66 +344,72 @@ p{
   transition: 0.3s ease-in-out;
   transition-delay: -0.05s;
 }
-.button-contact-content a:hover:before{
+
+.button-contact-content a:hover:before {
   background-image: url(../img/mail-white.webp);
   transition: 0.3s ease-in-out;
   transition-delay: -0.05s;
 }
 
-.plugin_path_win{
+.plugin_path_win {
   position: relative;
   width: 150%;
   margin: 0 auto;
 }
 
-.howtouse-img{
+.howtouse-img {
   border: 0.5px solid #000
 }
 
-.howtouse-area img{
+.howtouse-area img {
   width: 95%;
 }
 
-.howtouse-area p{
+.howtouse-area p {
   text-align: left;
   word-wrap: break-word;
-  letter-spacing: 0.10em; 
+  letter-spacing: 0.10em;
   position: relative;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.textindent-number{
+
+.textindent-number {
   margin-left: 2.3em;
   text-indent: -1.6em;
 }
-.textindent-os{
+
+.textindent-os {
   margin-left: 2.3em;
   text-indent: -0.4em;
 }
-.textindent-caution{
+
+.textindent-caution {
   margin-left: 2.3em;
   text-indent: -1.2em;
 }
 
 
-@media screen and (max-width: 599px){
-  .howtouse-area{
+@media screen and (max-width: 599px) {
+  .howtouse-area {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     width: 100%;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .howtouse-area{
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .howtouse-area {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     width: 70%;
   }
 }
-@media screen and (min-width: 1025px){
-  .howtouse-area{
+
+@media screen and (min-width: 1025px) {
+  .howtouse-area {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -388,15 +418,16 @@ p{
 }
 
 @media screen and (max-width: 699px) {
-  .howtouse-area img{
+  .howtouse-area img {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
     margin-bottom: 20px;
   }
 }
+
 @media screen and (min-width: 700px) {
-  .howtouse-area img{
+  .howtouse-area img {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -406,8 +437,8 @@ p{
 
 
 .inner-header {
-  height:65vh;
-  width:100%;
+  height: 65vh;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -427,7 +458,8 @@ p{
   width: 100vw;
   height: 300px;
 }
-@media screen and (min-width: 2400px){
+
+@media screen and (min-width: 2400px) {
   .waves-container {
     position: fixed;
     bottom: 0;
@@ -439,7 +471,8 @@ p{
     transform-origin: center;
   }
 }
-@media screen and (min-width: 3800px){
+
+@media screen and (min-width: 3800px) {
   .waves-container {
     position: fixed;
     bottom: 0;
@@ -454,41 +487,48 @@ p{
 
 .waves {
   width: 2400px;
-  margin-bottom: 130px; /*Fix for safari gap*/
+  margin-bottom: 130px;
+  /*Fix for safari gap*/
 }
 
 /* Animation */
 
-.parallax > use {
-  animation: wave-move 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+.parallax>use {
+  animation: wave-move 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
-.parallax > use:nth-child(1) {
+
+.parallax>use:nth-child(1) {
   animation-delay: -2s;
   animation-duration: 14s;
 }
-.parallax > use:nth-child(2) {
+
+.parallax>use:nth-child(2) {
   animation-delay: -3s;
   animation-duration: 20s;
 }
-.parallax > use:nth-child(3) {
+
+.parallax>use:nth-child(3) {
   animation-delay: -4s;
   animation-duration: 26s;
 }
-.parallax > use:nth-child(4) {
+
+.parallax>use:nth-child(4) {
   animation-delay: -5s;
   animation-duration: 40s;
 }
+
 @keyframes wave-move {
   0% {
-    transform: translate(-90px,0);
+    transform: translate(-90px, 0);
   }
-  100% { 
-    transform: translate(85px,0);
+
+  100% {
+    transform: translate(85px, 0);
   }
 }
 
 
-.circles{
+.circles {
   position: fixed;
   top: 0;
   left: 0;
@@ -497,7 +537,7 @@ p{
   overflow: hidden;
 }
 
-.circles li{
+.circles li {
   position: fixed;
   display: block;
   list-style: none;
@@ -506,17 +546,17 @@ p{
   background: rgba(255, 255, 255, 0.2);
   animation: animate 25s linear infinite;
   bottom: -150px;
-  
+
 }
 
-.circles li:nth-child(1){
+.circles li:nth-child(1) {
   left: 15%;
   width: 80px;
   height: 80px;
   animation-delay: 19s;
 }
 
-.circles li:nth-child(2){
+.circles li:nth-child(2) {
   left: 8%;
   width: 34px;
   height: 34px;
@@ -524,14 +564,14 @@ p{
   animation-duration: 22s;
 }
 
-.circles li:nth-child(3){
+.circles li:nth-child(3) {
   left: 70%;
   width: 20px;
   height: 20px;
   animation-delay: 4s;
 }
 
-.circles li:nth-child(4){
+.circles li:nth-child(4) {
   left: 40%;
   width: 60px;
   height: 60px;
@@ -539,28 +579,28 @@ p{
   animation-duration: 18s;
 }
 
-.circles li:nth-child(5){
+.circles li:nth-child(5) {
   left: 65%;
   width: 40px;
   height: 40px;
   animation-delay: 0s;
 }
 
-.circles li:nth-child(6){
+.circles li:nth-child(6) {
   left: 75%;
   width: 110px;
   height: 110px;
   animation-delay: 3s;
 }
 
-.circles li:nth-child(7){
+.circles li:nth-child(7) {
   left: 26%;
   width: 150px;
   height: 150px;
   animation-delay: 7s;
 }
 
-.circles li:nth-child(8){
+.circles li:nth-child(8) {
   left: 50%;
   width: 30px;
   height: 30px;
@@ -568,7 +608,7 @@ p{
   animation-duration: 45s;
 }
 
-.circles li:nth-child(9){
+.circles li:nth-child(9) {
   left: 20%;
   width: 25px;
   height: 25px;
@@ -576,7 +616,7 @@ p{
   animation-duration: 35s;
 }
 
-.circles li:nth-child(10){
+.circles li:nth-child(10) {
   left: 85%;
   width: 150px;
   height: 150px;
@@ -584,112 +624,112 @@ p{
   animation-duration: 16s;
 }
 
-@media screen and (max-width: 599px){
-  .circles li:nth-child(1){
+@media screen and (max-width: 599px) {
+  .circles li:nth-child(1) {
     display: none;
   }
-  
-  .circles li:nth-child(2){
+
+  .circles li:nth-child(2) {
     left: 2%;
     width: 34px;
     height: 34px;
   }
-  
-  .circles li:nth-child(3){
+
+  .circles li:nth-child(3) {
     display: none;
   }
-  
-  .circles li:nth-child(4){
+
+  .circles li:nth-child(4) {
     left: 40%;
     width: 48px;
     height: 48px;
   }
-  
-  .circles li:nth-child(5){
+
+  .circles li:nth-child(5) {
     left: 65%;
     width: 40px;
     height: 40px;
   }
-  
-  .circles li:nth-child(6){
+
+  .circles li:nth-child(6) {
     left: 75%;
     width: 72px;
     height: 72px;
   }
-  
-  .circles li:nth-child(7){
+
+  .circles li:nth-child(7) {
     left: 26%;
     width: 80px;
     height: 80px;
   }
-  
-  .circles li:nth-child(8){
+
+  .circles li:nth-child(8) {
     display: none;
   }
-  
-  .circles li:nth-child(9){
+
+  .circles li:nth-child(9) {
     left: 20%;
     width: 25px;
     height: 25px;
   }
-  
-  .circles li:nth-child(10){
+
+  .circles li:nth-child(10) {
     left: 92%;
     width: 74px;
     height: 74px;
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .circles li:nth-child(1){
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .circles li:nth-child(1) {
     display: none;
   }
-  
-  .circles li:nth-child(2){
+
+  .circles li:nth-child(2) {
     left: 2%;
     width: 34px;
     height: 34px;
   }
-  
-  .circles li:nth-child(3){
+
+  .circles li:nth-child(3) {
     display: none;
   }
-  
-  .circles li:nth-child(4){
+
+  .circles li:nth-child(4) {
     left: 40%;
     width: 48px;
     height: 48px;
   }
-  
-  .circles li:nth-child(5){
+
+  .circles li:nth-child(5) {
     left: 65%;
     width: 40px;
     height: 40px;
   }
-  
-  .circles li:nth-child(6){
+
+  .circles li:nth-child(6) {
     left: 75%;
     width: 72px;
     height: 72px;
   }
-  
-  .circles li:nth-child(7){
+
+  .circles li:nth-child(7) {
     left: 26%;
     width: 80px;
     height: 80px;
   }
-  
-  .circles li:nth-child(8){
+
+  .circles li:nth-child(8) {
     display: none;
   }
-  
-  .circles li:nth-child(9){
+
+  .circles li:nth-child(9) {
     left: 20%;
     width: 25px;
     height: 25px;
   }
-  
-  .circles li:nth-child(10){
+
+  .circles li:nth-child(10) {
     left: 92%;
     width: 74px;
     height: 74px;
@@ -699,33 +739,34 @@ p{
 
 @keyframes animate {
 
-  0%{
-      transform: translateY(0) rotate(0deg);
-      opacity: 1;
-      border-radius: 0;
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
   }
 
-  100%{
-      transform: translateY(-1000px) rotate(720deg);
-      opacity: 0;
-      border-radius: 50%;
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
   }
 
 }
 
-@media screen and (max-width: 699px){
-  .plugin-image{
+@media screen and (max-width: 699px) {
+  .plugin-image {
     position: relative;
     width: 80%;
     height: auto;
     margin: 0 auto;
   }
 
-  .arrow-container{
+  .arrow-container {
     width: auto;
     height: 10%;
     text-align: center;
   }
+
   .arrow-twocontents {
     display: inline-block;
     color: #333;
@@ -733,9 +774,10 @@ p{
     position: relative;
     width: 0.2em;
     height: 3em;
-    margin: 20px 0 ;
+    margin: 20px 0;
     background: currentColor;
   }
+
   .arrow-twocontents::before {
     content: '';
     width: 1.5em;
@@ -752,8 +794,8 @@ p{
 
 }
 
-@media screen and (min-width: 700px) and (max-width: 1024px){
-  .plugin-image{
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+  .plugin-image {
     display: flex;
     position: relative;
     width: 100%;
@@ -761,12 +803,13 @@ p{
     margin: 0 auto;
   }
 
-  .arrow-container{
+  .arrow-container {
     display: grid;
     place-content: center;
     width: 10%;
     height: auto;
   }
+
   .arrow-twocontents {
     display: inline-block;
     color: #333;
@@ -776,6 +819,7 @@ p{
     height: 0.2em;
     background: currentColor;
   }
+
   .arrow-twocontents::before {
     content: '';
     width: 1.5em;
@@ -792,20 +836,22 @@ p{
   }
 }
 
-@media screen and (min-width: 1025px){
-  .plugin-image{
+@media screen and (min-width: 1025px) {
+  .plugin-image {
     display: flex;
     position: relative;
     width: 800px;
     height: auto;
     margin: 0 auto;
   }
-  .arrow-container{
+
+  .arrow-container {
     display: grid;
     place-content: center;
     width: 10%;
     height: auto;
   }
+
   .arrow-twocontents {
     display: inline-block;
     color: #333;
@@ -815,6 +861,7 @@ p{
     height: 0.2em;
     background: currentColor;
   }
+
   .arrow-twocontents::before {
     content: '';
     width: 1.5em;
@@ -831,21 +878,22 @@ p{
   }
 }
 
-.plugin-billboard{
-  background: url(../img/plugin/BG.webp) !important; 
-  background-position: center !important; 
-  background-size: 110% 110% !important; 
-  padding-top: 0px !important; 
-  min-height: calc(100vh - 0px) !important; 
+.plugin-billboard {
+  background: url(../img/plugin/BG.webp) !important;
+  background-position: center !important;
+  background-size: 110% 110% !important;
+  padding-top: 0px !important;
+  min-height: calc(100vh - 0px) !important;
   background-attachment: fixed !important;
 }
 
 
-.plugin-image-before{
+.plugin-image-before {
   position: relative;
   transform: translate(3%);
 }
-.plugin-image-before::after{
+
+.plugin-image-before::after {
   content: '';
   display: inline-block;
   background-image: url(../img/plugin/before-parts.webp);
@@ -859,11 +907,12 @@ p{
   border: 3px solid #313131;
 }
 
-.plugin-image-after{
+.plugin-image-after {
   position: relative;
   transform: translate(3%);
 }
-.plugin-image-after::after{
+
+.plugin-image-after::after {
   content: '';
   display: inline-block;
   background-image: url(../img/plugin/after-parts.webp);
@@ -881,24 +930,26 @@ p{
 
 
 
-@media screen and (max-width: 599px){
-  .control-panel{
+@media screen and (max-width: 599px) {
+  .control-panel {
     display: flex;
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .control-panel{
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .control-panel {
     display: flex;
     width: 120%;
     margin: 0 auto;
     flex-wrap: wrap;
   }
 }
-@media screen and (min-width: 1025px){
-  .control-panel{
+
+@media screen and (min-width: 1025px) {
+  .control-panel {
     display: flex;
     width: 85%;
     margin: 0 auto;
@@ -907,67 +958,75 @@ p{
 }
 
 
-.control-panel-title{
+.control-panel-title {
   width: 30%;
 }
-.control-panel-title p{
+
+.control-panel-title p {
   text-align: right;
   padding: 0 0.5em 0 0;
   border-right: 0.5px solid #000
 }
-.control-panel-title span{
+
+.control-panel-title span {
   font-weight: bold;
 }
 
-.control-panel-text{
+.control-panel-text {
   width: 70%;
 }
-.control-panel-text p{
+
+.control-panel-text p {
   text-align: left;
   margin-left: 0;
 }
 
 
-.textcenter{
+.textcenter {
   text-align: center;
 }
 
 
-@media screen and (max-width: 599px){
-  .content-flex{
+@media screen and (max-width: 599px) {
+  .content-flex {
     display: flex;
     justify-content: space-between;
     width: 320px;
     margin: 0 auto;
     transform: translate(-20px);
   }
-  .content-flex img{
+
+  .content-flex img {
     height: 80px;
     width: auto;
   }
 }
-@media screen and (min-width: 600px) and (max-width: 1024px){
-  .content-flex{
+
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .content-flex {
     display: flex;
     justify-content: space-between;
     width: 360px;
     margin: 0 auto;
     transform: translate(-20px);
   }
-  .content-flex img{
+
+  .content-flex img {
     height: 80px;
     width: auto;
   }
 }
-@media screen and (min-width: 1025px){
-  .content-flex{
+
+@media screen and (min-width: 1025px) {
+  .content-flex {
     display: flex;
     justify-content: space-between;
     width: 400px;
     margin: 0 auto;
     transform: translate(-20px);
   }
-  .content-flex img{
+
+  .content-flex img {
     height: 80px;
     width: auto;
   }
