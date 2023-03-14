@@ -194,8 +194,8 @@ p{
 .content img{
   display: block;
   position: relative;
-  width: 180px;
-  height: auto;
+  width: auto;
+  height: 90px;
   margin: 0 auto;
 }
 
@@ -831,6 +831,14 @@ p{
   }
 }
 
+.plugin-billboard{
+  background: url(../img/plugin/BG.webp) !important; 
+  background-position: center !important; 
+  background-size: 110% 110% !important; 
+  padding-top: 0px !important; 
+  min-height: calc(100vh - 0px) !important; 
+  background-attachment: fixed !important;
+}
 
 
 .plugin-image-before{
@@ -917,4 +925,50 @@ p{
 .control-panel-text p{
   text-align: left;
   margin-left: 0;
+}
+
+
+.textcenter{
+  text-align: center;
+}
+
+
+@media screen and (max-width: 599px){
+  .content-flex{
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    margin: 0 auto;
+    transform: translate(-20px);
+  }
+  .content-flex img{
+    height: 80px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px){
+  .content-flex{
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+    margin: 0 auto;
+    transform: translate(-20px);
+  }
+  .content-flex img{
+    height: 80px;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1025px){
+  .content-flex{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    margin: 0 auto;
+    transform: translate(-20px);
+  }
+  .content-flex img{
+    height: 80px;
+    width: auto;
+  }
 }
