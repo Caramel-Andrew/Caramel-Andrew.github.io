@@ -9,3 +9,14 @@ RewriteRule ^(.+)$ $1.php
 
 RewriteCond %{THE_REQUEST} \.(php|html)\ HTTP
 RewriteRule ^(.+)\.(php|html)$ /$1 [R=301,L]
+
+# .htmlありから.htmlなしにリダイレクト
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+
+# httpからhttpsにリダイレクト
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

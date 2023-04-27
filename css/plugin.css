@@ -7,7 +7,7 @@ h2 {
   margin-bottom: 1rem;
   line-height: 1.5em;
   font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  font-weight: 500 !important;
 }
 
 p {
@@ -245,8 +245,6 @@ p {
 
 .button-container {
   flex-grow: 1;
-  width: 200px;
-  height: 100px;
   display: grid;
   place-items: center;
   margin: 0 auto
@@ -292,6 +290,48 @@ p {
 .button-content a:hover:before {
   background-image: url(../img/plugin/download-icon-white.webp);
 }
+
+.button-content label {
+  background: rgba(240, 240, 240);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 22px 22px 22px 48px;
+  width: 180px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: 350;
+  border-radius: 46px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+}
+
+.button-content label:hover {
+  background: #313131;
+  color: #FFF;
+}
+
+.button-content label:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/plugin/download-icon-black.webp);
+  background-size: contain;
+  position: absolute;
+  left: 24px;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  transition: 1.0s;
+}
+
+.button-content label:hover:before {
+  background-image: url(../img/plugin/download-icon-white.webp);
+}
+
 
 
 
@@ -1030,4 +1070,84 @@ p {
     height: 80px;
     width: auto;
   }
+}
+
+
+.plugin_hr{
+  width: 80%;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(245,239,120,1) 0%, rgba(235,173,126,1) 19%, rgba(221,90,123,1) 38%, rgba(152,96,241,1) 59%, rgba(129,146,243,1) 80%, rgba(126,218,239,1) 100%);
+  border: none;
+  margin: 60px auto;
+}
+
+.download_title{
+  color: white;
+}
+
+
+.modal_wrap input{
+  display: none;
+}
+
+.modal_overlay{
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0s 0.5s;
+  transform: scale(0);
+}
+
+.modal_trigger{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.modal_content{
+  align-self: center;
+  width: 60%;
+  max-width: 800px;
+  max-height: 1000px;
+  padding: 30px 30px 15px;
+  box-sizing: border-box;
+  background: #fff;
+  line-height: 1.4em;
+  transform: scale(0.3);
+  transition: 0.5s;
+}
+
+.close_button{
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal_wrap input:checked ~ .modal_overlay{
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+}
+
+.modal_wrap input:checked ~ .modal_overlay .modal_content{
+  transform: scale(1);
+}
+
+.open_button{
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+
+label{
+  font-weight: 400;
 }
