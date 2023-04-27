@@ -1,8 +1,8 @@
 #a-header,#a-ghost_header,#a-billboard,#a-site_contents,#a-footer{max-width:100%}#a-site_contents{max-width:100%}
 @media only screen and (max-width:641px){
-    .bg-document{max-width:100%}#a-site_contents{max-width:100%}}.bd-webp #a-billboard{padding:0;background-image:url(img/caramel-topimage3.webp);background-position:center center;background-size:cover; background-attachment: fixed;}
+    .bg-document{max-width:100%}#a-site_contents{max-width:100%}}.bd-webp #a-billboard{padding:0;background-position:center center;background-size:cover; background-attachment: fixed;}
 @media only screen and (max-width:641px){
-    .bd-no-webp #a-header{padding:0}.bd-webp #a-header{padding:0}.bd-no-webp #a-ghost_header{padding:0}.bd-webp #a-ghost_header{padding:0}.bd-webp #a-billboard{padding:0;background-image:url(img/caramel-topimage3.webp);background-position:center center;background-size:cover; background-attachment: fixed;}.bd-no-webp #a-main{padding:0}.bd-webp #a-main{padding:0}.bd-no-webp #a-side-a{padding:0}.bd-webp #a-side-a{padding:0}.bd-no-webp #a-side-b{padding:0}.bd-webp #a-side-b{padding:0}.bd-no-webp #a-footer{padding:0}.bd-webp #a-footer{padding:0}}#bk59198404>div{margin:0 auto;max-width:50%}.bd-no-webp #bk59198464{background-color:#f5ad54}.bd-webp #bk59198464{background-color:#f5ad54}#bk59198464>div{padding-left:30px;padding-top:50px;padding-right:30px;padding-bottom:50px}.bd-no-webp #bk59198465{background-color:rgba(255,255,255,0.13)}
+    .bd-no-webp #a-header{padding:0}.bd-webp #a-header{padding:0}.bd-no-webp #a-ghost_header{padding:0}.bd-webp #a-ghost_header{padding:0}.bd-webp #a-billboard{padding:0;background-position:center center;background-size:cover; background-attachment: fixed;}.bd-no-webp #a-main{padding:0}.bd-webp #a-main{padding:0}.bd-no-webp #a-side-a{padding:0}.bd-webp #a-side-a{padding:0}.bd-no-webp #a-side-b{padding:0}.bd-webp #a-side-b{padding:0}.bd-no-webp #a-footer{padding:0}.bd-webp #a-footer{padding:0}}#bk59198404>div{margin:0 auto;max-width:50%}.bd-no-webp #bk59198464{background-color:#f5ad54}.bd-webp #bk59198464{background-color:#f5ad54}#bk59198464>div{padding-left:30px;padding-top:50px;padding-right:30px;padding-bottom:50px}.bd-no-webp #bk59198465{background-color:rgba(255,255,255,0.13)}
 
 
 .profile_block{
@@ -10,14 +10,14 @@
     max-width: 1200px;
     min-width: 400px;
     
-    height: 200px;
-    margin: 40px auto 400px 150px;
+    height: fit-content;
+    margin: 40px auto 40px 200px;
 }
 .profile_block_mobile{
     display: block;
-    text-align: center;
-    height: 200px;
-    margin: 40px auto 1000px auto;
+    text-align: left;
+    height: fit-content;
+    margin: 40px auto 40px auto;
 }
 
 .yoyobutton{
@@ -92,7 +92,7 @@
         position: relative;
         text-align: center;
         margin: 0 auto;
-        width:80vw;
+        width: 80%;
         height:1100px; 
     }
     .contactform{
@@ -110,8 +110,8 @@
         position: relative;
         margin: 0 auto;
         text-align: center;
-        width:80vw;
-        height:1250px; 
+        width: 95%;
+        height: 1000px; 
     }
     .contactform{
         position: absolute;

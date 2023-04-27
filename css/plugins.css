@@ -1,0 +1,9 @@
+.plugins-billboard{
+  background: url(../img/plugin/BG.webp) !important; 
+  background-position: center !important; 
+  background-size: 110% 110% !important; 
+  padding-top: 0px !important; 
+  position: relative !important;
+  height: 100px !important; 
+  background-attachment: fixed !important;
+}
