@@ -60,7 +60,7 @@ h2 {
     text-align: center;
     word-wrap: break-word;
   }
-  
+
   .br-sp,
   .br-pc {
     display: none;
@@ -960,12 +960,12 @@ p {
 }
 
 
-.plugin-image-before {
+.plugin-smoother-before {
   position: relative;
   transform: translate(3%);
 }
 
-.plugin-image-before::after {
+.plugin-smoother-before::after {
   content: '';
   display: inline-block;
   background-image: url(../img/plugin/before-parts.webp);
@@ -979,12 +979,12 @@ p {
   border: 3px solid #313131;
 }
 
-.plugin-image-after {
+.plugin-smoother-after {
   position: relative;
   transform: translate(3%);
 }
 
-.plugin-image-after::after {
+.plugin-smoother-after::after {
   content: '';
   display: inline-block;
   background-image: url(../img/plugin/after-parts.webp);
@@ -998,7 +998,6 @@ p {
 
   border: 3px solid #313131;
 }
-
 
 
 
