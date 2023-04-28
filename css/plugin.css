@@ -347,7 +347,15 @@ p {
   transition: 1.0s;
 }
 
-.button-content label:hover:before {
+.button-container:after {
+  position: absolute;
+  transform: translate(75px,-30px);
+  content: '';
+  width: 60px;
+  height: 28px;
+  background-image: url(../img/plugin/freelabel.png);
+  background-size: cover;
+  vertical-align: middle;
 }
 
 
@@ -1188,6 +1196,9 @@ p {
   }
 }
 
+.modal_title{
+  font-size: 24px;
+}
 
 .close_button{
   position: absolute;
