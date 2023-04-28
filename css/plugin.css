@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
+h1{
+  padding-top: 80px;
+}
+
 h2 {
   font-size: 18px;
   margin: 0;
@@ -10,12 +14,23 @@ h2 {
   font-weight: 500 !important;
 }
 
-p {
-  font-size: 14px;
-  margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 400;
+@media (width < 600px){
+  p {
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+  }
 }
+@media (600px <= width){
+  p {
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+  }
+}
+
 
 .colordiv {
   height: 100px;
@@ -41,6 +56,11 @@ p {
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
 
+  p {
+    text-align: center;
+    word-wrap: break-word;
+  }
+  
   .br-sp,
   .br-pc {
     display: none;
@@ -318,7 +338,6 @@ p {
 .button-content label:before {
   content: '';
   display: inline-block;
-  background-image: url(../img/plugin/download-icon-black.webp);
   background-size: contain;
   position: absolute;
   left: 24px;
@@ -329,9 +348,22 @@ p {
 }
 
 .button-content label:hover:before {
+}
+
+
+.buttonicon-download label:before{
+  background-image: url(../img/plugin/download-icon-black.webp);
+}
+.buttonicon-download label:hover:before{
   background-image: url(../img/plugin/download-icon-white.webp);
 }
 
+.buttonicon-howtouse label:before{
+  background-image: url(../img/plugin/document-black.webp);
+}
+.buttonicon-howtouse label:hover:before{
+  background-image: url(../img/plugin/document-white.webp);
+}
 
 
 
@@ -982,7 +1014,7 @@ p {
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .control-panel {
     display: flex;
-    width: 120%;
+    width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
   }
@@ -998,8 +1030,15 @@ p {
 }
 
 
-.control-panel-title {
-  width: 30%;
+@media (width < 600px){
+  .control-panel-title {
+    width: 30%;
+  }
+}
+@media (600px <= width){
+  .control-panel-title {
+    width: 30%;
+  }
 }
 
 .control-panel-title p {
@@ -1078,7 +1117,7 @@ p {
   height: 6px;
   background: linear-gradient(90deg, rgba(245,239,120,1) 0%, rgba(235,173,126,1) 19%, rgba(221,90,123,1) 38%, rgba(152,96,241,1) 59%, rgba(129,146,243,1) 80%, rgba(126,218,239,1) 100%);
   border: none;
-  margin: 60px auto;
+  margin: 20px auto;
 }
 
 .download_title{
@@ -1112,18 +1151,44 @@ p {
   height: 100%;
 }
 
-.modal_content{
-  align-self: center;
-  width: 60%;
-  max-width: 800px;
-  max-height: 1000px;
-  padding: 30px 30px 15px;
-  box-sizing: border-box;
-  background: #fff;
-  line-height: 1.4em;
-  transform: scale(0.3);
-  transition: 0.5s;
+@media (width < 600px){
+  .modal_content{
+    align-self: center;
+    width: 98%;
+    max-width: 600px;
+    max-height: 800px;
+    padding: 40px 5px 20px;
+    box-sizing: border-box;
+    background: #fff;
+    line-height: 1.4em;
+    transform: scale(0.3);
+    transition: 0.5s;
+  }
+
+  .modal_content p{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
 }
+@media (600px <= width){
+  .modal_content{
+    align-self: center;
+    width: 60%;
+    max-width: 800px;
+    max-height: 1000px;
+    padding: 40px 25px 25px;
+    box-sizing: border-box;
+    background: #fff;
+    line-height: 1.4em;
+    transform: scale(0.3);
+    transition: 0.5s;
+  }
+  
+  .modal_content p{
+    
+  }
+}
+
 
 .close_button{
   position: absolute;
