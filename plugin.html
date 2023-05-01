@@ -302,7 +302,7 @@
 
                                                 <div class="plugin-image">
                                                     <div class="plugin-selector-before">
-                                                        <img class="plugin-selector-before" src="img/plugin/colorselector2.webp"
+                                                        <img class="plugin-selector-before" src="img/plugin/colorselector.webp"
                                                             alt="プラグインを使用する前のイメージ">
                                                     </div>
                                                     <div class="arrow-container">
@@ -331,7 +331,7 @@
                                             <div class="column -column1" id="DOWNLOAD">
                                                 <div class="c-body c-center">
                                                     <div class="c-img   ">
-                                                        <h2 class="download_title">miracleColorSelector<br>for Windows</h2> <!-- SHOULD BE IMAGE -->
+                                                        <h2 class="download_title">miracleColorSelector<br>for Windows</h2>
                                                     </div>
 
                                                     <div class="margin-10"></div>
@@ -339,19 +339,28 @@
                                                     <div class="button-area">
                                                         <div class="button-container">
                                                             <div class="button-content buttonicon-download">
-                                                                <a href="download/win/miracleSmoother.zip"
-                                                                    download="miracleSmoother.zip"
+                                                                <a href="download/win/miracleColorSelector.zip"
+                                                                    download="miracleColorSelector.zip"
                                                                     style="text-decoration:none;">DOWNLOAD</a>
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="button-container">
-                                                            <div class="button-content">
-                                                                <a href="download/mac/miracleSmoother.zip"
-                                                                    download="miracleSmoother.zip"
-                                                                    style="text-decoration:none;">Mac</a>
-                                                            </div>
-                                                        </div> -->
                                                     </div>
+
+                                                    <!-- <div class="c-img   ">
+                                                        <h2 class="download_title">miracleColorSelector<br>for Mac</h2>
+                                                    </div>
+
+                                                    <div class="margin-10"></div>
+
+                                                    <div class="button-area">
+                                                        <div class="button-container">
+                                                            <div class="button-content">
+                                                                <a href="download/mac/miracleColorSelector.zip"
+                                                                    download="miracleColorSelector.zip"
+                                                                    style="text-decoration:none;">DOWNLOAD</a>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
 
                                                     
                                                     <div class="margin-80"></div>
@@ -366,81 +375,112 @@
                                                         <input id="trigger" type="checkbox">
                                                             <div class="modal_overlay">
                                                                 <label for="trigger" class="modal_trigger"></label>
-                                                                <div class="modal_content">
-                                                                <label for="trigger" class="close_button">✖️</label>
-            
-                                                                    <h2 class="modal_title">miracleColorSelector</h2>
-            
-                                                                    <p>AfterEffectsを起動後miracleSmootherをかけたいレイヤーを選択し、上のメニューバーから<span style="font-weight: bold">エフェクト/CARAMEL.codeVFX/miracleColorSelector</span>をクリックして適用します。</p>
+                                                                
+                                                                
 
-                                                                    <div class="margin-10"></div>
-            
-            
-                                                                    <img class="howtouse-img" src="img/plugin/controlpanel.webp"
-                                                                        alt="">
+                                                                <div class="modal_window">
 
-                                                                    <div class="margin-20"></div>
-            
-                                                                    <div class="control-panel">
-                                                                        <div class="control-panel-title">
-                                                                            <p>
-                                                                                <span>Use Color Key</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="control-panel-text">
-                                                                            <p>
-                                                                                <span>ここにチェックを入れると選択した色でキーイング処理が行われます。</span>
-                                                                            </p>
+                                                                    <div class="modal_window_close">
+                                                                        <label for="trigger" class="close_button"></label>
+                                                                    </div>
+
+                                                                    <div class="modal_main">
+                                                                        <div class="modal_content">
+
+                                                                            <h2 class="modal_title">miracleColorSelector</h2>
+                    
+                                                                            <p>AfterEffectsを起動後miracleColorSelectorをかけたいレイヤーを選択し、上のメニューバーから<span style="font-weight: bold">エフェクト/CARAMEL.codeVFX/miracleColorSelector</span>をクリックして適用します。</p>
+
+                                                                            <div class="margin-20"></div>
+
+                                                                            <p>キーイング処理の色を10色まで指定可能。<br class="br-pc"><span style="font-weight: bold">Color、Range、Softness</span>で色を細かく設定し、<span style="font-weight: bold">EnableColor</span>でキーイング処理の対象とするか否かを決めます。Enable Color、Color、Range、Softnessはそれぞれの色で設定</p>
+
+                                                                            <div class="margin-10"></div>
+                    
+                    
+                                                                            <img class="howtouse-img" src="img/plugin/controlpanel_colorselector.webp"
+                                                                                alt="">
+
+                                                                            <div class="margin-20"></div>
+                    
+                                                                            <div class="control-panel">
+                                                                                <div class="control-panel-title">
+                                                                                    <p>
+                                                                                        <span>Enable Effect</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="control-panel-text">
+                                                                                    <p>
+                                                                                        <span>ここにチェックを入れると、Color One 〜 Tenで設定したカラー群(それぞれの設定項目でEnable Colorにチェックを入れた色)のキーイング処理が行われます。</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="margin-20"></div>
+                    
+                                                                            <div class="control-panel">
+                                                                                <div class="control-panel-title">
+                                                                                    <p>
+                                                                                        <span>Enable Color</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="control-panel-text">
+                                                                                    <p>
+                                                                                        <span>ここにチェックを入れると、キーイング処理の対象となります。</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="margin-20"></div>
+                    
+                                                                            <div class="control-panel">
+                                                                                <div class="control-panel-title">
+                                                                                    <p>
+                                                                                        <span>Color</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="control-panel-text">
+                                                                                    <p>
+                                                                                        <span>キーイング処理の色を指定。スポイトで素材から色を抽出可能。</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="margin-20"></div>
+                    
+                                                                            <div class="control-panel">
+                                                                                <div class="control-panel-title">
+                                                                                    <p>
+                                                                                        <span>Range</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="control-panel-text">
+                                                                                    <p>
+                                                                                        <span>色の近似値の範囲を指定。小さいほど選んだ色の近似値を狭く、大きいほど選んだ色の近似値を広げる。</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="margin-20"></div>
+                    
+                                                                            <div class="control-panel">
+                                                                                <div class="control-panel-title">
+                                                                                    <p>
+                                                                                        <span>Softness</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                                <div class="control-panel-text">
+                                                                                    <p>
+                                                                                        <span>色を選択した部分とそうでない部分の境界のキーイング処理具合を調整。</span>
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
 
-                                                                    <div class="margin-20"></div>
-            
-                                                                    <div class="control-panel">
-                                                                        <div class="control-panel-title">
-                                                                            <p>
-                                                                                <span>Alpha Key</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="control-panel-text">
-                                                                            <p>
-                                                                                <span>キーイング処理に使う色をここで選びます。</span>
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
+                                                                </div>
 
-                                                                    <div class="margin-20"></div>
-            
-                                                                    <div class="control-panel">
-                                                                        <div class="control-panel-title">
-                                                                            <p>
-                                                                                <span>Smoother Range</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="control-panel-text">
-                                                                            <p>
-                                                                                <span>アンチエイリアス処理をかける時の、隣接するカラー差のしきい値を調整します。ここの値が少ないほどカラーの差が少ない部分でもアンチエイリアス処理されるようになります。<br
-                                                                                        class="br-pc">通常は初期値1.0のままで処理できます。</span>
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="margin-20"></div>
-            
-                                                                    <div class="control-panel">
-                                                                        <div class="control-panel-title">
-                                                                            <p>
-                                                                                <span>Line Weight</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="control-panel-text">
-                                                                            <p>
-                                                                                <span>アンチエイリアス処理する線の幅を調整します。</span>
-                                                                            </p>
-                                                                        </div>
-                                                                    </div>
                                                             </div>
-                                                        </div>
                                                     </div>
                                                         
                                                     <div class="button-content buttonicon-howtouse">
@@ -486,7 +526,7 @@
 
                                                 <div class="plugin-image">
                                                     <div class="plugin-smoother-before">
-                                                        <img class="plugin-smoother-before" src="img/plugin/before.webp"
+                                                        <img class="plugin-smoother-before" src="img/plugin/smoother_before.webp"
                                                             alt="プラグインを使用する前のイメージ">
                                                     </div>
                                                     <div class="arrow-container">
@@ -494,7 +534,7 @@
                                                     </div>
 
                                                     <div class="plugin-smoother-after">
-                                                        <img class="plugin-smoother-after" src="img/plugin/after.webp"
+                                                        <img class="plugin-smoother-after" src="img/plugin/smoother_after.webp"
                                                             alt="プラグインを使用した際のイメージ">
                                                     </div>
                                                 </div>
@@ -515,7 +555,7 @@
                                             <div class="column -column1" id="DOWNLOAD">
                                                 <div class="c-body c-center">
                                                     <div class="c-img   ">
-                                                        <h2 class="download_title">miracleSmoother<br>for Windows</h2> <!-- SHOULD BE IMAGE -->
+                                                        <h2 class="download_title">miracleSmoother<br>for Windows</h2>
                                                     </div>
 
                                                     <div class="margin-10"></div>
@@ -528,14 +568,24 @@
                                                                     style="text-decoration:none;">DOWNLOAD</a>
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="button-container">
+                                                    </div>
+
+                                                    <!-- <div class="c-img   ">
+                                                        <h2 class="download_title">miracleSmoother<br>for Mac</h2>
+                                                    </div>
+
+                                                    <div class="margin-10"></div>
+
+                                                    <div class="button-area">
+                                                        <div class="button-container">
                                                             <div class="button-content">
                                                                 <a href="download/mac/miracleSmoother.zip"
                                                                     download="miracleSmoother.zip"
-                                                                    style="text-decoration:none;">Mac</a>
+                                                                    style="text-decoration:none;">DOWNLOAD</a>
                                                             </div>
-                                                        </div> -->
-                                                    </div>
+                                                        </div>
+                                                    </div> -->
+
 
                                                     <div class="margin-80"></div>
 
@@ -546,11 +596,11 @@
                                                     <div class="margin-10"></div>
 
                                                     <div class="modal_wrap">
-                                                        <input id="trigger" type="checkbox">
+                                                        <input id="trigger-smoother" type="checkbox">
                                                             <div class="modal_overlay">
-                                                                <label for="trigger" class="modal_trigger"></label>
+                                                                <label for="trigger-smoother" class="modal_trigger"></label>
                                                                 <div class="modal_content">
-                                                                <label for="trigger" class="close_button">✖️</label>
+                                                                <label for="trigger-smoother" class="close_button">✖️</label>
             
                                                                     <h2 class="modal_title">miracleSmoother</h2>
             
@@ -559,7 +609,7 @@
                                                                     <div class="margin-10"></div>
             
             
-                                                                    <img class="howtouse-img" src="img/plugin/controlpanel.webp"
+                                                                    <img class="howtouse-img" src="img/plugin/controlpanel_smoother.webp"
                                                                         alt="">
 
                                                                     <div class="margin-20"></div>
@@ -627,7 +677,7 @@
                                                     </div>
                                                         
                                                     <div class="button-content buttonicon-howtouse">
-                                                        <label for="trigger" class="open_button">HOW TO USE</label>
+                                                        <label for="trigger-smoother" class="open_button">HOW TO USE</label>
                                                     </div>
                                                         
                                                     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -638,10 +688,10 @@
                                             <div class="margin-100"></div>
                                         </div>
 
-                                        <div class="margin-40"></div>
-                                        <div class="colordiv"></div>
-                                        <div class="margin-80 br-pc"></div>
-                                        <div class="margin-20 br-tab br-sp"></div>
+                                        <!-- <div class="margin-40"></div>
+                                        <div class="colordiv"></div> -->
+                                        <div class="margin-100 br-pc"></div>
+                                        <div class="margin-100 br-tab br-sp"></div>
 
                                         <div id="bk59198408"
                                             class="b-plain c-space_normal c-sp-space_normal cssskin-mobile_screen"
@@ -707,12 +757,16 @@
 
                                                         <p class="textindent-caution" style="margin-bottom: 140px">※現在お使いのAfterEffectsバージョンのフォルダに入れてください。(上記写真ではAfter Effects 2023)</p>
 
-                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="margin-40"></div>
+                                        <div class="colordiv"></div>
+                                                        
 
                                         <!-- BLANK section -->
-
-                                        <div class="margin-small br-pc"></div>
-                                        <div class="margin-100 br-tab br-sp"></div>
 
                                         <div class="content-row">
                                             <div class="contact">
