@@ -463,6 +463,11 @@ p {
   text-indent: -1.2em;
 }
 
+.text-center{
+  display: block;
+  margin: 0 auto;
+}
+
 
 @media screen and (max-width: 599px) {
   .howtouse-area {
