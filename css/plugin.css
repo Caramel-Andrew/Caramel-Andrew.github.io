@@ -1,21 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
 
+h1{
+  padding-top: 80px;
+}
+
 h2 {
   font-size: 18px;
   margin: 0;
   margin-bottom: 1rem;
   line-height: 1.5em;
   font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  font-weight: 500 !important;
 }
 
-p {
-  font-size: 14px;
-  margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 400;
+@media (width < 600px){
+  p {
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+  }
 }
+@media (600px <= width){
+  p {
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 400;
+  }
+}
+
 
 .colordiv {
   height: 100px;
@@ -40,6 +55,11 @@ p {
 }
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
+
+  p {
+    text-align: center;
+    word-wrap: break-word;
+  }
 
   .br-sp,
   .br-pc {
@@ -245,8 +265,6 @@ p {
 
 .button-container {
   flex-grow: 1;
-  width: 200px;
-  height: 100px;
   display: grid;
   place-items: center;
   margin: 0 auto
@@ -291,6 +309,68 @@ p {
 
 .button-content a:hover:before {
   background-image: url(../img/plugin/download-icon-white.webp);
+}
+
+.button-content label {
+  background: rgba(240, 240, 240);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 22px 22px 22px 48px;
+  width: 180px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: 350;
+  border-radius: 46px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+}
+
+.button-content label:hover {
+  background: #313131;
+  color: #FFF;
+}
+
+.button-content label:before {
+  content: '';
+  display: inline-block;
+  background-size: contain;
+  position: absolute;
+  left: 24px;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  transition: 1.0s;
+}
+
+.button-container:after {
+  position: absolute;
+  transform: translate(75px,-30px);
+  content: '';
+  width: 60px;
+  height: 28px;
+  background-image: url(../img/plugin/freelabel.webp);
+  background-size: cover;
+  vertical-align: middle;
+}
+
+
+.buttonicon-download label:before{
+  background-image: url(../img/plugin/download-icon-black.webp);
+}
+.buttonicon-download label:hover:before{
+  background-image: url(../img/plugin/download-icon-white.webp);
+}
+
+.buttonicon-howtouse label:before{
+  background-image: url(../img/plugin/document-black.webp);
+}
+.buttonicon-howtouse label:hover:before{
+  background-image: url(../img/plugin/document-white.webp);
 }
 
 
@@ -888,15 +968,15 @@ p {
 }
 
 
-.plugin-image-before {
+.plugin-smoother-before {
   position: relative;
   transform: translate(3%);
 }
 
-.plugin-image-before::after {
+.plugin-smoother-before::after {
   content: '';
   display: inline-block;
-  background-image: url(../img/plugin/before-parts.webp);
+  background-image: url(../img/plugin/smoother_before_parts.webp);
   background-size: cover;
   position: absolute;
   left: 0px;
@@ -907,15 +987,15 @@ p {
   border: 3px solid #313131;
 }
 
-.plugin-image-after {
+.plugin-smoother-after {
   position: relative;
   transform: translate(3%);
 }
 
-.plugin-image-after::after {
+.plugin-smoother-after::after {
   content: '';
   display: inline-block;
-  background-image: url(../img/plugin/after-parts.webp);
+  background-image: url(../img/plugin/smoother_after_parts.webp);
   background-size: cover;
   position: absolute;
   left: 0px;
@@ -926,7 +1006,6 @@ p {
 
   border: 3px solid #313131;
 }
-
 
 
 
@@ -942,7 +1021,7 @@ p {
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .control-panel {
     display: flex;
-    width: 120%;
+    width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
   }
@@ -958,8 +1037,15 @@ p {
 }
 
 
-.control-panel-title {
-  width: 30%;
+@media (width < 600px){
+  .control-panel-title {
+    width: 30%;
+  }
+}
+@media (600px <= width){
+  .control-panel-title {
+    width: 30%;
+  }
 }
 
 .control-panel-title p {
@@ -1030,4 +1116,191 @@ p {
     height: 80px;
     width: auto;
   }
+}
+
+
+.plugin_hr{
+  width: 80%;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(245,239,120,1) 0%, rgba(235,173,126,1) 19%, rgba(221,90,123,1) 38%, rgba(152,96,241,1) 59%, rgba(129,146,243,1) 80%, rgba(126,218,239,1) 100%);
+  border: none;
+  margin: 20px auto;
+}
+
+.download_title{
+  color: white;
+}
+
+
+.modal_wrap input{
+  display: none;
+}
+
+.modal_overlay{
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0s 0.5s;
+  transform: scale(0);
+}
+
+.modal_trigger{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.modal_window_close{
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  height: 45px;
+  margin: 0 auto;
+  text-align: right;
+}
+
+.modal_main{
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@media (width < 600px){
+  .modal_window{
+    align-self: center;
+    padding: 10px;
+    padding-top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal_content{
+    overflow: scroll;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    padding: 40px 10px 40px;
+    box-sizing: border-box;
+    background: #fff;
+    line-height: 1.4em;
+    transform: scale(1);
+    transition: 0.5s;
+  }
+
+  .modal_content p{
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}
+@media (600px <= width){
+  .modal_window{
+    align-self: center;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 765px;
+  }
+  
+  .modal_content{
+    overflow: scroll;
+    align-self: center;
+    max-width: 800px;
+    max-height: 650px;
+    margin: 0 auto;
+    padding: 40px 25px 25px;
+    box-sizing: border-box;
+    background: #fff;
+    line-height: 1.4em;
+    transform: scale(1);
+    transition: 0.5s;
+  }
+  
+  .modal_content p{
+    
+  }
+}
+
+.modal_title{
+  font-size: 24px;
+}
+
+.close_button {
+  position: absolute;
+  z-index: 10000;
+  top: 22.5px;
+  right: -22.5px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;  /* 丸みの度合い */
+  background: #fff; /* ボタンの背景色 */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px)
+
+  cursor: pointer;
+  transition: 1s;
+}
+.close_button:hover{
+  background: #000;
+}
+
+.close_button::before, .close_button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px; /* 棒の幅（太さ） */
+  height: 22px; /* 棒の高さ */
+  background: #000; /* バツ印の色 */
+  transition: 1s;
+}
+
+.close_button:hover::before, .close_button:hover::after {
+  content: "";
+  background: #fff; /* バツ印の色 */
+}
+
+.close_button::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.close_button::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+
+
+.modal_wrap input:checked ~ .modal_overlay{
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+}
+
+.modal_wrap input:checked ~ .modal_overlay .modal_content{
+  transform: scale(1);
+}
+
+.open_button{
+  font-weight: 400 !important;
+  cursor: pointer;
+}
+
+label{
+  font-weight: 400;
 }
