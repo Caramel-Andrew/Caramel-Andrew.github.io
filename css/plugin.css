@@ -245,30 +245,24 @@ p {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 599px) {
-  .button-area {
-    width: 300x;
+@media (width < 600px){
+  .button-container {
+    flex-grow: 1;
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
+}
+@media (width >= 600px){
+  .button-container {
+    flex-grow: 1;
+    display: grid;
+    place-items: center;
+    margin: 0 auto
   }
 }
 
-@media screen and (min-width: 600px) and (max-width: 1024px) {
-  .button-area {
-    width: 460px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .button-area {
-    width: 500px;
-  }
-}
-
-.button-container {
-  flex-grow: 1;
-  display: grid;
-  place-items: center;
-  margin: 0 auto
-}
 
 .button-content a {
   background: rgba(240, 240, 240);
@@ -1079,7 +1073,7 @@ p {
     justify-content: space-between;
     width: 320px;
     margin: 0 auto;
-    /* transform: translate(-20px); */
+    margin-bottom: 40px;
   }
 
   .content-flex img {
@@ -1094,7 +1088,7 @@ p {
     justify-content: space-between;
     width: 360px;
     margin: 0 auto;
-    transform: translate(-20px);
+    margin-bottom: 40px;
   }
 
   .content-flex img {
@@ -1109,7 +1103,7 @@ p {
     justify-content: space-between;
     width: 400px;
     margin: 0 auto;
-    transform: translate(-20px);
+    margin-bottom: 40px;
   }
 
   .content-flex img {
@@ -1251,7 +1245,7 @@ p {
   background: #fff; /* ボタンの背景色 */
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(5.5px);
-  -webkit-backdrop-filter: blur(5.5px)
+  -webkit-backdrop-filter: blur(5.5px);
 
   cursor: pointer;
   transition: 1s;
@@ -1303,4 +1297,26 @@ p {
 
 label{
   font-weight: 400;
+}
+
+
+@media (width < 600px){
+  .flex-container{
+    justify-content: center;
+  }
+  
+  .flex-content{
+    width: 320px;
+    margin-bottom: 40px;
+  }
+}
+@media (width >= 600px){
+  .flex-container{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .flex-content{
+    width: 320px;
+  }
 }
