@@ -458,10 +458,21 @@ p {
   text-indent: -0.4em;
 }
 
-.textindent-caution {
-  margin-left: 2.3em;
-  text-indent: -1.2em;
+
+@media (width < 600px) {
+  .textindent-caution {
+    margin-left: 2.3em;
+    text-indent: -1.2em;
+  }
 }
+@media (width >= 600px) {
+  .textindent-caution {
+    margin-left: 2.3em;
+    text-indent: -1.2em;
+    margin: 0 auto;
+  }
+}
+
 
 .text-center{
   display: block;
