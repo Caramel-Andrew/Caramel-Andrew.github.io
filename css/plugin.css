@@ -272,7 +272,7 @@ p {
   align-items: center;
   margin: 0 auto;
   padding: 22px 22px 22px 48px;
-  width: 180px;
+  width: 290px;
   color: #313131;
   transition: 0.3s ease-in-out;
   font-size: 0.9rem;
@@ -343,7 +343,7 @@ p {
 
 .button-container:after {
   position: absolute;
-  transform: translate(75px,-30px);
+  transform: translate(126px,-30px);
   content: '';
   width: 60px;
   height: 28px;
@@ -1342,7 +1342,7 @@ label{
   }
   
   .flex-content{
-    width: 320px;
+    width: 420px;
     margin-bottom: 40px;
   }
 }
@@ -1353,6 +1353,6 @@ label{
   }
   
   .flex-content{
-    width: 320px;
+    width: 420px;
   }
 }
