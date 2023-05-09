@@ -431,7 +431,7 @@ p {
   margin: 0 auto;
 }
 
-.howtouse-img {
+.howtouse-img{
   border: 0.5px solid #000
 }
 
@@ -1388,4 +1388,9 @@ label{
   .flex-content{
     width: 420px;
   }
+}
+
+.plugin_title{
+  width: 100%;
+  margin: 0 auto;
 }
