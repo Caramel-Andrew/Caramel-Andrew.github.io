@@ -103,3 +103,182 @@ wrap.addEventListener('touchend', e => {
     cancelAnimationFrame( tick )
   }
 });
+
+
+
+var slide = document.getElementById('led-slider');
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
+var list1 = document.getElementById('list1');
+var list2 = document.getElementById('list2');
+var list3 = document.getElementById('list3');
+var list4 = document.getElementById('list4');
+var list5 = document.getElementById('list5');
+
+// クリックイベント
+
+next.addEventListener('click', nextClick);
+prev.addEventListener('click', prevClick);
+
+function nextClick() {
+  if (slide.classList.contains('led-slider1') === true) {
+    slide.classList.remove('led-slider1');
+    slide.classList.add('led-slider2');
+    list1.classList.remove('filledbar');
+    list2.classList.add('filledbar');
+    count = 0;
+  } else if (slide.classList.contains('led-slider2') === true) {
+    slide.classList.remove('led-slider2');
+    slide.classList.add('led-slider3');
+    list2.classList.remove('filledbar');
+    list3.classList.add('filledbar');
+    count = 0;
+  } else if (slide.classList.contains('led-slider3') === true) {
+    slide.classList.remove('led-slider3');
+    slide.classList.add('led-slider4');
+    list3.classList.remove('filledbar');
+    list4.classList.add('filledbar');
+    count = 0;
+  } else if (slide.classList.contains('led-slider4') === true) {
+    slide.classList.remove('led-slider4');
+    slide.classList.add('led-slider5');
+    list4.classList.remove('filledbar');
+    list5.classList.add('filledbar');
+    count = 0;
+  } else {
+    slide.classList.remove('led-slider5');
+    slide.classList.add('led-slider1');
+    list5.classList.remove('filledbar');
+    list1.classList.add('filledbar');
+    count = 0;
+  }
+};
+
+function prevClick() {
+  if (slide.classList.contains('led-slider1') === true) {
+    slide.classList.remove('led-slider1');
+    slide.classList.add('led-slider5');
+    list1.classList.remove('filledbar');
+    list5.classList.add('filledbar');
+    count = 0;
+  } else if (slide.classList.contains('led-slider2') === true) {
+    slide.classList.remove('led-slider2');
+    slide.classList.add('led-slider1');
+    list2.classList.remove('filledbar');
+    list1.classList.add('filledbar');
+    count = 0;
+  } else if (slide.classList.contains('led-slider3') === true) {
+    slide.classList.remove('led-slider3');
+    slide.classList.add('led-slider2');
+    list3.classList.remove('filledbar');
+    list2.classList.add('filledbar');
+    count = 0;
+  } else if (slide.classList.contains('led-slider4') === true) {
+    slide.classList.remove('led-slider4');
+    slide.classList.add('led-slider3');
+    list4.classList.remove('filledbar');
+    list3.classList.add('filledbar');
+    count = 0;
+  } else {
+    slide.classList.remove('led-slider5');
+    slide.classList.add('led-slider4');
+    list5.classList.remove('filledbar');
+    list4.classList.add('filledbar');
+    count = 0;
+  }
+};
+
+// インジケーター
+
+list1.addEventListener('click', click1);
+list2.addEventListener('click', click2);
+list3.addEventListener('click', click3);
+list4.addEventListener('click', click4);
+list5.addEventListener('click', click5);
+
+function click1() {
+  slide.classList.add('led-slider1');
+  slide.classList.remove('led-slider2');
+  slide.classList.remove('led-slider3');
+  slide.classList.remove('led-slider4');
+  slide.classList.remove('led-slider5');
+
+  list1.classList.add('filledbar');
+  list2.classList.remove('filledbar');
+  list3.classList.remove('filledbar');
+  list4.classList.remove('filledbar');
+  list5.classList.remove('filledbar');
+  count = 0;
+}
+
+function click2() {
+  slide.classList.remove('led-slider1');
+  slide.classList.add('led-slider2');
+  slide.classList.remove('led-slider3');
+  slide.classList.remove('led-slider4');
+  slide.classList.remove('led-slider5');
+
+  list1.classList.remove('filledbar');
+  list2.classList.add('filledbar');
+  list3.classList.remove('filledbar');
+  list4.classList.remove('filledbar');
+  list5.classList.remove('filledbar');
+  count = 0;
+}
+
+function click3() {
+  slide.classList.remove('led-slider1');
+  slide.classList.remove('led-slider2');
+  slide.classList.add('led-slider3');
+  slide.classList.remove('led-slider4');
+  slide.classList.remove('led-slider5');
+
+  list1.classList.remove('filledbar');
+  list2.classList.remove('filledbar');
+  list3.classList.add('filledbar');
+  list4.classList.remove('filledbar');
+  list5.classList.remove('filledbar');
+  count = 0;
+}
+
+function click4() {
+  slide.classList.remove('led-slider1');
+  slide.classList.remove('led-slider2');
+  slide.classList.remove('led-slider3');
+  slide.classList.add('led-slider4');
+  slide.classList.remove('led-slider5');
+
+  list1.classList.remove('filledbar');
+  list2.classList.remove('filledbar');
+  list3.classList.remove('filledbar');
+  list4.classList.add('filledbar');
+  list5.classList.remove('filledbar');
+  count = 0;
+}
+
+function click5() {
+  slide.classList.remove('led-slider1');
+  slide.classList.remove('led-slider2');
+  slide.classList.remove('led-slider3');
+  slide.classList.remove('led-slider4');
+  slide.classList.add('led-slider5');
+
+  list1.classList.remove('filledbar');
+  list2.classList.remove('filledbar');
+  list3.classList.remove('filledbar');
+  list4.classList.remove('filledbar');
+  list5.classList.add('filledbar');
+  count = 0;
+}
+
+// 自動スライド
+var count = 0;
+
+setInterval(() => {
+  if (count > 5) {
+    count = 0;
+    nextClick();
+  }
+  count++;
+  console.log(count);
+}, 1000);
