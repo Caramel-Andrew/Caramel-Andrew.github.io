@@ -1,10 +1,64 @@
-/* body{
-  background-color: black !important;
-} */
+body{
+  background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+.ledpage-title{
+  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
+  animation: blinking 15s ease-in-out infinite alternate;
+}
+@keyframes blinking {
+	0% {opacity: 1;}
+  15% {opacity: 1;}
+  15.2% {opacity: 0.5;}
+  15.8% {opacity: 0.5;}
+  16% {opacity: 1;}
+  33% {opacity: 1;}
+  33.3% {opacity: 0.5;}
+  34.0% {opacity: 0.5;}
+  34.3% {opacity: 1;}
+  67% {opacity: 1;}
+  67.2% {opacity: 0.5;}
+  67.8% {opacity: 0.5;}
+  68% {opacity: 1;}
+  69% {opacity: 1;}
+  69.2% {opacity: 0.5;}
+  69.8% {opacity: 0.5;}
+  70% {opacity: 1;}
+	100% {opacity: 1;}
+}
 
 p{
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.billboard-container{
+  background-image: url(../img/led/pripara/led25.webp);
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.billboard-img-container{
+  background-color: rgba(0,0,0,0.2);
+  height: 300px;
+
+}
+
+.billboard-img-container h1{
+  color: white;
+  font-size: 42px;
+  text-align: center;
+  height:20px;
+  line-height:100px;
+}
+
+.billboard-img-container img{
+  height: 400px;
+  width: 100vw;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .imgtext-container{
@@ -786,11 +840,38 @@ svg {
   background: #fff;
 } */
 
-.carousel-container{
-  position: relative;
-  width: 100%;
-  object-fit: contain;
-  margin-top: 180px;
+
+@media (width < 600px){
+  .carousel-container{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 80px;
+  }
+}
+@media (600px <= width < 960px){
+  .carousel-container{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 180px;
+  }
+}
+@media (960px <= width < 1280px){
+  .carousel-container{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 180px;
+  }
+}
+@media (1280px <= width){
+  .carousel-container{
+    position: relative;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 180px;
+  }
 }
 
 .wrap {
@@ -902,27 +983,17 @@ svg {
   opacity: 0.5;
 }
 
-@media (width < 480px){
+
+@media (width < 600px){
   .text-container{
-    position: absolute;
+    position: relative;
     bottom: 20%;
-    left: 20px;
+    left: 1em;
     z-index: 5;
     color: aliceblue;
     padding:0;
     margin:0;
-    mix-blend-mode: difference;
-  }
-}
-@media (480px <= width < 600px){
-  .text-container{
-    position: absolute;
-    bottom: 20%;
-    left: 20px;
-    z-index: 5;
-    color: aliceblue;
-    padding:0;
-    margin:0;
+    margin-top: 1em;
     mix-blend-mode: difference;
   }
 }
@@ -969,6 +1040,11 @@ svg {
 
 .content-txt{
   font-size: 12px;
-  margin-top: 10px !important;
+  margin-top: 13px !important;
+  text-align: left;
+}
+.content-work{
+  font-size: 12px;
+  margin-top: 5px !important;
   text-align: left;
 }
