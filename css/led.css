@@ -994,7 +994,8 @@ svg {
     padding:0;
     margin:0;
     margin-top: 1em;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
+    text-shadow: 1px 2px 3px #808080;
   }
 }
 @media (600px <= width < 960px){
@@ -1006,7 +1007,8 @@ svg {
     color: aliceblue;
     padding:0;
     margin:0;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
+    text-shadow: 1px 2px 3px #808080;
   }
 }
 @media (960px <= width < 1280px){
@@ -1018,7 +1020,8 @@ svg {
     color: aliceblue;
     padding:0;
     margin:0;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
+    text-shadow: 1px 2px 3px #808080;
   }
 }
 @media (1280px <= width){
@@ -1030,7 +1033,8 @@ svg {
     color: aliceblue;
     padding:0;
     margin:0;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
+    text-shadow: 1px 2px 3px #808080;
   }
 }
 
@@ -1047,4 +1051,68 @@ svg {
   font-size: 12px;
   margin-top: 5px !important;
   text-align: left;
+}
+
+.contact-led{
+  color: aliceblue;
+  text-shadow: -1px 0px 12px rgba(240, 248, 255, 0.6), 1px 0px 12px rgba(240, 248, 255, 0.6);
+  animation: blinking 15s ease-in-out infinite alternate;
+}
+
+.button-contact-container {
+  flex-grow: 1;
+  width: 200px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto
+}
+
+.button-contact-content-led a {
+  background: rgba(255, 255, 240, 0.095);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 22px;
+  width: 180px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: 350;
+  border:3px solid aliceblue;
+  border-radius: 46px;
+  box-shadow: 0 4px 32px 0 rgba(240, 248, 255, 0.6);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+  color:aliceblue !important;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.button-contact-content-led a:hover {
+  background: rgba(240, 248, 255, 0.264);
+  color: #FFF;
+  transition: 0.3s ease-in-out;
+}
+
+.button-contact-content-led a:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/led/mail-led.webp);
+  background-size: contain;
+  box-shadow: 0 4px 32px 0 rgba(240, 248, 255, 0.6);
+  vertical-align: middle;
+  margin-right: 18px;
+  width: 24px;
+  height: 24px;
+  transition: 0.3s ease-in-out;
+  transition-delay: -0.05s;
+}
+
+.button-contact-content-led a:hover:before {
+  background-image: url(../img/mail-white.webp);
+  transition: 0.3s ease-in-out;
+  transition-delay: -0.05s;
 }
