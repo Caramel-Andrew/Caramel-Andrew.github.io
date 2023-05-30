@@ -381,6 +381,7 @@ a{
     flex-wrap: wrap;
     margin: 0 auto;
     width: 80%;
+    max-width: 1000px;
   }
 }
 
@@ -432,6 +433,36 @@ a{
 }
 .item-plugin img {
   width: 88%;
+}
+
+
+@media (width < 600px){
+  .item-led{
+    width: 90%;
+    background-image: url(../img/led/led-pagelink.webp);
+    margin-top: 30px;
+    aspect-ratio: 1/1;
+    width: 100vw;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+@media (600px <= width){
+  .item-led{
+    width: 100%;
+    background-image: url(../img/led/led-pagelink.webp);
+    margin-top: 80px;
+    height: 140px;
+    width: 100vw;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .item-led img{
+    width: 400px;
+  }
+}
+.item-led:hover {
+  transform: scale(1.05);
 }
 
 @media not all and (min-width: 600px) {
