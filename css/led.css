@@ -870,7 +870,7 @@ svg {
     position: relative;
     width: 100%;
     object-fit: contain;
-    margin-top: 180px;
+    margin-top: 120px;
   }
 }
 @media (960px <= width < 1280px){
@@ -878,7 +878,7 @@ svg {
     position: relative;
     width: 100%;
     object-fit: contain;
-    margin-top: 180px;
+    margin-top: 120px;
   }
 }
 @media (1280px <= width){
@@ -886,7 +886,7 @@ svg {
     position: relative;
     width: 100%;
     object-fit: contain;
-    margin-top: 180px;
+    margin-top: 120px;
   }
 }
 
