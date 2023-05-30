@@ -3,7 +3,8 @@ body{
 }
 
 .ledpage-title{
-  text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83), 6px 0px 15px rgba(255, 255, 240, 0.83);
+  color: aliceblue !important;
+  text-shadow: -6px 0px 15px rgba(240, 248, 255, 0.6), 6px 0px 15px rgba(240, 248, 255, 0.6);
   animation: blinking 15s ease-in-out infinite alternate;
 }
 @keyframes blinking {
@@ -639,8 +640,7 @@ svg {
 
 /* 再生/一時停止ボタン */
 
-/* インジケータ */
-.Carousel-indicator {
+/* インジケータ */.Carousel-indicator {
   display: flex;
   justify-content: center;
   margin: 0;
