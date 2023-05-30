@@ -1,5 +1,5 @@
 body{
-  background-color: rgba(0, 0, 0, 0.55) !important;
+  background-color: rgba(0, 0, 0, 0.697) !important;
 }
 
 .ledpage-title{
@@ -42,7 +42,7 @@ p{
 }
 
 .billboard-img-container{
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.5);
   height: 300px;
 
 }

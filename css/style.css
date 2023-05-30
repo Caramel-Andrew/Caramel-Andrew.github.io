@@ -435,6 +435,15 @@ a{
   width: 88%;
 }
 
+.item-led{
+  width: 100%;
+  background-image: url(../img/led/led-pagelink.webp);
+  margin-top: 80px;
+}
+.item-led:hover {
+  transform: scale(1.05);
+}
+
 @media not all and (min-width: 600px) {
   .item {
     width: 100%;
