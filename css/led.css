@@ -47,12 +47,28 @@ p{
 
 }
 
-.billboard-img-container h1{
-  color: white;
-  font-size: 42px;
-  text-align: center;
-  height:20px;
-  line-height:100px;
+
+@media (width < 600px){
+  .billboard-img-container h1{
+    position: absolute;
+    color: white;
+    font-size: 42px;
+    text-align: left;
+    height:20px;
+    line-height:60px;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+@media (600px <= width){
+  .billboard-img-container h1{
+    color: white;
+    font-size: 42px;
+    text-align: center;
+    height:20px;
+    line-height:100px;
+  }
 }
 
 .billboard-img-container img{
