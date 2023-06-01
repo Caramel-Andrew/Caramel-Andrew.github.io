@@ -1,5 +1,5 @@
 body{
-  background-color: rgba(0, 0, 0, 0.697) !important;
+  background-color: rgba(0, 0, 0, 0.814) !important;
 }
 
 .ledpage-title{
@@ -870,7 +870,7 @@ svg {
     position: relative;
     width: 100%;
     object-fit: contain;
-    margin-top: 120px;
+    margin-top: 80px;
   }
 }
 @media (960px <= width < 1280px){
@@ -878,7 +878,6 @@ svg {
     position: relative;
     width: 100%;
     object-fit: contain;
-    margin-top: 120px;
   }
 }
 @media (1280px <= width){
@@ -886,7 +885,6 @@ svg {
     position: relative;
     width: 100%;
     object-fit: contain;
-    margin-top: 120px;
   }
 }
 
@@ -1004,57 +1002,66 @@ svg {
   .text-container{
     position: relative;
     bottom: 20%;
-    left: 1em;
     z-index: 5;
     color: aliceblue;
     padding:0;
     margin:0;
     margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
     /* mix-blend-mode: difference; */
     text-shadow: -1px 0px 8px rgba(240, 248, 255, 0.6), 1px 0px 8px rgba(240, 248, 255, 0.6);
   }
 }
 @media (600px <= width < 960px){
   .text-container{
-    position: absolute;
+    position: relative;
     bottom: 20%;
-    left: 20px;
     z-index: 5;
     color: aliceblue;
     padding:0;
-    margin:0;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
     /* mix-blend-mode: difference; */
-    text-shadow: 1px 2px 3px #808080;
+    text-shadow: -1px 0px 8px rgba(240, 248, 255, 0.6), 1px 0px 8px rgba(240, 248, 255, 0.6);
   }
 }
 @media (960px <= width < 1280px){
   .text-container{
+    background-color: #00000070;
     position: absolute;
-    bottom: 20%;
-    right: 2%;
+    bottom: 5%;
+    right: 0%;
+    width: 45%;
     z-index: 5;
+    padding: 10px;
     color: aliceblue;
-    padding:0;
-    margin:0;
+    padding: 10px;
+    margin: 0;
     /* mix-blend-mode: difference; */
     text-shadow: 1px 2px 3px #808080;
   }
 }
 @media (1280px <= width){
   .text-container{
+    background-color: #00000070;
     position: absolute;
-    bottom: 20%;
-    right: 10%;
+    bottom: 5%;
+    right: 0%;
+    width: 40%;
     z-index: 5;
+    padding: 10px;
     color: aliceblue;
-    padding:0;
-    margin:0;
+    padding: 10px;
+    margin: 0;
     /* mix-blend-mode: difference; */
     text-shadow: 1px 2px 3px #808080;
   }
 }
 
 .title-txt{
+  text-align: left;
   font-size: 18px;
 }
 
