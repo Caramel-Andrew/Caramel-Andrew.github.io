@@ -1,0 +1,168 @@
+.promotion-container{
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.promotion-content{
+  margin-top: 140px;
+}
+
+.columns{
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+
+.left-column{
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background-color: bisque;
+}
+
+.right-column{
+  position: relative;
+  width: 50%;
+  /* background-color: aquamarine; */
+}
+
+@media (width < 600px){
+  .promotion-container{
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .promotion-content{
+    margin-top: 140px;
+  }
+
+  .columns{
+    display: block;
+    position: relative;
+    height: 100%;
+  }
+
+  .left-column{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background-color: bisque;
+  }
+  
+  .right-column{
+    position: relative;
+    width: 100%;
+    height: 40%;
+  }
+}
+
+@media (480px < width < 600px){
+  .left-column{
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
+
+.pr-title-container{
+  text-align: center;
+  background-color: #FFAE27
+}
+
+.pr-title{
+  color: white;
+  font-size: 3rem !important;
+}
+
+.pr-button{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
+}
+@media (width < 600px){
+  .pr-button{
+    position: relative;
+    bottom: 0;
+  }
+}
+
+
+.pr-button a {
+  background: #FFAE27;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 22px 22px 22px 48px;
+  width: 200px !important;
+  color: #fff !important;
+  transition: 0.3s ease-in-out;
+  font-size: 0.9rem;
+  font-weight: bold !important;
+  border-radius: 46px;
+  box-shadow: 0 8px 32px 0 rgba(41, 42, 53, 0.37);
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(5.5px);
+}
+
+.pr-button a:hover {
+  background: #313131 !important;
+  color: #FFF !important;
+}
+
+.pr-button a:before {
+  content: '';
+  display: inline-block;
+  background-image: url(../img/plugin/document-black.webp);
+  background-size: contain;
+  position: absolute;
+  left: 24px;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  transition: 1.0s;
+}
+
+.pr-button a:before{
+  background-image: url(../img/plugin/document-white.webp);
+}
+
+
+.pr-description{
+  margin-top: 20px;
+}
+
+.pr-headtext{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold !important;
+  margin: 0 !important;
+  margin-left: 30px !important;
+}
+@media (width < 600px){
+  .pr-headtext{
+    margin: 0 auto !important;
+    margin-top: 40px !important;
+  }
+}
+
+
+.pr-text{
+  text-align: justify;
+  margin: 0 !important;
+  margin-left: 30px !important;
+  margin-top: 20px !important;
+}
+@media (width < 600px){
+  .pr-text{
+    margin: 0 auto !important;
+    margin-top: 20px !important;
+  }
+}
