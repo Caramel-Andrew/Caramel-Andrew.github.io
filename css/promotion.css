@@ -1,3 +1,12 @@
+h1{
+  padding: 0;
+}
+
+.page-description{
+  margin-top: 30px;
+}
+
+
 .promotion-container{
   position: relative;
   width: 90%;
@@ -7,6 +16,9 @@
 
 .promotion-content{
   margin-top: 140px;
+}
+.first-content{
+  margin-top: 70px;
 }
 
 .columns{
@@ -76,6 +88,8 @@
 .pr-title{
   color: white;
   font-size: 3rem !important;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .pr-button{
