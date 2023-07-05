@@ -3,6 +3,9 @@ h1{
 }
 
 .page-description{
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
   margin-top: 30px;
 }
 
@@ -50,6 +53,9 @@ h1{
   .promotion-content{
     margin-top: 140px;
   }
+  .first-content{
+    margin-top: 70px;
+  }
 
   .columns{
     display: block;
@@ -90,6 +96,7 @@ h1{
   font-size: 3rem !important;
   padding-top: 50px;
   padding-bottom: 50px;
+  line-height: 3.5rem;
 }
 
 .pr-button{
