@@ -90,6 +90,9 @@
     <script type="text/javascript" charset="UTF-8" src="src/onion.js.download"></script>
     <script type="text/javascript" charset="UTF-8" src="src/controls.js.download"></script>
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-661WJ9N4TD"></script>
     <script>
@@ -136,7 +139,7 @@
                                                             data-="" class=" js-link_scroller">SERVICE</a></li> -->
                                                     <li>
                                                         <div class="dropdown">
-                                                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                          <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                             SERVICE
                                                           </button>
                                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -197,23 +200,21 @@
                                     <!-- header PC screen-->
                                     <div class=" column -col8">
                                         <nav>
-                                            <div class=" -menu_right">
-                                                <ul class="c-menu -menu_a menu-parts">
+                                            <div class="-menu_right" id="navbarSupportedContent">
+                                                <ul class="c-menu -menu_a menu-parts navbar-nav mr-auto">
                                                     <!-- <li><a href="index.html?press=preview#SERVICE" data-mypid="4022136"
                                                             data-="" class=" js-link_scroller">SERVICE</a></li> -->
-                                                            <li>
-                                                                <div class="dropdown">
-                                                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                      SERVICE
-                                                                    </button>
-                                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                      <a class="dropdown-item" href="https://visibby.com" target="_blank">VisibbY</a>
-                                                                      <a class="dropdown-item" href="tennis-breaker.html">Tennis Preaker</a>
-                                                                      <a class="dropdown-item" href="plugin.html" target="_blank">Plugins</a>
-                                                                      <a class="dropdown-item"href="led.html">LED & Interactive</a>
-                                                                    </div>
-                                                                  </div>
-                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle" href="#SERVICE" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                  Service
+                                                                </a>
+                                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                                  <a class="dropdown-item" href="https://visibby.com" target="_blank">VisibbY</a>
+                                                                  <a class="dropdown-item" href="tennis-breaker.html">Tennis Breaker</a>
+                                                                  <a class="dropdown-item" href="plugin.html">Plugins</a>
+                                                                  <a class="dropdown-item" href="led.html">LED & Interactive</a>
+                                                                </div>
+                                                              </li>
                                                     <li><a href="index.html?press=preview#ABOUT" data-mypid="4022136"
                                                             class=" js-link_scroller">ABOUT</a></li>
                                                     <li><a href="index.html?press=preview#ACCESS" data-mypid="4022136"
