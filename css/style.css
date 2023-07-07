@@ -449,6 +449,9 @@ a{
     object-fit: cover;
     overflow: hidden;
   }
+  .item-motion img{
+    width: 90%;
+  }
 }
 @media (600px <= width){
   .item-motion{
@@ -461,7 +464,7 @@ a{
     overflow: hidden;
   }
   .item-motion img{
-    width: 400px;
+    width: 35%;
   }
 }
 .item-motion:hover {
