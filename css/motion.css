@@ -28,6 +28,7 @@ body{
 	100% {opacity: 1;}
 }
 
+
 p{
   margin: 0 !important;
   padding: 0 !important;
@@ -42,9 +43,12 @@ p{
 }
 
 .billboard-img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0,0,0,0.5);
   height: 300px;
-
+  text-align: center;
 }
 
 
@@ -72,8 +76,7 @@ p{
 }
 
 .billboard-img-container img{
-  height: 400px;
-  width: 100vw;
+  width: 600px;
   object-fit: cover;
   overflow: hidden;
 }
