@@ -440,9 +440,9 @@ a{
 
 
 @media (width < 600px){
-  .item-led{
+  .item-motion{
     width: 90%;
-    background-image: url(../img/led/led-pagelink.webp);
+    background-image: url(../img/motion/motion-pagelink.webp);
     margin-top: 30px;
     aspect-ratio: 1/1;
     width: 100vw;
@@ -451,20 +451,20 @@ a{
   }
 }
 @media (600px <= width){
-  .item-led{
+  .item-motion{
     width: 100%;
-    background-image: url(../img/led/led-pagelink.webp);
+    background-image: url(../img/motion/motion-pagelink.webp);
     margin-top: 80px;
     height: 140px;
     width: 100vw;
     object-fit: cover;
     overflow: hidden;
   }
-  .item-led img{
+  .item-motion img{
     width: 400px;
   }
 }
-.item-led:hover {
+.item-motion:hover {
   transform: scale(1.05);
 }
 
